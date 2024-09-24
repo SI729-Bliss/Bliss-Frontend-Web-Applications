@@ -8,6 +8,7 @@ import { HttpClient, provideHttpClient } from "@angular/common/http";
 import { importProvidersFrom } from '@angular/core';
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { DetailsComponent } from './customers/home-client/pages/booking/details/details.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

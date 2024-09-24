@@ -1,6 +1,6 @@
 {
   "bc": {
-      "hello": "Hello"
+    "hello": "BLISS"
   },
   "bc-2": {
 
@@ -12,6 +12,38 @@
 
   },
   "bc-5": {
-
+    "toolbar": {
+      "home": "Home",
+      "myService": "My Service",
+      "schedule": "Schedule"
+    },
+    "booking": {
+      "filter": "Filter",
+      "search": "Search...",
+      "hair": "Hair",
+      "type1": "Wavy",
+      "type2": "Straight",
+      "type3": "Curly",
+      "nails": "Nails",
+      "nailType1": "Manicure",
+      "nailType2": "Pedicure",
+      "nailType3": "Nail Art",
+      "makeup": "Makeup",
+      "makeupType1": "Foundation",
+      "makeupType2": "Eyeshadow",
+      "makeupType3": "Lipstick",
+      "salon": "Salon",
+      "salonType1": "Haircut",
+      "salonType2": "Coloring",
+      "salonType3": "Styling",
+      "category": "Category",
+      "categoryType1": "Hair",
+      "categoryType2": "Nails",
+      "categoryType3": "Makeup",
+      "popularTags": "Popular Tags",
+      "filterByPrice": "Filter by Price",
+      "cardsTitle": "Salons near to me",
+      "newcardsTitle": "Recommended Services"
+    }
   }
 }
