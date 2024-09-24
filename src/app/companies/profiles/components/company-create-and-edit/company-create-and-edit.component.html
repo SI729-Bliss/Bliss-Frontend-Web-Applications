@@ -1,0 +1,30 @@
+<div class="main-container">
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit()" #studentForm="ngForm" class="form-section">
+      <h3>Company Registration</h3>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" name="name" required [(ngModel)]="company.name">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="E-mail" name="email" required [(ngModel)]="company.email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Address" name="address" required [(ngModel)]="company.address">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput placeholder="Phone Number" name="phoneNumber" required [(ngModel)]="company.phoneNumber">
+      </mat-form-field>
+      <ng-container *ngIf="editMode">
+        <button mat-raised-button color="primary">Update</button>
+        <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+      </ng-container>
+      <ng-container *ngIf="!editMode">
+        <button mat-raised-button color="primary">Add</button>
+      </ng-container>
+    </form>
+  </div>
+</div>
