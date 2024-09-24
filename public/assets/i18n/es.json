@@ -9,6 +9,16 @@
 
   },
   "bc-4": {
+    "id": "Núm.",
+    "eTitle": "Edit Services",
+    "mTitle": "Listado de Servicios",
+
+    "nBasePrice": "Precio Base",
+    "cardtitle1": "Trabaja a la velocidad",
+    "subtitle1": "¿Requiere herramients más profesionales?",
+    "learnm": "Descubre Más",
+
+    "actions": "Funciones"
 
   },
   "bc-5": {
