@@ -1,0 +1,64 @@
+<!-- Services catalogue -->
+<div class="table-wrapper">
+  <h3>{{ 'bc-4.mTitle' | translate }}</h3>
+
+  <!--Add/Edit Form-->
+  <app-services-create-and-edit (editCanceled)="onCancelEdit()"
+                               (entserviceAdded)="onEntserviceAdded($event)"
+                               (entserviceUpdated)="onEntserviceUpdated($event)"
+                               [editMode] = "isEditMode"
+                               [entservice]="entservicesData"/>
+
+  <!-- Data Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+         matSort matSortActive="name" matSortDirection="asc">
+
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.id' | translate }} </th>
+      <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'bc-4.name' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="categoryId">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.id' | translate }} </th>
+      <td *matCellDef="let element" mat-cell>{{ element.categoryId }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="imageUrl">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'bc-4.name' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.imageUrl }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'bc-4.name' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.description }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="basePrice">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.id' | translate }} </th>
+      <td *matCellDef="let element" mat-cell>{{ element.basePrice }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="beautySalonId">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.id' | translate }} </th>
+      <td *matCellDef="let element" mat-cell>{{ element.beautySalonId }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef mat-header-cell> {{ 'bc-4.actions' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>
+        <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
+        <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns:displayedColumns" [ngClass]="{'editable-row': entservicesData.id === row.id }" mat-row></tr>
+  </table>
+  <!-- Paginator child component-->
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>

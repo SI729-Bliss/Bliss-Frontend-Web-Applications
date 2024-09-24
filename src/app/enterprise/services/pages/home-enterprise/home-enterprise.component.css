@@ -1,0 +1,15 @@
+.container-services {
+  background-color: #ffffff;
+}
+
+.container-cardservices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.container-cardservices app-service-card {
+  margin: 10px;
+  display: flex;
+}

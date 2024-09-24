@@ -1,0 +1,100 @@
+<div class="container">
+
+  <div class="box">
+    <div class="card1">
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-icon matListItemIcon>credit_card</mat-icon>
+
+          <mat-card-title>{{ 'bc-4.cardtitle1' | translate }}</mat-card-title>
+
+          <mat-card-subtitle>{{ 'bc-4.subtitle1' | translate }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-actions align="end">
+          <a mat-stroked-button href="https://www.google.com/" target="_blank">{{ 'bc-4.learnm' | translate }}</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <br>
+
+    <div class="card2">
+      <mat-card appearance="outlined">
+        <mat-card-header>
+
+          <mat-icon matListItemIcon>credit_card</mat-icon>
+
+          <mat-card-title>{{ 'bc-4.cardtitle1' | translate }}</mat-card-title>
+
+          <mat-card-subtitle>{{ 'bc-4.subtitle1' | translate }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions align="end">
+          <button mat-button>Learn More</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+
+  <div class="box">
+
+    <!-- Create and Edit Form -->
+    <h4>{{ editMode ? 'Edit Service' : 'New Service' }}</h4>
+    <div class="form-section">
+
+      <form (submit)="onSubmit()" #entserviceFrom='ngForm' class="form-row">
+        <mat-form-field>
+          <input matInput placeholder="Name" name="name"  required [(ngModel)]="entservice.name">
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <input matInput placeholder="Category" name="category" required [(ngModel)]="entservice.categoryId">
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <input matInput placeholder="Image URL" name="imageurl" required [(ngModel)]="entservice.imageUrl">
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <input matInput placeholder="Description" name="description" required [(ngModel)]="entservice.description">
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <input matInput placeholder="{{ 'bc-4.nBasePrice' | translate }}" name="basePrice" required [(ngModel)]="entservice.basePrice">
+        </mat-form-field>
+
+        <!--<mat-form-field>
+          <input matInput placeholder="{{ 'bc-4.nBeautySalon' | translate }}" name="beaturySalonId" required [(ngModel)]="entservice.beautySalonId">
+        </mat-form-field>-->
+
+        <br>
+
+        <ng-container>
+          @if (editMode === true) {
+            <button mat-raised-button color="primary">Update</button>
+            <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+          }
+          @else {
+            <button mat-raised-button color="primary">Add</button>
+          }
+        </ng-container>
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
