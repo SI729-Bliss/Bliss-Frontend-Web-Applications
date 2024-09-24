@@ -1,2 +1,16 @@
-<app-header-content></app-header-content>
-<app-customer-create-and-edit></app-customer-create-and-edit>
+<mat-toolbar color="primary">
+  <span>Bliss Web App</span>
+  <span class="mat-spacer"></span>
+  <a mat-button [routerLink]="'/customer'">Customers</a>
+  <a mat-button [routerLink]="'/company'">Companies</a>
+  <button mat-icon-button>
+    <mat-icon>share</mat-icon>
+  </button>
+  <span>
+    <app-language-switcher></app-language-switcher>
+  </span>
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

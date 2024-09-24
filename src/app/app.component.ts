@@ -32,15 +32,16 @@ export class AppComponent implements OnInit {
 
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
   options = [
-    { icon: 'home', path: '/home', title: 'Home'},
     { icon: 'person', path: '/customer', title: 'Customers'},
-    { icon: 'info', path:'/company', title: 'Companies'},
+    { icon: 'person', path:'/company', title: 'Companies'},
   ];
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {
     translate.setDefaultLang('en');
     translate.use('en');
   }
+
+
 
   ngOnInit(): void {
     this.observer.observe(['(max-width: 1280px)'])

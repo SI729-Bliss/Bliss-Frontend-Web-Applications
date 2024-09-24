@@ -1,6 +1,7 @@
 <div class="main-container">
   <div class="container">
     <form (submit)="onSubmit()" #studentForm='ngForm' class="form-section">
+      <div class="profile-img"><img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg" alt="profile photo" class="profile-img"></div>
       <h3>Information</h3>
       <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
@@ -31,6 +32,7 @@
   </div>
   <div class="container-favorites">
     <h3>Favorite Services</h3>
+    <div class="card-list">
     <div *ngFor="let service of services" class="card">
       <div class="image-container">
         <img [src]="service.image" alt="{{ service.serviceCategory }}">
