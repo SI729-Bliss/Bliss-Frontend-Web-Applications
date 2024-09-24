@@ -51,21 +51,21 @@
       "price": 30,
       "duration": 45,
       "description": "Corte de cabello corto",
-      "customization_options": "Lavado, secado, peinado"
+      "customizationOptions": "Lavado, secado, peinado"
     },
     {
       "id": 2,
       "price": 50,
       "duration": 60,
       "description": "Coloración de cabello",
-      "customization_options": "Tinte, mechas, balayage"
+      "customizationOptions": "Tinte, mechas, balayage"
     },
     {
       "id": 3,
       "price": 20,
       "duration": 30,
       "description": "Manicuría básica",
-      "customization_options": "Esmalte, cutícula"
+      "customizationOptions": "Esmalte, cutícula"
     }
   ],
   "categories": [
@@ -93,17 +93,37 @@
       "id": 1,
       "name": "Corte de cabello",
       "description": "Corte de cabello clásico.",
-      "base_price": 30,
+      "basePrice": 30,
       "categoryId": 1,
-      "beauty_salon_id": 1
+      "beautySalonId": 1,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
     },
     {
       "id": 2,
       "name": "Coloración",
       "description": "Aplicación de color en el cabello.",
-      "base_price": 50,
+      "basePrice": 50,
       "categoryId": 1,
-      "beauty_salon_id": 1
+      "beautySalonId": 1,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+    },
+    {
+      "id": 3,
+      "name": "Coloración",
+      "description": "Aplicación de color en el cabello.",
+      "basePrice": 50,
+      "categoryId": 1,
+      "beautySalonId": 1,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+    },
+    {
+      "id": 4,
+      "name": "Coloración",
+      "description": "Aplicación de color en el cabello.",
+      "basePrice": 50,
+      "categoryId": 1,
+      "beautySalonId": 1,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
     }
   ],
   "reservations": [
@@ -111,8 +131,8 @@
       "id": 123,
       "date": "2023-11-22",
       "hour": "15:00",
-      "service_id": 456,
-      "customer_id": 789
+      "serviceId": 456,
+      "customerId": 789
     }
   ],
   "reservations_details": [
@@ -122,7 +142,7 @@
       "description": "Corte de cabello con color",
       "duration": 120,
       "totalPrice": 70.00,
-      "reservation_id": 123
+      "reservationId": 123
     }
   ],
   "feedback": [
@@ -130,25 +150,54 @@
       "id": 1,
       "punctuation": 5,
       "comment": "Excelente servicio!",
-      "created_date": "2023-11-23",
-      "reservation_id": 1,
-      "customer_id": 1
+      "createdDate": "2023-11-23",
+      "reservationId": 1,
+      "customerId": 1
     },
     {
       "id": 2,
       "punctuation": 4,
       "comment": "El color no fue exactamente lo que esperaba.",
-      "created_date": "2023-11-24",
-      "reservation_id": 2,
-      "customer_id": 2
+      "createdDate": "2023-11-24",
+      "reservationId": 2,
+      "customerId": 2
     },
     {
       "id": 3,
       "punctuation": 5,
       "comment": "¡Me encantó el peinado!",
-      "created_date": "2023-11-25",
-      "reservation_id": 3,
-      "customer_id": 3
+      "createdDate": "2023-11-25",
+      "reservationId": 3,
+      "customerId": 3
+    }
+  ],
+  "specialists": [
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1234567890",
+      "certificationNumber": "CERT-987654321",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321",
+      "certificationNumber": "CERT-123456789",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
+
+    },
+    {
+      "firstName": "Carlos",
+      "lastName": "Gonzalez",
+      "email": "carlos.gonzalez@example.com",
+      "phone": "+1122334455",
+      "certificationNumber": "CERT-112233445",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
+
     }
   ]
+
 }

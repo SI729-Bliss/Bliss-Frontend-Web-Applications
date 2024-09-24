@@ -1,0 +1,30 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+}
+
+.filter-column {
+  margin: 10px;
+  padding: 20px;
+  grid-row: span 2;
+  background-color: #FFFFFF;
+}
+
+.service-cards {
+  grid-column: 2;
+}
+
+.specialist-cards {
+  grid-column: 2;
+}
+
+.bottom-filter {
+  grid-column: span 2;
+}
+h4,p{
+  color:#C3A3BF;
+}
+
+

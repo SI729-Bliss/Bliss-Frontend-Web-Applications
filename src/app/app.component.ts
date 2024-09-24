@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { OnInit } from '@angular/core';
 import { HeaderContentComponent } from './public/components/header-content/header-content.component';
 import { TranslateService } from "@ngx-translate/core";
 
@@ -18,4 +18,6 @@ export class AppComponent {
     translate.setDefaultLang('en');
     translate.use('en');
   }
+  options = [
+    { path: '/home', title: 'Home'},]
 }
