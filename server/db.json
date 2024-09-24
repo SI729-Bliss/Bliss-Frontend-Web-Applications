@@ -92,17 +92,19 @@
     {
       "id": 1,
       "name": "Corte de cabello",
+      "categoryId": "1",
+      "imageUrl": "Corte de cabello clásico.",
       "description": "Corte de cabello clásico.",
-      "base_price": 30,
-      "categoryId": 1,
-      "beauty_salon_id": 1
+      "basePrice": 30,
+      "beautySalonId": 1
     },
     {
       "id": 2,
       "name": "Coloración",
+      "categoryId": 3,
+      "image": "Corte de cabello clásico.",
       "description": "Aplicación de color en el cabello.",
       "base_price": 50,
-      "categoryId": 1,
       "beauty_salon_id": 1
     }
   ],
@@ -121,7 +123,7 @@
       "status": "confirmed",
       "description": "Corte de cabello con color",
       "duration": 120,
-      "totalPrice": 70.00,
+      "totalPrice": 70,
       "reservation_id": 123
     }
   ],
