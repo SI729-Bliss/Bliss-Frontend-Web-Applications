@@ -4,6 +4,7 @@ export class Customer {
   email: string;
   address: string;
   phoneNumber: string;
+
   constructor() {
     this.id = '';
     this.name = '';

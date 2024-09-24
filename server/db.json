@@ -1,22 +1,84 @@
 {
   "customers": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
-      "age": 26,
-      "address": "Nowhere"
+      "email": "john.doe@example.com",
+      "address": "123 Main St",
+      "phoneNumber": "555-1234"
     },
     {
-      "id": 2,
-      "name": "Jason Bourne",
-      "age": 34,
-      "address": "Unknown"
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "address": "456 Elm St",
+      "phoneNumber": "555-5678"
+    }
+  ],
+  "services": [
+    {
+      "language": "English",
+      "stars": 4.9,
+      "serviceCategory": "Hair Styling",
+      "description": "Expert hair styling services to give you a fresh, modern look.",
+      "price": "$85.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
     },
     {
-      "id": 3,
-      "name": "William Norton",
-      "age": 38,
-      "address": "One Secret Place"
+      "language": "English",
+      "stars": 4.7,
+      "serviceCategory": "Manicure & Pedicure",
+      "description": "Complete manicure and pedicure services for flawless hands and feet.",
+      "price": "$40.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.8,
+      "serviceCategory": "Facial Treatments",
+      "description": "Rejuvenate your skin with our personalized facial treatments.",
+      "price": "$60.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.6,
+      "serviceCategory": "Hair Coloring",
+      "description": "Professional hair coloring to match your style.",
+      "price": "$90.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.5,
+      "serviceCategory": "Nail Art",
+      "description": "Express your style with creative and professional nail art.",
+      "price": "$50.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.7,
+      "serviceCategory": "Massage Therapy",
+      "description": "Relax and rejuvenate with our expert massage therapy sessions.",
+      "price": "$100.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.8,
+      "serviceCategory": "Eyebrow Shaping",
+      "description": "Get the perfect eyebrow shape with our precision eyebrow shaping service.",
+      "price": "$25.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.9,
+      "serviceCategory": "Waxing",
+      "description": "Smooth and flawless skin with our waxing services.",
+      "price": "$45.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
     }
   ]
 }
