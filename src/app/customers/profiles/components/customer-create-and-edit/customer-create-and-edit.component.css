@@ -53,10 +53,12 @@ h3{
   flex-flow: row nowrap;
   padding: 10px 10px;
   gap: 15px;
-  text-align: left; /* Cambiado de center a left */
+  text-align: left;
   min-width: 30%;
   max-width: 40%;
-  align-items: flex-start; /* Alinea los elementos al inicio */
+  align-items: flex-start;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Agrega un delineado ligero */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra ligera */
 }
 
 .image-container {
