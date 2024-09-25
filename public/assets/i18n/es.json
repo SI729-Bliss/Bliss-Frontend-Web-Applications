@@ -1,0 +1,9 @@
+{
+  "app": {
+    "title": "BLISS",
+    "home": "Inicio",
+    "myServices": "Mis Servicios",
+    "mySchedule": "Mi Horario",
+    "searchPlaceholder": "Buscar..."
+  }
+}

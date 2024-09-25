@@ -1,5 +1,22 @@
-<nav>
-  <a routerLink="/">Create Review</a>
-  <a routerLink="/reviews">View Reviews</a>
-</nav>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<mat-toolbar color="primary" class="navbar-style-7navbar-light">
+  <span class="nav-brand">BLISS</span>
+  <span class="spacer"></span>
+  <nav >
+
+    <a mat-button [routerLink]="['myservices']">{{ 'app.home' | translate }}</a>
+    <a mat-button [routerLink]="['']">{{ 'app.myServices' | translate }}</a>
+    <a mat-button [routerLink]="['']">{{ 'app.mySchedule' | translate }}</a>
+    <span>
+
+    <app-language-switcher/>
+  </span>
+    <!-- Contenedor de íconos -->
+    <div class="icon-container">
+      <mat-icon aria-hidden="false" aria-label="Search">search</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Shopping Cart">shopping_cart</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Favorite">favorite</mat-icon>
+    </div>
+  </nav>
+</mat-toolbar>
 <router-outlet></router-outlet>

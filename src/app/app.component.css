@@ -1,10 +1,42 @@
-.root {
-  height: 100%;
-  font-family: sans-serif;
-  background-color: #f5f5f5;
-  overflow-y: auto;
+.navbar-style-7navbar-light
+{
+  background-color:#d1e4fa;
+  height:93px;
+  padding: 10px 56px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  align-items:center;
+  justify-content:right;
+  position:relative;
+  gap:202px;
+}
+.nav-brand
+{
+  height:73px;
+  width:156px;
+  align-self:flex-start;
+  left:56px;
+  top:10px;
+  position:absolute;
+  padding:10px;
+}
+.nav-brand {
+  font-family: 'Tajawal', sans-serif; /* Fuente Tajawal */
+  font-weight: 200; /* Negrita */
+  font-size: 24px; /* Tamaño de la fuente */
 }
 
-.content {
-  padding: 20px;
+/* Ajusta los íconos para que estén alineados correctamente */
+.icon-container {
+  display: inline;
+  align-items: center;
+  justify-content: center; /* Esto centra los íconos horizontalmente */
+  gap: 15px;
 }
+
+.mat-icon {
+  cursor: pointer;
+}
+
+
