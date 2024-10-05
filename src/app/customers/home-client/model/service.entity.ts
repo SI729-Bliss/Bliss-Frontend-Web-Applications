@@ -4,7 +4,9 @@ export class Service {
   description:string;
   basePrice:number;
   categoryId:number;
-  beautySalonId:number;
+  beautySalon:string;
+  sales:number;
+  rating:number;
   image: string;
   constructor(){
     this.id = 0;
@@ -12,7 +14,9 @@ export class Service {
     this.description = '';
     this.basePrice =0 ;
     this.categoryId = 0;
-    this.beautySalonId = 0;
+    this.sales = 0;
+    this.rating = 0;
+    this.beautySalon = '';
     this.image = '';
     }
 }

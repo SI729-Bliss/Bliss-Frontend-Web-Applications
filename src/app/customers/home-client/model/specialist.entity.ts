@@ -4,6 +4,7 @@ export class Specialist {
   lastName: string;
   email: string;
   phone: string;
+  profession: string;
   certificationNumber: string;
   img: string;
 
@@ -13,6 +14,7 @@ export class Specialist {
     this.lastName = '';
     this.email = '';
     this.phone = '';
+    this.profession = '';
     this.certificationNumber = '';
     this.img = '';
   }

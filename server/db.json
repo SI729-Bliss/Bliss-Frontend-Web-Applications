@@ -1,24 +1,4 @@
 {
-  "customers": [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "age": 26,
-      "address": "Nowhere"
-    },
-    {
-      "id": 2,
-      "name": "Jason Bourne",
-      "age": 34,
-      "address": "Unknown"
-    },
-    {
-      "id": 3,
-      "name": "William Norton",
-      "age": 38,
-      "address": "One Secret Place"
-    }
-  ],
   "beauty_salons": [
     {
       "id": 1,
@@ -45,49 +25,6 @@
       "password": "superstrongpassword"
     }
   ],
-  "service_details": [
-    {
-      "id": 1,
-      "price": 30,
-      "duration": 45,
-      "description": "Corte de cabello corto",
-      "customizationOptions": "Lavado, secado, peinado"
-    },
-    {
-      "id": 2,
-      "price": 50,
-      "duration": 60,
-      "description": "Coloración de cabello",
-      "customizationOptions": "Tinte, mechas, balayage"
-    },
-    {
-      "id": 3,
-      "price": 20,
-      "duration": 30,
-      "description": "Manicuría básica",
-      "customizationOptions": "Esmalte, cutícula"
-    }
-  ],
-  "categories": [
-    {
-      "id": 1,
-      "name": "Cabello",
-      "description": "Todos los servicios relacionados al cuidado del cabello.",
-      "type": "servicio"
-    },
-    {
-      "id": 2,
-      "name": "Uñas",
-      "description": "Servicios de manicura y pedicura.",
-      "type": "estetica"
-    },
-    {
-      "id": 3,
-      "name": "Maquillaje",
-      "description": "Servicios de maquillaje profesional.",
-      "type": "estetica"
-    }
-  ],
   "services": [
     {
       "id": 1,
@@ -95,7 +32,9 @@
       "description": "Corte de cabello clásico.",
       "basePrice": 30,
       "categoryId": 1,
-      "beautySalonId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
       "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
     },
     {
@@ -104,7 +43,9 @@
       "description": "Aplicación de color en el cabello.",
       "basePrice": 50,
       "categoryId": 1,
-      "beautySalonId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
       "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
     },
     {
@@ -113,7 +54,9 @@
       "description": "Aplicación de color en el cabello.",
       "basePrice": 50,
       "categoryId": 1,
-      "beautySalonId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
       "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
     },
     {
@@ -122,53 +65,10 @@
       "description": "Aplicación de color en el cabello.",
       "basePrice": 50,
       "categoryId": 1,
-      "beautySalonId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
       "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
-    }
-  ],
-  "reservations": [
-    {
-      "id": 123,
-      "date": "2023-11-22",
-      "hour": "15:00",
-      "serviceId": 456,
-      "customerId": 789
-    }
-  ],
-  "reservations_details": [
-    {
-      "id": 1,
-      "status": "confirmed",
-      "description": "Corte de cabello con color",
-      "duration": 120,
-      "totalPrice": 70.00,
-      "reservationId": 123
-    }
-  ],
-  "feedback": [
-    {
-      "id": 1,
-      "punctuation": 5,
-      "comment": "Excelente servicio!",
-      "createdDate": "2023-11-23",
-      "reservationId": 1,
-      "customerId": 1
-    },
-    {
-      "id": 2,
-      "punctuation": 4,
-      "comment": "El color no fue exactamente lo que esperaba.",
-      "createdDate": "2023-11-24",
-      "reservationId": 2,
-      "customerId": 2
-    },
-    {
-      "id": 3,
-      "punctuation": 5,
-      "comment": "¡Me encantó el peinado!",
-      "createdDate": "2023-11-25",
-      "reservationId": 3,
-      "customerId": 3
     }
   ],
   "specialists": [
@@ -177,6 +77,7 @@
       "lastName": "Doe",
       "email": "john.doe@example.com",
       "phone": "+1234567890",
+      "profession": "Estilist",
       "certificationNumber": "CERT-987654321",
       "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
     },
@@ -185,6 +86,7 @@
       "lastName": "Smith",
       "email": "jane.smith@example.com",
       "phone": "+0987654321",
+      "profession": "Estilist",
       "certificationNumber": "CERT-123456789",
       "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
 
@@ -194,6 +96,7 @@
       "lastName": "Gonzalez",
       "email": "carlos.gonzalez@example.com",
       "phone": "+1122334455",
+      "profession": "Estilist",
       "certificationNumber": "CERT-112233445",
       "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
 

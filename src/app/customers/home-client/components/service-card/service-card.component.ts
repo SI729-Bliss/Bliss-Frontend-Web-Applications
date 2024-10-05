@@ -20,7 +20,7 @@ import { ServicesService } from '../../services/services.service';
 export class ServiceCardComponent implements OnInit{
 
   services: Array<Service> = [];
-  displayedColumns: string[] = ['name','description','basePrice','image'];
+  displayedColumns: string[] = ['name','description','basePrice','image','beautySalon','sales','rating'];
   dataSource: any;
   constructor(private serviceApiService: ServicesService){}
 

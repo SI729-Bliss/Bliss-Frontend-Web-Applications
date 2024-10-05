@@ -17,7 +17,7 @@ import { SpecialistsService } from '../../services/specialists.service';
 })
 export class PopularSpecialistCardComponent implements OnInit{
   specialists: Array<Specialist> = [];
-  displayedColumns: string[] = ['lastName','certificationNumber','phone','img'];
+  displayedColumns: string[] = ['lastName','certificationNumber','phone','img','profession'];
   dataSource: any;
   constructor(private specialistApiService: SpecialistsService){}
   applyFilter(event: Event) {
