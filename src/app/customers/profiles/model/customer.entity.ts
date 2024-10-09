@@ -1,12 +1,14 @@
+
+
 export class Customer {
-  id: string;
+  id: number;
   name: string;
   email: string;
   address: string;
   phoneNumber: string;
 
   constructor() {
-    this.id = '';
+    this.id = 0;
     this.name = '';
     this.email = '';
     this.address = '';

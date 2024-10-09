@@ -1,4 +1,3 @@
-// src/app/customers/services/customer.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -9,15 +8,32 @@ import { Service } from '../model/service.entity';
   providedIn: 'root'
 })
 export class CustomerService {
-  private apiUrl = 'http://localhost:3000/api/v1';
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
+  // Obtener lista de clientes
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>(`${this.apiUrl}/customers`);
   }
 
+  // Obtener lista de servicios
   getServices(): Observable<Service[]> {
     return this.http.get<Service[]>(`${this.apiUrl}/services`);
   }
+
+  // Agregar un nuevo cliente
+  addCustomer(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(`${this.apiUrl}/customers`, customer);
+  }
+
+  // Actualizar cliente existente
+  updateCustomer(customer: Customer): Observable<Customer> {
+    return this.http.put<Customer>(`${this.apiUrl}/customers/${customer.id}`, customer);
+  }
+
+  getCustomerById(id: string): Observable<Customer> {
+    return this.http.get<Customer>(`${this.apiUrl}/customers/${id}`);
+  }
+
 }
