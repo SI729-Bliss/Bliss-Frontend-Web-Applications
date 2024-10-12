@@ -1,6 +1,5 @@
 <!-- Services catalogue -->
 <div class="table-wrapper">
-  <h3>{{ 'bc-4.mTitle' | translate }}</h3>
 
   <!--Add/Edit Form-->
   <app-services-create-and-edit (editCanceled)="onCancelEdit()"
@@ -10,6 +9,9 @@
                                [entservice]="entservicesData"/>
 
   <!-- Data Table -->
+
+  <h4 class="custom-title">{{ 'bc-4.mTitle' | translate }}</h4>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
          matSort matSortActive="name" matSortDirection="asc">
 
@@ -24,27 +26,28 @@
     </ng-container>
 
     <ng-container matColumnDef="categoryId">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.id' | translate }} </th>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.categoryId' | translate }} </th>
       <td *matCellDef="let element" mat-cell>{{ element.categoryId }}</td>
     </ng-container>
 
     <ng-container matColumnDef="imageUrl">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'bc-4.name' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.imageUrl }}</td>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'bc-4.imageUrl' | translate }}</th>
+      <!--<td *matCellDef="let element" mat-cell>{{ element.imageUrl }}</td>-->
+      <td mat-cell *matCellDef="let element"><img  width="50px" height="50px" src="{{element.imageUrl}}"> </td>
     </ng-container>
 
     <ng-container matColumnDef="description">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'bc-4.name' | translate }}</th>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'bc-4.description' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.description }}</td>
     </ng-container>
 
     <ng-container matColumnDef="basePrice">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.id' | translate }} </th>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.basePrice' | translate }} </th>
       <td *matCellDef="let element" mat-cell>{{ element.basePrice }}</td>
     </ng-container>
 
     <ng-container matColumnDef="beautySalonId">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.id' | translate }} </th>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.beautySalonId' | translate }} </th>
       <td *matCellDef="let element" mat-cell>{{ element.beautySalonId }}</td>
     </ng-container>
 

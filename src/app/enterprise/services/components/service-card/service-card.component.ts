@@ -3,11 +3,12 @@ import {Component, Input, OnInit} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { EntsevicesService } from "../../services/entsevices.service";
 import { Entservice } from "../../model/entservice.entity";
+import {MatCell, MatCellDef} from "@angular/material/table";
 
 @Component({
   selector: 'app-service-card',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, MatCell, MatCellDef],
   templateUrl: './service-card.component.html',
   styleUrl: './service-card.component.css'
 })

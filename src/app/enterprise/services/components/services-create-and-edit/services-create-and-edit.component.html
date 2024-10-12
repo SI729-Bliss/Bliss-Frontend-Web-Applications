@@ -37,10 +37,12 @@
 
   </div>
 
+
+
   <div class="box">
 
     <!-- Create and Edit Form -->
-    <h4>{{ editMode ? 'Edit Service' : 'New Service' }}</h4>
+    <h4 style="color: #000000">{{ editMode ? 'Edit Service' : 'New Service' }}</h4>
     <div class="form-section">
 
       <form (submit)="onSubmit()" #entserviceFrom='ngForm' class="form-row">
