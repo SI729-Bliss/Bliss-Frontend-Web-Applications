@@ -18,9 +18,16 @@
     "subtitle1": "¿Requiere herramients más profesionales?",
     "learnm": "Descubre Más",
 
-    "actions": "Funciones"
+    "name": "Nombre",
+    "categoryId": "Categoria",
+    "imageUrl": "URL",
+    "description": "Descripción",
+    "basePrice": "Precio",
+    "beautySalonId": "Salón de Belleza",
+    "actions": "Funcions",
 
   },
+
   "bc-5": {
 
   }

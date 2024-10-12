@@ -18,8 +18,17 @@
     "subtitle1": "Want more professional tools?",
     "learnm": "Learn More",
 
-    "actions": "Funcions"
+
+    "name": "Name",
+    "categoryId": "Category",
+    "imageUrl": "URL",
+    "description": "Description",
+    "basePrice": "Price",
+    "beautySalonId": "Beauty Salon",
+    "actions": "Funcions",
+    
   },
+
   "bc-5": {
 
   }
