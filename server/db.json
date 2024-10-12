@@ -15,6 +15,45 @@
       "phoneNumber": "555-5678"
     }
   ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Beauty Salqwe",
+      "email": "john.doe@example.com",
+      "address": "123 Main St",
+      "phoneNumber": "555-1234"
+    },
+    {
+      "id": "2",
+      "name": "John's Salon",
+      "email": "john.doe@example.com",
+      "address": "123 Main Std qqe2",
+      "phoneNumber": "555-3214"
+    }
+  ],
+  "stylists": [
+    {
+      "id": "1",
+      "name": "Alice",
+      "image": "https://micarrerauniversitaria.com/wp-content/uploads/2018/04/ESTILISTA.jpg",
+      "specialism": "Hair Styling",
+      "rating": 4.9
+    },
+    {
+      "id": "2",
+      "name": "Maria",
+      "image": "https://i.pinimg.com/enabled_lo/564x/68/70/a4/6870a466e0b53c77eded825fcfbfe9ea.jpg",
+      "specialism": "Manicure & Pedicure",
+      "rating": 4.7
+    },
+    {
+      "id": "3",
+      "name": "Charlie",
+      "image": "https://i.pinimg.com/736x/1f/ec/57/1fec577ace50c4938ff1f62235dc4309.jpg",
+      "specialism": "Facial Treatments",
+      "rating": 4.8
+    }
+  ],
   "services": [
     {
       "language": "English",
