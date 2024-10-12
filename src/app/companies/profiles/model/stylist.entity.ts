@@ -1,14 +1,12 @@
 export class Stylist {
-  id: string;
   name: string;
-  email: string;
-  address: string;
-  phoneNumber: string;
+  specialism: string;
+  image: string;
+  rating: number;
   constructor() {
-    this.id = '';
     this.name = '';
-    this.email = '';
-    this.address = '';
-    this.phoneNumber = '';
+    this.specialism = '';
+    this.image = '';
+    this.rating = 0;
   }
 }
