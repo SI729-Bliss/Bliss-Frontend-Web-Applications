@@ -10,11 +10,12 @@ import {TranslateModule} from "@ngx-translate/core";
 import { MatIconModule } from '@angular/material/icon';
 
 import {MatCardModule} from '@angular/material/card';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-services-create-and-edit',
   standalone: true,
-  imports: [MatFormField, MatInputModule, MatButtonModule, FormsModule, TranslateModule, MatCardModule, MatIconModule],
+  imports: [MatFormField, MatInputModule, MatButtonModule, FormsModule, TranslateModule, MatCardModule, MatIconModule, RouterLink],
   templateUrl: './services-create-and-edit.component.html',
   styleUrl: './services-create-and-edit.component.css'
 })
@@ -24,6 +25,7 @@ export class ServicesCreateAndEditComponent {
   // Attributes
   @Input() entservice: Entservice;
   @Input() editMode: boolean = false;
+  @Input() totalservices: number = 0;
   @Output() entserviceAdded: EventEmitter<Entservice> = new EventEmitter<Entservice>();
   @Output() entserviceUpdated: EventEmitter<Entservice> = new EventEmitter<Entservice>();
   @Output() editCanceled: EventEmitter<any> = new EventEmitter();
@@ -52,6 +54,9 @@ export class ServicesCreateAndEditComponent {
       console.error('Invalid data in form');
     }
   }
+
+  // Additional functions
+
 
   onCancel(): void {
     this.editCanceled.emit();

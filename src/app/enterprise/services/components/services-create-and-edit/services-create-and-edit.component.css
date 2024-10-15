@@ -27,9 +27,32 @@
   padding: 20px;
   margin: 10px;
 }
+
 .card1 mat-card {
   background-color: #B39DE7;
 }
+
 .card2 mat-card {
+  display: flex;
+  flex-direction: column;
   background-color: #CFDCD3;
+
+}
+
+mat-card-header {
+  margin-bottom: 16px;
+}
+
+.card2 mat-card mat-card-subtitle {
+  text-align: center;
+  font-size: 25px;
+}
+
+.card2 mat-card mat-card-actions {
+  /*margin-top: auto;*/
+}
+
+mat-icon {
+  padding: 15px;
+  font-size: 30px;
 }
