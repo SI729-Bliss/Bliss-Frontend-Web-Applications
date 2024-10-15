@@ -1,4 +1,1 @@
-export const environment = {
-  production: true,
-  serverBasePath: undefined
-};
+export const environment = { production: true, serverBasePath: undefined,}

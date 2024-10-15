@@ -1,12 +1,10 @@
 import { Routes } from '@angular/router';
-import { BookingComponent } from './customers/home-client/pages/booking/booking.component';
-import { DetailsComponent } from './customers/home-client/pages/booking/details/details.component';
-import { AppComponent } from './app.component';
 
+import { BookingComponent } from "./enterprise/services/pages/booking/booking.component";
+import { CitasListComponent } from "./enterprise/services/components/booking-card/booking-card.component";
 
 export const routes: Routes = [
-  { path: '', component: AppComponent, children: [
-      { path: '', component: BookingComponent },
-      { path: 'details/:title', component: DetailsComponent }
-    ]}
+  { path: 'booking', component: BookingComponent },
+  { path: 'citas', component: CitasListComponent },
+  { path: '', redirectTo: 'booking', pathMatch: 'full' },
 ];

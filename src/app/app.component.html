@@ -1,2 +1,14 @@
-<app-header-content></app-header-content>
-<app-booking></app-booking>
+<app-header-content [isSidenavVisible]="isSidenavVisible" (toggleSidenavEvent)="toggleSidenav()"></app-header-content>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="option.path" *ngFor="let option of options">
+        <mat-icon>{{ option.icon }}</mat-icon>
+        <span>{{ option.title }}</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,7 +1,0 @@
-<div class="card">
-  <h3>{{ card.title }}</h3>
-  <p>{{ card.description }}</p>
-  <a (click)="navigateToDetails()">Learn More</a>
-</div>
-
-<app-new-card *ngFor="let newCard of newCards" [newCard]="newCard"></app-new-card>

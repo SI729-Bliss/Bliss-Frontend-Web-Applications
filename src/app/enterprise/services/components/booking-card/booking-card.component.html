@@ -1,0 +1,18 @@
+<div class="citas-container">
+  <h2>Lista de Citas</h2>
+
+  <div *ngIf="citas.length === 0" class="no-citas">
+    <p>No hay citas agendadas.</p>
+  </div>
+
+  <div *ngFor="let cita of citas" class="card">
+    <h3>{{ cita.fullName }}</h3>
+    <p><strong>Email:</strong> {{ cita.email }}</p>
+    <p><strong>Servicio:</strong> {{ cita.service }}</p>
+    <p><strong>Disponibilidad:</strong> {{ cita.availability }}</p>
+    <p><strong>Fecha:</strong> {{ cita.date }}</p>
+    <p><strong>Hora:</strong> {{ cita.time }}</p>
+    <p *ngIf="cita.message"><strong>Mensaje:</strong> {{ cita.message }}</p>
+    <p *ngIf="cita.requirements"><strong>Requisitos:</strong> {{ cita.requirements }}</p>
+  </div>
+</div>

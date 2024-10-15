@@ -1,0 +1,86 @@
+.appointment-container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #5a2c82;
+  font: 700 24px/1.2 'Roboto', sans-serif;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+.input-group:last-of-type {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #5a2c82;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 2px solid #c1a3e3;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f0e6ff;
+  color: #5a2c82;
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+.switch-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.switch-group label {
+  margin-right: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #7e57c2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #d3b3e6;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  background-color: #6a47a1;
+}

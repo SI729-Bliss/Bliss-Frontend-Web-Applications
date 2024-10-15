@@ -1,0 +1,44 @@
+:host {
+  display: block;
+  height: 100%;
+  background-color: #ffe8e8;
+}
+
+app-header-content {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+mat-sidenav-container {
+  height: 100vh;
+  margin-top: 0;
+}
+
+mat-sidenav {
+  height: 100vh;
+  width: 250px;
+}
+
+mat-sidenav-content {
+  background-color: #ffe8e8;
+  height: 100vh;
+  overflow: auto;
+}
+
+mat-nav-list a {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+
+mat-nav-list a mat-icon {
+  margin-right: 10px;
+}
+
+mat-nav-list a span {
+  margin-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
