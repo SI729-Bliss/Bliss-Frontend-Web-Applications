@@ -1,15 +1,12 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span> {{  "bc.hello" | translate }}</span>
+<mat-toolbar >
+  <div>
+    <span class="bliss-title">BLISS</span>
+  </div>
+
   <span class="example-spacer"></span>
-
-
-  <!-- faltan añadir secicones -->
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-
-  </button>
+  @for(option of options; track option.title) {
+  <a mat-button [routerLink]="option.path" class="titles">{{ option.title }}</a>
+  }
 
   <span>
     <app-language-switcher/>
