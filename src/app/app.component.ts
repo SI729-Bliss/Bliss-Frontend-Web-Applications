@@ -19,5 +19,5 @@ export class AppComponent {
     translate.use('en');
   }
   options = [
-    { path: '/home', title: 'Home'},]
+    { path: '/catalog', title: 'Catalog'}]
 }
