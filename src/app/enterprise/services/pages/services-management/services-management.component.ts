@@ -25,6 +25,7 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['id', 'name', 'categoryId', 'imageUrl', 'description', 'basePrice', 'beautySalonId', 'actions'];
   isEditMode: boolean;
+  totalServices: number;
 
   @ViewChild(MatPaginator, { static: false}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false}) sort!: MatSort;
@@ -34,6 +35,7 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
     this.isEditMode = false;
     this.entservicesData = {} as Entservice;
     this.dataSource = new MatTableDataSource<any>();
+    this.totalServices = 0;
   }
 
   // Private Methods
@@ -48,6 +50,17 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
     this.entserviceService.getAll()
       .subscribe((response: any) => {
         this.dataSource.data = response;
+        console.log("data for table", this.dataSource.data);
+
+      });
+  };
+
+  private getTotalServices(): any {
+    this.entserviceService.getAll()
+      .subscribe((response: any) => {
+        this.totalServices = response.length;
+        console.log('Total services:', this.totalServices)
+        return this.totalServices;
       });
   };
 
@@ -81,8 +94,8 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
     this.entserviceService.delete(serviceId)
       .subscribe(() => {
         this.dataSource.data = this.dataSource.data
-          .filter((student: Entservice) => {
-            return student.id !== serviceId ? student : false;
+          .filter((tservice: Entservice) => {
+            return tservice.id !== serviceId ? tservice : false;
           });
       });
   };
@@ -115,6 +128,10 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
     this.resetEditState();
   }
 
+  // Additional functions
+
+
+
   // Lifecycle Hooks
 
   ngAfterViewInit(): void {
@@ -124,7 +141,10 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     this.getAllEntservices();
+    this.getTotalServices();
   }
+
+
 
 
 
