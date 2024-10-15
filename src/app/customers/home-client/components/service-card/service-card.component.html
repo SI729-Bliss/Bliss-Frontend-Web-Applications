@@ -1,22 +1,22 @@
 <div class="container">
   <div *ngFor="let service of dataSource.filteredData">
     <mat-card class="service-card">
-      <div class="card-content">
-        <img [src]="service.image" alt="Service Image">
+        <img mat-card-image [src]="service.image" alt="Service Image">
         <div class="text-content">
           <mat-card-header>
-            <mat-card-title>{{service.name}}</mat-card-title>
+            <mat-card-title>{{service.beautySalon}}</mat-card-title>
+            <mat-card-subtitle><mat-icon>star</mat-icon>  {{service.rating}}</mat-card-subtitle>
           </mat-card-header>
-          <mat-card-subtitle>{{service.name}}</mat-card-subtitle>
           <mat-card-content>
-            <p>{{service.beautySalon}}</p>
-            <p>{{service.description}}</p>
-            <p>Sales: {{service.sales}}</p>
-            <p>Rating: {{service.rating}}</p>
-            <p>Price: {{service.basePrice}}</p>
+            <p class="service-name">{{service.name}}</p>
+            <p class="description">{{service.description}}</p>
+            <p class="sales">{{service.sales}} sales</p>
+            <p class="price">${{service.basePrice}}</p>
           </mat-card-content>
+          <mat-card-actions align="start">
+            <button mat-button>Learn More ></button>
+          </mat-card-actions>
         </div>
-      </div>
     </mat-card>
   </div>
 </div>

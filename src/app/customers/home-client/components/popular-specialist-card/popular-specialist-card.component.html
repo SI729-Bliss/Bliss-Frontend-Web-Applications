@@ -1,16 +1,17 @@
 <div class="container">
 <div *ngFor="let specialists of dataSource.filteredData">
   <mat-card class="specialist-card">
+    <img [src]="specialists.img" alt="Specialist Image">
     <mat-card-header>
       <mat-card-title>
-        <img [src]="specialists.img" alt="Specialist Image">
+        {{specialists.lastName}}
       </mat-card-title>
+      <mat-card-subtitle>
+        {{specialists.profession}}
+      </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-subtitle>{{specialists.lastName}}</mat-card-subtitle>
     <mat-card-content>
-      <p>{{specialists.profession}}</p>
-      <p>{{specialists.certificationNumber}}</p>
-      <p>{{specialists.phone}}</p>
+      <p>Contact {{specialists.phone}}</p>
     </mat-card-content>
   </mat-card>
 </div>
