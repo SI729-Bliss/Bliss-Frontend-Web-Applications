@@ -2,121 +2,104 @@
   "feedback": [
     {
       "id": 1,
-      "punctuation": 5,
-      "comment": "Excelente servicio!",
-      "created_date": "2023-11-23",
-      "reservation_id": 123,
-      "reservation_day": "2023-11-20",
-      "beauty_salon_id": 1,
+      "punctuation": 0,
+      "comment": "nice ",
+      "createdDate": "2024-10-15T09:29:53.436Z",
+      "reservationId": 1,
+      "customerId": 1,
       "images": [
-        "imagen1.jpg",
-        "imagen2.jpg"
+        "",
+        "",
+        ""
       ]
     },
     {
       "id": 2,
-      "punctuation": 4,
-      "comment": "El color no fue exactamente lo que esperaba.",
-      "created_date": "2023-11-24",
-      "reservation_id": 456,
-      "reservation_day": "2023-11-21",
-      "beauty_salon_id": 2,
+      "punctuation": 0,
+      "comment": "",
+      "createdDate": "2024-10-15T09:28:57.060Z",
+      "reservationId": 2,
+      "customerId": 1,
       "images": [
-        "imagen3.jpg"
+        "",
+        "",
+        ""
       ]
+    }
+  ],
+  "beauty_salons": [
+    {
+      "id": 1,
+      "name": "Belleza Express",
+      "email": "bellezaexpress@example.com",
+      "phone": "+541144433322",
+      "address": "Av. Corrientes 1234, Buenos Aires",
+      "password": "mystrongpassword"
     },
     {
-      "id": 3,
-      "punctuation": 5,
-      "comment": "¡Me encantó el peinado!",
-      "created_date": "2023-11-25",
-      "reservation_id": 789,
-      "reservation_day": "2023-11-22",
-      "beauty_salon_id": 3,
-      "images": [
-        "imagen4.jpg",
-        "imagen5.jpg",
-        "imagen6.jpg"
-      ]
+      "id": 2,
+      "name": "Estética Total",
+      "email": "esteticatotal@example.com",
+      "phone": "+541144433311",
+      "address": "Calle Florida 567, Buenos Aires",
+      "password": "anotherstrongpassword"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "name": "Corte de cabello",
+      "description": "Corte de cabello clásico.",
+      "basePrice": 30,
+      "categoryId": 1,
+      "beautySalonId": 1,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
     },
     {
-      "id": 4,
-      "punctuation": 3,
-      "comment": "El servicio fue bueno, pero se demoraron demasiado.",
-      "created_date": "2023-11-26",
-      "reservation_id": 124,
-      "reservation_day": "2023-11-19",
-      "beauty_salon_id": 1,
-      "images": []
+      "id": 2,
+      "name": "Manicura",
+      "description": "Manicura con diseño personalizado.",
+      "basePrice": 20,
+      "categoryId": 2,
+      "beautySalonId": 1,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/07/manicura-ejemplo.jpg"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Juan Pérez",
+      "email": "juanperez@example.com",
+      "phone": "+5491122334455",
+      "address": "Calle Falsa 123, Buenos Aires"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "serviceId": 1,
+      "beautySalonId": 1,
+      "reservationDate": "2023-11-20",
+      "status": "completed"
     },
     {
-      "id": 5,
-      "punctuation": 4,
-      "comment": "El corte quedó bien, pero la atención podría mejorar.",
-      "created_date": "2023-11-27",
-      "reservation_id": 457,
-      "reservation_day": "2023-11-20",
-      "beauty_salon_id": 2,
-      "images": [
-        "imagen7.jpg"
-      ]
+      "id": 2,
+      "customerId": 1,
+      "serviceId": 2,
+      "beautySalonId": 1,
+      "reservationDate": "2023-11-22",
+      "status": "completed"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Corte de Cabello"
     },
     {
-      "id": 6,
-      "punctuation": 5,
-      "comment": "Muy satisfecha con el servicio, volveré pronto.",
-      "created_date": "2023-11-28",
-      "reservation_id": 790,
-      "reservation_day": "2023-11-22",
-      "beauty_salon_id": 3,
-      "images": [
-        "imagen8.jpg"
-      ]
-    },
-    {
-      "id": 7,
-      "punctuation": 2,
-      "comment": "No quedé conforme con el color, no se parecía a lo que pedí.",
-      "created_date": "2023-11-29",
-      "reservation_id": 125,
-      "reservation_day": "2023-11-19",
-      "beauty_salon_id": 1,
-      "images": []
-    },
-    {
-      "id": 8,
-      "punctuation": 5,
-      "comment": "El servicio fue impecable y el lugar muy agradable.",
-      "created_date": "2023-11-30",
-      "reservation_id": 458,
-      "reservation_day": "2023-11-21",
-      "beauty_salon_id": 2,
-      "images": [
-        "imagen9.jpg",
-        "imagen10.jpg"
-      ]
-    },
-    {
-      "id": 9,
-      "punctuation": 4,
-      "comment": "Muy buena atención, pero el precio fue un poco alto.",
-      "created_date": "2023-12-01",
-      "reservation_id": 791,
-      "reservation_day": "2023-11-23",
-      "beauty_salon_id": 3,
-      "images": [
-        "imagen11.jpg"
-      ]
-    },
-    {
-      "id": 10,
-      "punctuation": 3,
-      "comment": "El corte quedó bien, pero esperaba algo más moderno.",
-      "created_date": "2023-12-02",
-      "reservation_id": 126,
-      "reservation_day": "2023-11-25",
-      "beauty_salon_id": 1,
-      "images": []
+      "id": 2,
+      "name": "Manicura"
     }
   ]
 }

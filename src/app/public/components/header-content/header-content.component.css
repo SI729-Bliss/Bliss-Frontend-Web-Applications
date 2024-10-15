@@ -1,0 +1,13 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+mat-toolbar {
+  background-color: #D1E4FA;
+}
+.bliss-title{
+  font-size: 60px;
+  color: #37123C;
+}
+.titles{
+  color: #37123C !important;
+}

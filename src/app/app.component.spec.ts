@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'webAplication' title`, () => {
+  it(`should have the 'daos-bliss-feedback' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('webAplication');
+    expect(app.title).toEqual('daos-bliss-feedback');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, webAplication');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, daos-bliss-feedback');
   });
 });
