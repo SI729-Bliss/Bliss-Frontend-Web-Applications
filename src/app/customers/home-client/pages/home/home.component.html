@@ -1,24 +1,20 @@
 <div class="grid-container">
   <div class="filter-column">
-    <div>
-      <h4>Filter Options</h4>
-      <p>Filter by Name</p>
-      <p>Filter by Type</p>
-      <p>Filter by Price</p>
+    <app-side-filter></app-side-filter>
+  </div>
+
+  <div class="content">
+    <div class="service-cards">
+      <h3>Recommended Services</h3>
+      <app-service-card></app-service-card>
+    </div>
+    <div class="specialist-cards">
+      <h3>Popular Specialists</h3>
+      <app-popular-specialist-card></app-popular-specialist-card>
     </div>
   </div>
 
-  <div class="service-cards">
-    <h3>Recommended Services</h3>
-    <app-service-card></app-service-card>
+  <div class="bottom-filter">
+    <app-bottom-filter></app-bottom-filter>
   </div>
-
-<div class="specialist-cards">
-  <h3>Popular Specialists</h3>
-  <app-popular-specialist-card></app-popular-specialist-card>
-</div>
-<div class="bottom-filter">
-  <app-bottom-filter></app-bottom-filter>
-</div>
-
 </div>

@@ -1,31 +1,32 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr;
   gap: 20px;
   margin-top: 25px;
 }
 
 .filter-column {
-  margin: 10px;
-  padding: 20px;
+  width: 80%;
   grid-row: span 2;
-  background-color: #FFFFFF;
+  padding: 10px;
 }
 
-.service-cards {
-  grid-column: 2;
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.specialist-cards {
-  grid-column: 2;
+.service-cards, .specialist-cards {
+  padding: 10px;
 }
 
 .bottom-filter {
   grid-column: span 2;
-}
-h4,p{
-  color:#C3A3BF;
+  padding: 10px;
 }
 
-
+h4, p {
+  color: #C3A3BF;
+}
