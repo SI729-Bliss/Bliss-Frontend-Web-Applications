@@ -25,4 +25,16 @@ export class HeaderContentComponent {
         {path: '/my-reservations', title: 'My Reservations'},
         {path: '/service-history', title: 'Services History'}
       ]
+    options = [
+
+            /*CLIENT VIEWS*/
+            { path: '/catalog', title: 'Catalog'},
+            {path: '/my-reservations', title: 'My Reservations'},
+            {path: '/service-history', title: 'Services History'},
+
+            /*ENTERPRISE VIEWS*/
+            { path: '/home', title: 'Home'},
+            {path: '/my-services', title: 'My Services'},
+            {path: '/my-schedule', title: 'Schedule'},
+          ]
 }
