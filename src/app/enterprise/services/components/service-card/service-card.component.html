@@ -1,20 +1,22 @@
 <div class="service-cards">
   <mat-card class="service-card">
     <mat-card-header>
-      <mat-card-title>{{ entservice.name }}</mat-card-title>
-
-      <mat-card-subtitle>Category: N. {{ entservice.categoryId }}</mat-card-subtitle>
+      <img class="service-image" mat-card-image [src]="entservice.imageUrl" alt="{{ entservice.name }}">
     </mat-card-header>
 
     <mat-card-content>
-      <img mat-card-image [src]="entservice.imageUrl" alt="{{ entservice.name }}">
+      <mat-card-title>{{ entservice.name }}</mat-card-title>
+
+      <!--<p>Category: {{ entservice.categoryId }}</p>-->
       <br>
-      <p>Description: {{ entservice.description }}</p>
-      <p>Price: $ {{ entservice.basePrice }}</p>
-      <p>Salon: N. {{ entservice.beautySalonId }}</p>
+      <p> {{'bc-4.description' | translate }}: {{ entservice.description }}</p>
+
+      <!--<p>Price: $ {{ entservice.basePrice }}</p>-->
+      <!--<p>Salon: N. {{ entservice.beautySalonId }}</p>-->
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Ver Detalles</button>
+      <!--Button to view service details with param for id of service-->
+      <a mat-stroked-button [routerLink]="['/service-details', entservice.id]"> {{'bc-4.buttondetails' | translate }} </a>
     </mat-card-actions>
   </mat-card>
 </div>
