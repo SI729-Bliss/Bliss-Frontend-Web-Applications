@@ -1,7 +1,8 @@
+// base.service.ts
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { catchError, Observable, retry, throwError } from 'rxjs';
 import { environment } from "../../../environments/environment";
-import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
-import { catchError, Observable, retry, throwError } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { catchError, Observable, retry, throwError } from "rxjs";
 export class BaseService<T> {
 
   basePath: string = `${environment.serverBasePath}`;
-  resourceEndpoint: string = '/resources';
+  resourceEndpoint: string = '/db';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,17 +21,29 @@ export class BaseService<T> {
   constructor(protected http: HttpClient) {  }
 
   handleError(error: HttpErrorResponse | any) {
+    let errorMessage = 'An unknown error occurred!';
     if (error.error instanceof ErrorEvent) {
       // Client-side or network error
-      console.error('An error occurred:', error.error.message);
+      errorMessage = `A client-side error occurred: ${error.error.message}`;
     } else if (error instanceof ProgressEvent) {
       // Network error or CORS issue
-      console.error('A network error occurred:', error);
+      errorMessage = 'A network error occurred.';
     } else {
-      // Backend returned an unsuccessful response code
-      console.error(`Backend returned code ${error.status}, body was:`, error.error);
+      // Backend error
+      switch (error.status) {
+        case 404:
+          errorMessage = 'The requested resource was not found.';
+          break;
+        case 500:
+          errorMessage = 'Internal server error occurred.';
+          break;
+        // Add more cases as needed
+        default:
+          errorMessage = `Backend returned code ${error.status}, body was: ${error.error}`;
+      }
     }
-    return throwError(() => new Error('Something happened with request, please try again later'));
+    console.error(errorMessage);
+    return throwError(() => new Error(errorMessage));
   }
 
   // Create Resource
