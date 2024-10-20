@@ -25,6 +25,24 @@
         "",
         ""
       ]
+  "customers": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 26,
+      "address": "Nowhere"
+    },
+    {
+      "id": 2,
+      "name": "Jason Bourne",
+      "age": 34,
+      "address": "Unknown"
+    },
+    {
+      "id": 3,
+      "name": "William Norton",
+      "age": 38,
+      "address": "One Secret Place"
     }
   ],
   "beauty_salons": [
@@ -100,6 +118,128 @@
     {
       "id": 2,
       "name": "Manicura"
+    }
+  ]
+}
+      "name": "Glamour Salon",
+      "email": "glamoursalon@example.com",
+      "phone": "+541155544433",
+      "address": "Calle Florida 123, Buenos Aires",
+      "password": "anotherstrongpassword"
+    },
+    {
+      "id": 3,
+      "name": "Estilo Único",
+      "email": "estilo-unico@example.com",
+      "phone": "+541166655544",
+      "address": "Av. Santa Fe 123, Buenos Aires",
+      "password": "superstrongpassword"
+    }
+  ],
+  "service_details": [
+    {
+      "id": 1,
+      "price": 30,
+      "duration": 45,
+      "description": "Corte de cabello corto",
+      "customization_options": "Lavado, secado, peinado"
+    },
+    {
+      "id": 2,
+      "price": 50,
+      "duration": 60,
+      "description": "Coloración de cabello",
+      "customization_options": "Tinte, mechas, balayage"
+    },
+    {
+      "id": 3,
+      "price": 20,
+      "duration": 30,
+      "description": "Manicuría básica",
+      "customization_options": "Esmalte, cutícula"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Cabello",
+      "description": "Todos los servicios relacionados al cuidado del cabello.",
+      "type": "servicio"
+    },
+    {
+      "id": 2,
+      "name": "Uñas",
+      "description": "Servicios de manicura y pedicura.",
+      "type": "estetica"
+    },
+    {
+      "id": 3,
+      "name": "Maquillaje",
+      "description": "Servicios de maquillaje profesional.",
+      "type": "estetica"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "name": "Corte de cabello",
+      "description": "Corte de cabello clásico.",
+      "base_price": 30,
+      "categoryId": 1,
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Coloración",
+      "description": "Aplicación de color en el cabello.",
+      "base_price": 50,
+      "categoryId": 1,
+      "beauty_salon_id": 1
+    }
+  ],
+  "reservations": [
+    {
+      "id": 123,
+      "date": "2023-11-22",
+      "hour": "15:00",
+      "service_id": 456,
+      "customer_id": 789
+    }
+  ],
+  "reservations_details": [
+    {
+      "id": 1,
+      "status": "confirmed",
+      "description": "Corte de cabello con color",
+      "duration": 120,
+      "totalPrice": 70.00,
+      "reservation_id": 123
+    }
+  ],
+  "feedback": [
+    {
+      "id": 1,
+      "punctuation": 5,
+      "comment": "Excelente servicio!",
+      "created_date": "2023-11-23",
+      "reservation_id": 1,
+      "customer_id": 1
+    },
+    {
+      "id": 2,
+      "punctuation": 4,
+      "comment": "El color no fue exactamente lo que esperaba.",
+      "created_date": "2023-11-24",
+      "reservation_id": 2,
+      "customer_id": 2
+    },
+    {
+      "id": 3,
+      "punctuation": 5,
+      "comment": "¡Me encantó el peinado!",
+      "created_date": "2023-11-25",
+      "reservation_id": 3,
+      "customer_id": 3
     }
   ]
 }

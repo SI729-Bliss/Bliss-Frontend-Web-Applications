@@ -11,6 +11,7 @@ import { TranslateModule } from "@ngx-translate/core";
   selector: 'app-header-content',
   standalone: true,
   imports: [RouterLink, MatToolbarModule, MatButtonModule, MatIconModule, LanguageSwitcherComponent, TranslateModule],
+
   templateUrl: './header-content.component.html',
   styleUrl: './header-content.component.css'
 })
@@ -36,4 +37,5 @@ export class HeaderContentComponent {
     { path: '/my-services', title: 'My Services'},
     { path: '/my-schedule', title: 'Schedule'},
   ];
+
 }

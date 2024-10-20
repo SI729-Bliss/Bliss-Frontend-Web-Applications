@@ -27,6 +27,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatGridListModule,
     MatBadgeModule,
     MatMenuModule, TranslateModule, HeaderContentComponent],
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [
@@ -38,9 +39,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   ]
 })
 export class AppComponent {
-  title = 'daos-bliss-feedback';
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {
+  title = 'Bliss-Frontend-Web-Application';
+
     translate.setDefaultLang('en');
     translate.use('en');
   }
