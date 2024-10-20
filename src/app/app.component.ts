@@ -15,7 +15,7 @@ import { BreakpointObserver } from "@angular/cdk/layout";
 import { TranslateService } from "@ngx-translate/core";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
 import { BookingComponent } from "./enterprise/services/pages/booking/booking.component";
-import {NgForOf} from "@angular/common";
+import {NgClass, NgForOf} from "@angular/common";
 
 
 
@@ -23,7 +23,7 @@ import {NgForOf} from "@angular/common";
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HeaderContentComponent, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, BookingComponent, NgForOf],
+    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, BookingComponent, NgForOf, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -34,8 +34,8 @@ export class AppComponent implements OnInit {
   opened = true;
   isSidenavVisible = false;
   options = [
-    { icon: 'home', path: '/booking', title: 'Booking' },
-    { icon: 'info', path: '/citas', title: 'List' },
+    { icon: 'home', path: '/booking', title: 'Booking', class: 'booking-link' },
+    { icon: 'info', path: '/citas', title: 'List', class: 'citas-link' },
   ];
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {

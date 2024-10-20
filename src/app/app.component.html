@@ -2,7 +2,7 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" [(opened)]="opened">
     <mat-nav-list>
-      <a mat-list-item [routerLink]="option.path" *ngFor="let option of options">
+      <a mat-list-item [routerLink]="option.path" *ngFor="let option of options" [ngClass]="option.class">
         <mat-icon>{{ option.icon }}</mat-icon>
         <span>{{ option.title }}</span>
       </a>

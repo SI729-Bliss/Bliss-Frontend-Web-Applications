@@ -1,3 +1,4 @@
+<!-- src/app/enterprise/services/pages/booking/booking.component.html -->
 <div class="appointment-container">
   <h2>Make an Appointment</h2>
 
@@ -21,15 +22,13 @@
         <label for="service">Please Select *</label>
         <select id="service" formControlName="service" required>
           <option value="" disabled>Select a service</option>
-          <option value="service1">Service 1</option>
-          <option value="service2">Service 2</option>
+          <option *ngFor="let service of services" [value]="service.id">{{ service.name }}</option>
         </select>
       </div>
       <div class="input-group">
         <label for="availability">Available *</label>
         <select id="availability" formControlName="availability" required>
           <option value="available">Available</option>
-          <option value="not-available">Not Available</option>
         </select>
       </div>
     </div>
@@ -45,8 +44,7 @@
       <label for="requirements">Requirements</label>
       <select id="requirements" formControlName="requirements">
         <option value="" disabled selected>Select requirements</option>
-        <option value="requirement1">Requirement 1</option>
-        <option value="requirement2">Requirement 2</option>
+        <option *ngFor="let customization of customizations" [value]="customization">{{ customization }}</option>
       </select>
     </div>
 
@@ -82,6 +80,10 @@
 
     <!-- Botón de enviar -->
     <button [disabled]="!bookingForm.valid" type="submit">Book Appointment</button>
-
   </form>
+
+  <!-- Mensaje de éxito -->
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
 </div>
