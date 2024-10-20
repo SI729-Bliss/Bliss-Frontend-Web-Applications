@@ -24,7 +24,6 @@ import { NgClass, NgForOf } from "@angular/common";
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -43,7 +42,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 })
 
 export class AppComponent implements OnInit {
-  title = 'Bliss-Frontend-Web-Application';
+  title: string = 'Bliss-Frontend-Web-Application';
   @ViewChild('sidenav', { static: true }) sidenav!: MatSidenav;
   opened = true;
   isSidenavVisible = false;
@@ -53,6 +52,7 @@ export class AppComponent implements OnInit {
   ];
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {
+
     translate.setDefaultLang('en');
     translate.use('en');
   }

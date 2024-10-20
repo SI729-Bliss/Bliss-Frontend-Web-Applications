@@ -11,6 +11,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'my-services', component: ServicesHistoryComponent },
   { path: 'review-page/:id', component: ReviewPageComponent },
+  { path: 'review-page', component: ReviewPageComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'booking', component: BookingComponent },
   { path: 'citas', component: CitasListComponent },

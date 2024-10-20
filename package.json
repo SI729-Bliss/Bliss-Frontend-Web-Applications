@@ -25,13 +25,13 @@
     "cloudinary": "^2.5.1",
     "cloudinary-core": "^2.13.1",
     "firebase": "^10.14.1",
+    "or": "^0.2.0",
     "punycode": "^2.3.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
-
     "@angular-devkit/build-angular": "^18.0.7",
     "@angular/cli": "^18.2.0",
     "@angular/compiler-cli": "^18.2.0",
