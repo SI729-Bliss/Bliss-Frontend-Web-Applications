@@ -9,16 +9,20 @@
                                [entservice]="entservicesData"
                                 [totalservices]="totalServices"/>
 
-  <!-- Data Table -->
-
+  <!-- Service Details -->
   <h4 class="custom-title">{{ 'bc-4.mTitle' | translate }}</h4>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
          matSort matSortActive="name" matSortDirection="asc">
 
-    <ng-container matColumnDef="id">
+    <!--<ng-container matColumnDef="table-number">
       <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.id' | translate }} </th>
       <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+    </ng-container>-->
+
+    <ng-container matColumnDef="table-number">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.id' | translate }} </th>
+      <td *matCellDef="let i = index" mat-cell>{{ i + 1 }}</td>
     </ng-container>
 
     <ng-container matColumnDef="name">
@@ -44,25 +48,38 @@
 
     <ng-container matColumnDef="basePrice">
       <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.basePrice' | translate }} </th>
-      <td *matCellDef="let element" mat-cell>{{ element.basePrice }}</td>
+      <td *matCellDef="let element" mat-cell>$ {{ element.basePrice }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="beautySalonId">
+    <!--<ng-container matColumnDef="beautySalonId">
       <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.beautySalonId' | translate }} </th>
-      <td *matCellDef="let element" mat-cell>{{ element.beautySalonId }}</td>
-    </ng-container>
+      <td *matCellDef="let element" mat-cell>{{ element.beauty_salon_id }}</td>
+    </ng-container>-->
 
     <ng-container matColumnDef="actions">
+
       <th *matHeaderCellDef mat-header-cell> {{ 'bc-4.actions' | translate }}</th>
       <td *matCellDef="let element" mat-cell>
-        <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
-        <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="onEditItem(element)">
+            <mat-icon>edit</mat-icon>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item (click)="onDeleteItem(element)">
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+        </mat-menu>
       </td>
     </ng-container>
 
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
     <tr *matRowDef="let row; columns:displayedColumns" [ngClass]="{'editable-row': entservicesData.id === row.id }" mat-row></tr>
   </table>
+
   <!-- Paginator child component-->
   <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>
