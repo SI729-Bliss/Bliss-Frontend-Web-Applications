@@ -11,22 +11,38 @@
   "bc-4": {
     "id": "Number",
     "eTitle": "Edit Services",
-    "mTitle": "Services List",
+    "mTitle": "Services Details",
 
-    "nBasePrice": "Base Price",
-    "cardtitle1": "Work at the speed",
-    "subtitle1": "Want more professional tools?",
-    "learnm": "Learn More",
+    "cardtitle1": "Need more of Bliss?",
+    "subtitle1": "Get a subscription",
 
+    "subtitle2": "Amount of services:",
+    "amountServices": "Without added services",
+
+    "subscript": "Subscription",
+
+    "buttondetails": "View Details",
+
+    "addservice": "Add service",
+
+    "viewservice": "View services",
+
+    "addEdit": "Are you sure you want to edit this service?",
+    "addCancel": "Want to delete the service?",
 
     "name": "Name",
+    "serviceTo": "Service",
     "categoryId": "Category",
-    "imageUrl": "URL",
+    "imageUrl": "Imagen",
     "description": "Description",
     "basePrice": "Price",
     "beautySalonId": "Beauty Salon",
-    "actions": "Funcions",
+    "actions": "Functions",
 
+    "formAdvice": "The services will be validated",
+    "formAdviceName": "Service already exists",
+
+    "addIfOne": "Can't delete all services"
   },
 
   "bc-5": {
