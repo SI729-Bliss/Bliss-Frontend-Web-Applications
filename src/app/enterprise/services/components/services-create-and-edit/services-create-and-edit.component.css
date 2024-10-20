@@ -4,7 +4,12 @@
 
 .form-row {
   display: table-cell;
-  max-width: 2400px;
+  /*max-width: 2400px;*/
+}
+
+.button-container{
+  display: flex;
+  gap: 10px;
 }
 
 .form-row .mat-raised-button {
@@ -22,7 +27,9 @@
 
 .container{
   display: flex;
+  justify-content: center;
 }
+
 .box {
   padding: 20px;
   margin: 10px;
@@ -55,4 +62,11 @@ mat-card-header {
 mat-icon {
   padding: 15px;
   font-size: 30px;
+}
+
+.left-box{
+  display: flex;
+  padding: 20px;
+  margin: 10px;
+  justify-content: center;
 }
