@@ -22,7 +22,24 @@
       "customization_options": "Esmalte, cutícula"
     }
   ],
-
+  "beauty_salons": [
+    {
+      "id": 1,
+      "name": "Belleza Express",
+      "email": "bellezaexpress@example.com",
+      "phone": "+541144433322",
+      "address": "Av. Corrientes 1234, Buenos Aires",
+      "password": "mystrongpassword"
+    },
+    {
+      "id": 2,
+      "name": "Estética Total",
+      "email": "esteticatotal@example.com",
+      "phone": "+541144433311",
+      "address": "Calle Florida 567, Buenos Aires",
+      "password": "anotherstrongpassword"
+    }
+  ],
   "categories": [
     {
       "id": 1,
@@ -43,59 +60,40 @@
       "type": "estetica"
     }
   ],
-
   "services": [
     {
       "id": 1,
       "name": "Corte de cabello",
-      "categoryId": "1",
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
       "description": "Corte de cabello clásico.",
-      "basePrice": 35,
+      "base_price": 30,
+      "categoryId": 1,
       "beauty_salon_id": 1
     },
     {
       "id": 2,
       "name": "Coloración",
-      "categoryId": 2,
-      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
       "description": "Aplicación de color en el cabello.",
-      "basePrice": 50,
-      "beauty_salon_id": 2
-    },
-    {
-      "id": 4,
-      "name": "Corte",
-      "categoryId": 3,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
-      "description": "Corte de cabello.",
-      "basePrice": 56,
+      "base_price": 50,
+      "categoryId": 1,
       "beauty_salon_id": 1
     }
   ],
-
-  "service_customization": [
-    {
-      "serviceId": 1,
-      "customizations": ["Peinado con rizos", "Secado con volumen", "Lavado con shampoo especial"]
-    },
-    {
-      "serviceId": 2,
-      "customizations": ["Tinte vegano", "Mechas"]
-    },
-    {
-      "serviceId": 4,
-      "customizations": ["Corte en capas", "Corte degradado", "Corte recto"]
-    }
-  ],
-
   "reservations": [
     {
-      "id": 123,
-      "date": "2023-11-22",
-      "hour": "15:00",
-      "service_id": 456,
-      "customer_id": 789
+      "id": 1,
+      "customerId": 1,
+      "serviceId": 1,
+      "beautySalonId": 1,
+      "reservationDate": "2023-11-20",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "customerId": 1,
+      "serviceId": 2,
+      "beautySalonId": 1,
+      "reservationDate": "2023-11-22",
+      "status": "completed"
     }
   ],
   "reservations_details": [
@@ -104,34 +102,23 @@
       "status": "confirmed",
       "description": "Corte de cabello con color",
       "duration": 120,
-      "totalPrice": 70.00,
+      "totalPrice": 70,
       "reservation_id": 123
     }
   ],
   "feedback": [
     {
       "id": 1,
-      "punctuation": 5,
-      "comment": "Excelente servicio!",
-      "created_date": "2023-11-23",
-      "reservation_id": 1,
-      "customer_id": 1
-    },
-    {
-      "id": 2,
-      "punctuation": 4,
-      "comment": "El color no fue exactamente lo que esperaba.",
-      "created_date": "2023-11-24",
-      "reservation_id": 2,
-      "customer_id": 2
-    },
-    {
-      "id": 3,
-      "punctuation": 5,
-      "comment": "¡Me encantó el peinado!",
-      "created_date": "2023-11-25",
-      "reservation_id": 3,
-      "customer_id": 3
+      "punctuation": 3,
+      "comment": "1212e12e",
+      "createdDate": "2024-10-20T06:12:10.716Z",
+      "reservationId": 1,
+      "customerId": 1,
+      "images": [
+        "",
+        "",
+        ""
+      ]
     }
   ]
 }
