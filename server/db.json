@@ -159,6 +159,7 @@
       "customization_options": "Esmalte, cutícula"
     }
   ],
+
   "categories": [
     {
       "id": 1,
@@ -179,24 +180,52 @@
       "type": "estetica"
     }
   ],
+
   "services": [
     {
       "id": 1,
       "name": "Corte de cabello",
+      "categoryId": "1",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
       "description": "Corte de cabello clásico.",
-      "base_price": 30,
-      "categoryId": 1,
+      "basePrice": 35,
       "beauty_salon_id": 1
     },
     {
       "id": 2,
       "name": "Coloración",
+      "categoryId": 2,
+      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
       "description": "Aplicación de color en el cabello.",
-      "base_price": 50,
-      "categoryId": 1,
+      "basePrice": 50,
+      "beauty_salon_id": 2
+    },
+    {
+      "id": 4,
+      "name": "Corte",
+      "categoryId": 3,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
+      "description": "Corte de cabello.",
+      "basePrice": 56,
       "beauty_salon_id": 1
     }
   ],
+
+  "service_customization": [
+    {
+      "serviceId": 1,
+      "customizations": ["Peinado con rizos", "Secado con volumen", "Lavado con shampoo especial"]
+    },
+    {
+      "serviceId": 2,
+      "customizations": ["Tinte vegano", "Mechas"]
+    },
+    {
+      "serviceId": 4,
+      "customizations": ["Corte en capas", "Corte degradado", "Corte recto"]
+    }
+  ],
+
   "reservations": [
     {
       "id": 123,

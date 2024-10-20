@@ -11,3 +11,14 @@ mat-toolbar {
 .titles{
   color: #37123C !important;
 }
+
+.toolbar-item {
+  margin-right: 48px;
+}
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}

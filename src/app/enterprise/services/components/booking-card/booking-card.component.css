@@ -1,0 +1,80 @@
+.citas-container {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.no-citas {
+  text-align: center;
+  color: #888;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  margin: 0 0 10px;
+  color: #007bff;
+  font-size: 1.4em;
+}
+
+p {
+  margin: 5px 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+p strong {
+  color: #333;
+}
+
+.card p:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.card p:last-child {
+  margin-top: 10px;
+}
+
+.badge {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.extra-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.extra-info .badge {
+  margin-top: 5px;
+}

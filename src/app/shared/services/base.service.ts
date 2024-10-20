@@ -1,4 +1,3 @@
-// base.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, retry, throwError } from 'rxjs';
@@ -18,13 +17,16 @@ export class BaseService<T> {
     })
   }
 
-  constructor(protected http: HttpClient) {  }
+  constructor(protected http: HttpClient) { }
 
+  // Error Handling
   handleError(error: HttpErrorResponse | any) {
     let errorMessage = 'An unknown error occurred!';
+
     if (error.error instanceof ErrorEvent) {
       // Client-side or network error
       errorMessage = `A client-side error occurred: ${error.error.message}`;
+      console.log(`An error occurred: ${error.error.message}`);
     } else if (error instanceof ProgressEvent) {
       // Network error or CORS issue
       errorMessage = 'A network error occurred.';
@@ -37,10 +39,10 @@ export class BaseService<T> {
         case 500:
           errorMessage = 'Internal server error occurred.';
           break;
-        // Add more cases as needed
         default:
           errorMessage = `Backend returned code ${error.status}, body was: ${error.error}`;
       }
+      console.log(`Backend returned code ${error.status}, body was ${error.error}`);
     }
     console.error(errorMessage);
     return throwError(() => new Error(errorMessage));

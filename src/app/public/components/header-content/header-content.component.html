@@ -1,15 +1,23 @@
-<mat-toolbar >
-  <div>
-    <span class="bliss-title">BLISS</span>
-  </div>
-
+<mat-toolbar color="primary">
+  <button *ngIf="!isSidenavVisible" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{ "bc.hello" | translate }}</span>
   <span class="example-spacer"></span>
-  @for(option of options; track option.title) {
-    <a mat-button [routerLink]="option.path" class="titles">{{ option.title |translate }}</a>
-
-  }
-
+  <span class="toolbar-item">{{ "bc-5.toolbar.home" | translate }}</span>
+  <span class="toolbar-item">{{ "bc-5.toolbar.myService" | translate }}</span>
+  <span class="toolbar-item">{{ "bc-5.toolbar.schedule" | translate }}</span>
+  <button mat-icon-button class="example-icon" aria-label="Search icon">
+    <mat-icon>search</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Shopping cart icon">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
   <span>
-    <app-language-switcher/>
+    <app-language-switcher></app-language-switcher>
   </span>
 </mat-toolbar>
