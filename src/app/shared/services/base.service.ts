@@ -1,0 +1,76 @@
+// base.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { catchError, Observable, retry, throwError } from 'rxjs';
+import { environment } from "../../../environments/environment";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class BaseService<T> {
+
+  basePath: string = `${environment.serverBasePath}`;
+  resourceEndpoint: string = '/db';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-type': 'application/json',
+    })
+  }
+
+  constructor(protected http: HttpClient) {  }
+
+  handleError(error: HttpErrorResponse | any) {
+    let errorMessage = 'An unknown error occurred!';
+    if (error.error instanceof ErrorEvent) {
+      // Client-side or network error
+      errorMessage = `A client-side error occurred: ${error.error.message}`;
+    } else if (error instanceof ProgressEvent) {
+      // Network error or CORS issue
+      errorMessage = 'A network error occurred.';
+    } else {
+      // Backend error
+      switch (error.status) {
+        case 404:
+          errorMessage = 'The requested resource was not found.';
+          break;
+        case 500:
+          errorMessage = 'Internal server error occurred.';
+          break;
+        // Add more cases as needed
+        default:
+          errorMessage = `Backend returned code ${error.status}, body was: ${error.error}`;
+      }
+    }
+    console.error(errorMessage);
+    return throwError(() => new Error(errorMessage));
+  }
+
+  // Create Resource
+  create(item: any): Observable<T> {
+    return this.http.post<T>(this.resourcePath(), JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  // Delete Resource
+  delete(id: any) {
+    return this.http.delete(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  // Update Resource
+  update(id: any, item: any): Observable<T> {
+    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  // Get All Resources
+  getAll(): Observable<T[]> {
+    return this.http.get<T[]>(this.resourcePath(), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  private resourcePath(): string {
+    return `${this.basePath}${this.resourceEndpoint}`;
+  }
+}

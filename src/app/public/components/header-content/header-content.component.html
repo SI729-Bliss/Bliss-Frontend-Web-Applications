@@ -5,7 +5,8 @@
 
   <span class="example-spacer"></span>
   @for(option of options; track option.title) {
-  <a mat-button [routerLink]="option.path" class="titles">{{ option.title }}</a>
+    <a mat-button [routerLink]="option.path" class="titles">{{ option.title |translate }}</a>
+
   }
 
   <span>
