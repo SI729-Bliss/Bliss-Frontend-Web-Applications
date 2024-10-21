@@ -244,6 +244,128 @@
         ""
       ]
     }
-  ]
+  ],
+  "customers": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "address": "123 Main St",
+      "phoneNumber": "555-1234"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "address": "456 Elm St",
+      "phoneNumber": "555-5678"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Beauty Salqwe",
+      "email": "john.doe@example.com",
+      "address": "123 Main St",
+      "phoneNumber": "555-1234"
+    },
+    {
+      "id": "2",
+      "name": "John's Salon",
+      "email": "john.doe@example.com",
+      "address": "123 Main Std qqe2",
+      "phoneNumber": "555-3214"
+    }
+  ],
 
+  "services": [
+    {
+      "language": "English",
+      "stars": 4.9,
+      "serviceCategory": "Hair Styling",
+      "description": "Expert hair styling services to give you a fresh, modern look.",
+      "price": "$85.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.7,
+      "serviceCategory": "Manicure & Pedicure",
+      "description": "Complete manicure and pedicure services for flawless hands and feet.",
+      "price": "$40.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.8,
+      "serviceCategory": "Facial Treatments",
+      "description": "Rejuvenate your skin with our personalized facial treatments.",
+      "price": "$60.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.6,
+      "serviceCategory": "Hair Coloring",
+      "description": "Professional hair coloring to match your style.",
+      "price": "$90.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.5,
+      "serviceCategory": "Nail Art",
+      "description": "Express your style with creative and professional nail art.",
+      "price": "$50.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.7,
+      "serviceCategory": "Massage Therapy",
+      "description": "Relax and rejuvenate with our expert massage therapy sessions.",
+      "price": "$100.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.8,
+      "serviceCategory": "Eyebrow Shaping",
+      "description": "Get the perfect eyebrow shape with our precision eyebrow shaping service.",
+      "price": "$25.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    },
+    {
+      "language": "English",
+      "stars": 4.9,
+      "serviceCategory": "Waxing",
+      "description": "Smooth and flawless skin with our waxing services.",
+      "price": "$45.00",
+      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
+    }
+  ],
+  "stylists": [
+    {
+      "id": "1",
+      "name": "Alice",
+      "image": "https://micarrerauniversitaria.com/wp-content/uploads/2018/04/ESTILISTA.jpg",
+      "specialism": "Hair Styling",
+      "rating": 4.9
+    },
+    {
+      "id": "2",
+      "name": "Maria",
+      "image": "https://i.pinimg.com/enabled_lo/564x/68/70/a4/6870a466e0b53c77eded825fcfbfe9ea.jpg",
+      "specialism": "Manicure & Pedicure",
+      "rating": 4.7
+    },
+    {
+      "id": "3",
+      "name": "Charlie",
+      "image": "https://i.pinimg.com/736x/1f/ec/57/1fec577ace50c4938ff1f62235dc4309.jpg",
+      "specialism": "Facial Treatments",
+      "rating": 4.8
+    }
+  ]
 }
+

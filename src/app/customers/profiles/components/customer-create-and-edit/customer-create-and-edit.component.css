@@ -1,0 +1,124 @@
+.form-section {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+h3{
+  font-size: 25px;
+}
+.container{
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+  width: 40%;
+  height: 90vh;
+  font-size: smaller;
+}
+.main-container{
+  display: flex;
+  flex-flow: row nowrap;
+
+}
+
+.profile-img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container-favorites{
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 60%;
+  height: 90vh;
+}
+
+.card-list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 20px;
+}
+
+
+.card {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 10px 10px;
+  gap: 15px;
+  text-align: left;
+  min-width: 30%;
+  max-width: 40%;
+  align-items: flex-start;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  flex: 0 0 auto;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 200px;
+  height: 250px;
+  object-fit: cover;
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-container{
+  display: flex;
+  flex-flow: column wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+.row{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+.column{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.language{
+  color: #23A6F0;
+}
+
+.stars {
+  color: white;
+  background-color: #37123C;
+  border-radius: 90%;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.price{
+  color: green;
+  font-weight: bolder;
+}
