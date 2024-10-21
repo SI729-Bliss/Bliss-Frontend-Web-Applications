@@ -17,7 +17,6 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient } from "@angular/common/http";
 import { BreakpointObserver } from "@angular/cdk/layout";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
-import { HeaderContentComponent } from "./public/components/header-content/header-content.component";
 import { BookingComponent } from "./enterprise/services/pages/booking/booking.component";
 import { RouterLink } from "@angular/router";
 import { NgClass, NgForOf } from "@angular/common";
@@ -50,15 +49,13 @@ export class AppComponent implements OnInit {
   options = [
     { icon: 'home', path: '/booking', title: 'Booking', class: 'booking-link' },
     { icon: 'info', path: '/citas', title: 'List', class: 'citas-link' },
+    { icon: 'info', path: '/catalog', title: 'Catalog'}
   ];
 
   constructor(translate: TranslateService, private observer: BreakpointObserver) {
     translate.setDefaultLang('en');
     translate.use('en');
   }
-  options = [
-    { path: '/catalog', title: 'Catalog'}]
-
   ngOnInit(): void {
     this.observer.observe(['(max-width: 1280px)'])
       .subscribe((response) => {
