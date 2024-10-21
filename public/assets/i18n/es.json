@@ -9,8 +9,41 @@
 
   },
   "bc-4": {
+    "id": "Núm.",
+    "eTitle": "Edit Services",
+    "mTitle": "Detalles de servicios",
 
+    "cardtitle1": "¿Utiliza mucho Bliss?",
+    "subtitle1": "Obten una suscripción",
+
+    "subtitle2": "Cantidad de servicios:",
+    "amountServices": "Sin servicios añadidos",
+
+    "subscript": "Suscripción",
+
+    "buttondetails": "Ver Detalles",
+
+    "addservice": "Añadir servicio",
+
+    "viewservice": "Ver Servicios",
+
+    "addEdit": "Desea editar información del servicio?",
+    "addCancel": "Desea eliminar el servicio?",
+
+    "name": "Nombre",
+    "categoryId": "Categoria",
+    "imageUrl": "Picture",
+    "description": "Descripción",
+    "basePrice": "Precio",
+    "beautySalonId": "Salón de Belleza",
+    "actions": "Funciones",
+
+    "formAdvice": "Los servicios serán validados",
+    "formAdviceName": "El servicio ya existe",
+
+    "addIfOne": "No puede eliminar todos los servicios"
   },
+
   "bc-5": {
     "toolbar": {
       "home": "Inicio",

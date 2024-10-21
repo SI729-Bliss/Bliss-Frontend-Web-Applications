@@ -7,6 +7,9 @@ import {NgModule} from "@angular/core";
 import { BookingComponent } from "./enterprise/services/pages/booking/booking.component";
 import { CitasListComponent } from "./enterprise/services/components/booking-card/booking-card.component";
 
+import { HomeEnterpriseComponent } from "./enterprise/services/pages/home-enterprise/home-enterprise.component";
+import { ServicesManagementComponent } from "./enterprise/services/pages/services-management/services-management.component";
+
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'my-services', component: ServicesHistoryComponent },
@@ -15,7 +18,11 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'booking', component: BookingComponent },
   { path: 'citas', component: CitasListComponent },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
+
+  { path: 'homeEnterprise', component: HomeEnterpriseComponent },
+  { path: 'services', component: ServicesManagementComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -23,4 +30,3 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

@@ -51,8 +51,7 @@ export class AppComponent implements OnInit {
     { icon: 'info', path: '/citas', title: 'List', class: 'citas-link' },
   ];
 
-  constructor(private translate: TranslateService, private observer: BreakpointObserver) {
-
+  constructor(translate: TranslateService, private observer: BreakpointObserver) {
     translate.setDefaultLang('en');
     translate.use('en');
   }

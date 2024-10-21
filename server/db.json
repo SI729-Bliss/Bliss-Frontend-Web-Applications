@@ -64,17 +64,37 @@
     {
       "id": 1,
       "name": "Corte de cabello",
+      "categoryId": "1",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
       "description": "Corte de cabello clásico.",
-      "base_price": 30,
-      "categoryId": 1,
-      "beauty_salon_id": 1
+      "basePrice": 30,
+      "beautySalonId": 1
     },
     {
       "id": 2,
       "name": "Coloración",
+      "categoryId": 2,
+      "image": "https://peluqueriamimate.es/wp-content/uploads/2023/01/corte-mujer.jpg",
       "description": "Aplicación de color en el cabello.",
       "base_price": 50,
-      "categoryId": 1,
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Corte",
+      "categoryId": 3,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
+      "description": "Corte de cabello.",
+      "base_price": 50,
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Corte",
+      "categoryId": 3,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
+      "description": "Corte de cabello.",
+      "base_price": 50,
       "beauty_salon_id": 1
     }
   ],
