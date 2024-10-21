@@ -43,7 +43,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 export class AppComponent implements OnInit {
   title: string = 'Bliss-Frontend-Web-Application';
-  @ViewChild('sidenav', { static: true }) sidenav!: MatSidenav;
+  @ViewChild(MatSidenav, { static: true }) sidenav!: MatSidenav;
   opened = true;
   isSidenavVisible = false;
   options = [
