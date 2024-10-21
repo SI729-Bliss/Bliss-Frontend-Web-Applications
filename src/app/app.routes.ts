@@ -10,4 +10,6 @@ export const routes: Routes = [
   { path: 'home', component: HomeEnterpriseComponent },
   { path: 'services', component: ServicesManagementComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  //route for service-details with param id of services
+  { path: 'service-details/:id', component: ServicesManagementComponent },
 ];
