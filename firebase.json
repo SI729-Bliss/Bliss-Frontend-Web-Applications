@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "\\dist\\daos-bliss-feedback\\browser",
+    "public": "dist/bliss-frontend-web-application/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

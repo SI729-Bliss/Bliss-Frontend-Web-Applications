@@ -1,5 +1,5 @@
+import { HomeComponent } from './customers/home-client/pages/home/home.component';
 import {RouterModule, Routes} from '@angular/router';
-import { HomeComponent } from "./public/pages/home/home.component";
 import { PageNotFoundComponent } from "./public/pages/page-not-found/page-not-found.component";
 import {ServicesHistoryComponent} from "./history/pages/services-history/services-history.component";
 import {ReviewPageComponent} from "./review/pages/review-page/review-page.component";
@@ -11,7 +11,7 @@ import { HomeEnterpriseComponent } from "./enterprise/services/pages/home-enterp
 import { ServicesManagementComponent } from "./enterprise/services/pages/services-management/services-management.component";
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'catalog', component: HomeComponent },
   { path: 'my-services', component: ServicesHistoryComponent },
   { path: 'review-page/:id', component: ReviewPageComponent },
   { path: 'review-page', component: ReviewPageComponent },

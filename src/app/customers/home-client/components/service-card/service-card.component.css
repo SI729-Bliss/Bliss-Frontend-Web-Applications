@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+
+.service-card {
+  width: 300px;
+  height: 330px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 0;
+}
+
+
+.service-card img {
+  width: 150px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.text-content{
+  width: 400px;
+}
+
+mat-card-title{
+font-size: 14px;
+color: #23A6F0;
+}
+
+mat-card-subtitle{
+background-color: #59116B;
+padding:2px;
+display: flex !important;
+align-items: center !important;
+justify-content: center !important;
+color: white;
+border-radius: 9px;}
+
+.service-name{
+font-weight: bold;
+font-size: 16px;
+color: #59116B;
+}
+
+.description{
+font-size: 14px;
+color:#737373;
+}
+
+.sales{
+color:#737373;
+font-size: 14px;
+font-weight: bold;}
+
+.price{
+font-size: 16px;
+color: #23856D;
+}
+
+mat-icon {
+  margin-right: 5px;
+  color: gold; /* Optional: color the star icon */
+}
+
+button{
+  color: #8EBEF7 !important;
+  font-size: 14px;
+  border-radius: 15px;
+  border: 1px solid #8EBEF7 !important;
+  border: none;
+}

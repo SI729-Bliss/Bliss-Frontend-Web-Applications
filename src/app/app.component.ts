@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderContentComponent } from './public/components/header-content/header-content.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -55,6 +56,8 @@ export class AppComponent implements OnInit {
     translate.setDefaultLang('en');
     translate.use('en');
   }
+  options = [
+    { path: '/catalog', title: 'Catalog'}]
 
   ngOnInit(): void {
     this.observer.observe(['(max-width: 1280px)'])

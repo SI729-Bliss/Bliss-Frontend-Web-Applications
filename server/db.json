@@ -38,6 +38,14 @@
       "phone": "+541144433311",
       "address": "Calle Florida 567, Buenos Aires",
       "password": "anotherstrongpassword"
+    },
+    {
+      "id": 3,
+      "name": "Estilo Único",
+      "email": "estilo-unico@example.com",
+      "phone": "+541166655544",
+      "address": "Av. Santa Fe 123, Buenos Aires",
+      "password": "superstrongpassword"
     }
   ],
   "categories": [
@@ -67,7 +75,12 @@
       "categoryId": "1",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
       "description": "Corte de cabello clásico.",
-      "basePrice": 35,
+      "basePrice": 30,
+      "categoryId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
       "beauty_salon_id": 1
     },
     {
@@ -77,7 +90,66 @@
       "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
       "description": "Aplicación de color en el cabello.",
       "basePrice": 50,
+      "categoryId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Coloración",
+      "description": "Aplicación de color en el cabello.",
+      "basePrice": 50,
+      "categoryId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Coloración",
+      "description": "Aplicación de color en el cabello.",
+      "basePrice": 50,
+      "categoryId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
       "beauty_salon_id": 2
+    }
+  ],
+  "specialists": [
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1234567890",
+      "profession": "Estilist",
+      "certificationNumber": "CERT-987654321",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321",
+      "profession": "Estilist",
+      "certificationNumber": "CERT-123456789",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
+
+    },
+    {
+      "firstName": "Carlos",
+      "lastName": "Gonzalez",
+      "email": "carlos.gonzalez@example.com",
+      "phone": "+1122334455",
+      "profession": "Estilist",
+      "certificationNumber": "CERT-112233445",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
     },
     {
       "id": 4,
@@ -173,4 +245,5 @@
       ]
     }
   ]
+
 }

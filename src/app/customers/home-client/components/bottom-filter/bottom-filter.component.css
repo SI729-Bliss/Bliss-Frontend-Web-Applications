@@ -1,0 +1,71 @@
+/* Estilo general del contenedor principal */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 40px;
+  background-color: #FAFAFA;
+}
+
+/* Columna de texto (parte izquierda) */
+.text-columns {
+  display: flex;
+  gap: 40px;
+
+}
+
+/* Estilo de los títulos (h3) y las listas (ul) */
+.text-columns h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #D1E4FA;
+}
+
+.text-columns ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.text-columns ul li {
+  margin-bottom: 8px;
+
+}
+
+/* Estilo de los enlaces */
+.text-columns ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  color: #59116B;
+    font-style:bold;
+}
+
+.text-columns ul li a:hover {
+  color: #ff6b6b;
+}
+
+/* Imagen a la derecha */
+.image-container img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Para pantallas pequeñas (responsive) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .text-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .image-container img {
+    max-width: 100%;
+  }
+}
+
