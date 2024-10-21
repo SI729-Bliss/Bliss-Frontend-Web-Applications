@@ -80,7 +80,7 @@
       "beautySalon": "SOHO",
       "sales": 15,
       "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
       "beauty_salon_id": 1
     },
     {
@@ -94,7 +94,7 @@
       "beautySalon": "SOHO",
       "sales": 15,
       "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
       "beauty_salon_id": 1
     },
     {
@@ -106,7 +106,7 @@
       "beautySalon": "SOHO",
       "sales": 15,
       "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
       "beauty_salon_id": 1
     },
     {
@@ -118,7 +118,7 @@
       "beautySalon": "SOHO",
       "sales": 15,
       "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
       "beauty_salon_id": 2
     }
   ],
@@ -278,72 +278,6 @@
     }
   ],
 
-  "services": [
-    {
-      "language": "English",
-      "stars": 4.9,
-      "serviceCategory": "Hair Styling",
-      "description": "Expert hair styling services to give you a fresh, modern look.",
-      "price": "$85.00",
-      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
-    },
-    {
-      "language": "English",
-      "stars": 4.7,
-      "serviceCategory": "Manicure & Pedicure",
-      "description": "Complete manicure and pedicure services for flawless hands and feet.",
-      "price": "$40.00",
-      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
-    },
-    {
-      "language": "English",
-      "stars": 4.8,
-      "serviceCategory": "Facial Treatments",
-      "description": "Rejuvenate your skin with our personalized facial treatments.",
-      "price": "$60.00",
-      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
-    },
-    {
-      "language": "English",
-      "stars": 4.6,
-      "serviceCategory": "Hair Coloring",
-      "description": "Professional hair coloring to match your style.",
-      "price": "$90.00",
-      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
-    },
-    {
-      "language": "English",
-      "stars": 4.5,
-      "serviceCategory": "Nail Art",
-      "description": "Express your style with creative and professional nail art.",
-      "price": "$50.00",
-      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
-    },
-    {
-      "language": "English",
-      "stars": 4.7,
-      "serviceCategory": "Massage Therapy",
-      "description": "Relax and rejuvenate with our expert massage therapy sessions.",
-      "price": "$100.00",
-      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
-    },
-    {
-      "language": "English",
-      "stars": 4.8,
-      "serviceCategory": "Eyebrow Shaping",
-      "description": "Get the perfect eyebrow shape with our precision eyebrow shaping service.",
-      "price": "$25.00",
-      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
-    },
-    {
-      "language": "English",
-      "stars": 4.9,
-      "serviceCategory": "Waxing",
-      "description": "Smooth and flawless skin with our waxing services.",
-      "price": "$45.00",
-      "image": "https://st3.depositphotos.com/12039412/16352/i/450/depositphotos_163528226-stock-photo-woman-having-hair-wash.jpg"
-    }
-  ],
   "stylists": [
     {
       "id": "1",
