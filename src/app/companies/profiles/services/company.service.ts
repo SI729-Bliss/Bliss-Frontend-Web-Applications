@@ -8,7 +8,7 @@ import { Stylist } from '../model/stylist.entity';
   providedIn: 'root'
 })
 export class CompanyService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://my-json-server.typicode.com/Andorla0/dbjson';
 
   constructor(private http: HttpClient) {}
 
