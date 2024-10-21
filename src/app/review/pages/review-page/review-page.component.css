@@ -1,0 +1,27 @@
+.image-upload {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.upload-frame {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.upload-frame .camera-icon {
+  font-size: 48px;
+  color: #ccc;
+}
+
+.upload-frame .image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -8,8 +8,8 @@
 
 # Firebase
 /.firebase
-.firebaserc
 firebase.json
+.firebaserc
 
 # Node
 /node_modules

@@ -1,0 +1,37 @@
+<mat-card class="review-card">
+  <mat-card-header>
+    <mat-card-title>{{ service.name }}</mat-card-title>
+    <mat-card-subtitle>
+      <div style="display: flex; flex-direction: column;">
+        <span>{{ 'Service Date' | translate }}: {{ reservation.reservationDate | date:'shortDate' }}</span>
+        <span><strong>{{ userName }}</strong> - {{ todayDate | date:'shortDate' }}</span>
+      </div>
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="stars" style="margin: 10px 0; display: flex; justify-content: left; cursor: pointer;">
+      <mat-icon *ngFor="let star of stars; let i = index" (click)="selectStar(i)" [class.selected]="rating > i">star</mat-icon>
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="{{ 'Describe your experience' | translate }}" [(ngModel)]="comment"></textarea>
+    </mat-form-field>
+
+    <div class="image-upload" style="display: flex; justify-content: space-around; margin-top: 10px;">
+      <div class="upload-frame" *ngFor="let image of images; let i = index" (click)="fileInput.click()"
+           style="border: 2px dashed #ccc; width: 30%; height: 100px; display: flex; align-items: center; justify-content: center; position: relative;">
+        <input type="file" #fileInput (change)="uploadImage($event, i)" style="display: none;">
+        <mat-icon *ngIf="!image" class="camera-icon">camera_alt</mat-icon>
+        <img *ngIf="image" [src]="image" alt="Image Preview {{i+1}}" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-footer>
+    <mat-card-actions style="display: flex; justify-content: space-between; margin-top: 10px;">
+      <button mat-raised-button color="primary" (click)="saveReview()">{{ 'Save' | translate }}</button>
+      <button mat-raised-button color="warn" (click)="cleanInputs()">{{ 'Clean' | translate }}</button>
+    </mat-card-actions>
+  </mat-card-footer>
+</mat-card>

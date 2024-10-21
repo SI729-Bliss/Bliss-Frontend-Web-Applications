@@ -1,0 +1,22 @@
+.custom-title{
+  color: #ffffff;
+  text-align: center;
+}
+
+.table-wrapper {
+  /*width: 1024px;*/
+  margin: 50px auto;
+}
+
+table {
+  width: 100%;
+}
+
+tr.editable-row {
+  background-color: lightblue;
+}
+
+::ng-deep .mat-form-field input.mat-input-element {
+  background-color: #f0f0f0; /* Cambia el color según tus necesidades */
+}
+

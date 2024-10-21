@@ -1,4 +1,27 @@
 {
+  "service_details": [
+    {
+      "id": 1,
+      "price": 30,
+      "duration": 45,
+      "description": "Corte de cabello corto",
+      "customization_options": "Lavado, secado, peinado"
+    },
+    {
+      "id": 2,
+      "price": 50,
+      "duration": 60,
+      "description": "Coloración de cabello",
+      "customization_options": "Tinte, mechas, balayage"
+    },
+    {
+      "id": 3,
+      "price": 20,
+      "duration": 30,
+      "description": "Manicuría básica",
+      "customization_options": "Esmalte, cutícula"
+    }
+  ],
   "beauty_salons": [
     {
       "id": 1,
@@ -10,10 +33,10 @@
     },
     {
       "id": 2,
-      "name": "Glamour Salon",
-      "email": "glamoursalon@example.com",
-      "phone": "+541155544433",
-      "address": "Calle Florida 123, Buenos Aires",
+      "name": "Estética Total",
+      "email": "esteticatotal@example.com",
+      "phone": "+541144433311",
+      "address": "Calle Florida 567, Buenos Aires",
       "password": "anotherstrongpassword"
     },
     {
@@ -25,10 +48,32 @@
       "password": "superstrongpassword"
     }
   ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Cabello",
+      "description": "Todos los servicios relacionados al cuidado del cabello.",
+      "type": "servicio"
+    },
+    {
+      "id": 2,
+      "name": "Uñas",
+      "description": "Servicios de manicura y pedicura.",
+      "type": "estetica"
+    },
+    {
+      "id": 3,
+      "name": "Maquillaje",
+      "description": "Servicios de maquillaje profesional.",
+      "type": "estetica"
+    }
+  ],
   "services": [
     {
       "id": 1,
       "name": "Corte de cabello",
+      "categoryId": "1",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
       "description": "Corte de cabello clásico.",
       "basePrice": 30,
       "categoryId": 1,
@@ -36,10 +81,13 @@
       "sales": 15,
       "rating": 4.5,
       "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "beauty_salon_id": 1
     },
     {
       "id": 2,
       "name": "Coloración",
+      "categoryId": 2,
+      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
       "description": "Aplicación de color en el cabello.",
       "basePrice": 50,
       "categoryId": 1,
@@ -47,6 +95,7 @@
       "sales": 15,
       "rating": 4.5,
       "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "beauty_salon_id": 1
     },
     {
       "id": 3,
@@ -58,6 +107,7 @@
       "sales": 15,
       "rating": 4.5,
       "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "beauty_salon_id": 1
     },
     {
       "id": 4,
@@ -69,6 +119,7 @@
       "sales": 15,
       "rating": 4.5,
       "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp"
+      "beauty_salon_id": 2
     }
   ],
   "specialists": [
@@ -99,7 +150,99 @@
       "profession": "Estilist",
       "certificationNumber": "CERT-112233445",
       "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
-
+    },
+    {
+      "id": 4,
+      "name": "Corte",
+      "categoryId": 3,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
+      "description": "Corte de cabello.",
+      "basePrice": 56,
+      "beauty_salon_id": 1
+    },
+    {
+      "name": "Teñido",
+      "categoryId": 1,
+      "imageUrl": "https://vanart.com/funciona/wp-content/uploads/2019/02/shutterstock_383281507-1000x665.jpg",
+      "description": "Teñido de cabello",
+      "basePrice": 34,
+      "beauty_salon_id": 1,
+      "id": 29
+    },
+    {
+      "name": "Lavado de cabello",
+      "categoryId": 1,
+      "imageUrl": "https://img.freepik.com/fotos-premium/lavado-cabello-peluqueria-wahsing-cabello-sus-clientes-champu_259150-17249.jpg",
+      "description": "Lavado de Pelo con champú ",
+      "basePrice": 20,
+      "beauty_salon_id": 2,
+      "id": 32
+    }
+  ],
+  "service-details": [
+    {
+      "id": 1,
+      "serviceId": 1,
+      "price": 30,
+      "duration": 45,
+      "customization_options": "Lavado, secado, peinado"
+    },
+    {
+      "id": 2,
+      "serviceId": 2,
+      "price": 50,
+      "duration": 60,
+      "customization_options": "Tinte, mechas, balayage"
+    },
+    {
+      "id": 4,
+      "serviceId": 4,
+      "price": 20,
+      "duration": 30,
+      "customization_options": "Esmalte, cutícula"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "serviceId": 1,
+      "beautySalonId": 1,
+      "reservationDate": "2023-11-20",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "customerId": 1,
+      "serviceId": 2,
+      "beautySalonId": 1,
+      "reservationDate": "2023-11-22",
+      "status": "completed"
+    }
+  ],
+  "reservations_details": [
+    {
+      "id": 1,
+      "status": "confirmed",
+      "description": "Corte de cabello con color",
+      "duration": 120,
+      "totalPrice": 70,
+      "reservation_id": 123
+    }
+  ],
+  "feedback": [
+    {
+      "id": 1,
+      "punctuation": 3,
+      "comment": "1212e12e",
+      "createdDate": "2024-10-20T06:12:10.716Z",
+      "reservationId": 1,
+      "customerId": 1,
+      "images": [
+        "",
+        "",
+        ""
+      ]
     }
   ]
 

@@ -1,0 +1,42 @@
+.main-container {
+  margin-top: 30px;
+}
+
+.container-services {
+  background-color: #ffffff;
+  width: 85%;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+p {
+  text-align: left;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.card-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.card-services app-service-card {
+  margin: 10px;
+  display: flex;
+}
+
+.services-button {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-button a {
+  background-color: #25003e;
+  color: white;
+}

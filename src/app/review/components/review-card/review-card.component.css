@@ -1,0 +1,8 @@
+/* review-card.component.css */
+.stars mat-icon {
+  color: gray;
+}
+
+.stars mat-icon.selected {
+  color: gold;
+}

@@ -1,0 +1,130 @@
+<div class="container">
+
+  <div class="box">
+
+    <div class="card2">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ 'bc-4.subtitle2' | translate }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-subtitle>{{ totalservices ?  totalservices : 'bc-4.amountServices' | translate }}</mat-card-subtitle>
+
+        <mat-card-actions align="end">
+          <a mat-stroked-button [routerLink]="['/home']"> {{ 'bc-4.viewservice' | translate }} </a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <br>
+
+    <div class="card1">
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-icon>credit_card</mat-icon>
+
+          <mat-card-title>{{ 'bc-4.cardtitle1' | translate }}</mat-card-title>
+
+          <mat-card-subtitle>{{ 'bc-4.subtitle1' | translate }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-actions align="end">
+          <a mat-stroked-button href=" https://si729-bliss.github.io/Bliss-Landing-Page/ " target="_blank">{{ 'bc-4.subscript' | translate }}</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+
+
+
+  <div class="box">
+
+    <!-- Create and Edit Form -->
+    <h4 style="color: #000000">{{ editMode ? 'Edit Service' : 'New Service' }}</h4>
+    <div class="form-section">
+
+      <form #entserviceFrom='ngForm' (submit)="onSubmit()" class="form-row">
+        <mat-form-field>
+          <mat-label>{{ 'bc-4.name' | translate }}</mat-label>
+          <input matInput placeholder="{{ 'bc-4.serviceTo' | translate }}..." name="name"  required [(ngModel)]="entservice.name">
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <mat-label>{{ 'bc-4.categoryId' | translate }}</mat-label>
+          <input matInput type="number" placeholder="..." name="category" required min="1" [(ngModel)]="entservice.categoryId">
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <mat-label>{{ 'bc-4.imageUrl' | translate }}</mat-label>
+          <input matInput placeholder="https://..." name="imageurl" required [(ngModel)]="entservice.imageUrl">
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <mat-label>{{ 'bc-4.description' | translate }}</mat-label>
+          <input matInput placeholder="...." name="description" required [(ngModel)]="entservice.description">
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <mat-label>{{ 'bc-4.basePrice' | translate }}</mat-label>
+          <input matInput type="number" placeholder="$ 10 - 100" name="basePrice" required min="10" max="100" [(ngModel)]="entservice.basePrice">
+        </mat-form-field>
+
+        <br>
+
+        <!--<mat-form-field>
+          <input matInput placeholder="{{ 'bc-4.nBeautySalon' | translate }}" name="bsi" required [(ngModel)]="entservice.beauty_salon_id">
+        </mat-form-field>-->
+
+        <br>
+
+        <ng-container>
+          <div class="button-container">
+            @if (editMode === true) {
+              <button mat-raised-button color="primary">Update</button>
+              <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+            }
+            @else {
+              <button mat-raised-button color="primary">Add</button>
+            }
+          </div>
+        </ng-container>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="left-box">
+    <div class="card1">
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          @if (nameAddvice === true) {
+            <mat-card-subtitle style="color: #f0f0f0"> {{ 'bc-4.formAdviceName' | translate }}</mat-card-subtitle>
+          }
+          @else {
+            <mat-card-subtitle>{{ 'bc-4.formAdvice' | translate }}</mat-card-subtitle>
+          }
+        </mat-card-header>
+      </mat-card>
+    </div>
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="setSalon(1)">1</button>
+      <button mat-menu-item (click)="setSalon(2)">2</button>
+      <button mat-menu-item (click)="setSalon(3)">3</button>
+      <button mat-menu-item (click)="setSalon(4)">4</button>
+    </mat-menu>
+
+  </div>
+
+</div>
+

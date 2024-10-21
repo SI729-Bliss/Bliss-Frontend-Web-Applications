@@ -20,4 +20,5 @@ export class LanguageSwitcherComponent {
   useLanguage(language: string) : void {
     this.translate.use(language);
   }
+
 }

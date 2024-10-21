@@ -11,8 +11,5 @@ import { SideFilterComponent } from '../../components/side-filter/side-filter.co
   standalone: true,
   imports: [SideFilterComponent,CommonModule, ServiceCardComponent,PopularSpecialistCardComponent, BottomFilterComponent,MatFormFieldModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
-})
-export class HomeComponent {
-
-}
+  styleUrl: './home.component.css', })
+export class HomeComponent {}
