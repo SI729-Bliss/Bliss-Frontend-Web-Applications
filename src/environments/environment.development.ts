@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/*
 export const environment = {
   production: false,
 // Server Base Path for Fake REST API
@@ -7,6 +7,6 @@ export const environment = {
 serverBasePath: 'http://localhost:3000'
 
 };
-=======
+*/
 export const environment = {production: false, serverBasePath: 'http://localhost:3000/api/v1' };
->>>>>>> feature/booking
+
