@@ -67,35 +67,67 @@
       "categoryId": "1",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
       "description": "Corte de cabello clásico.",
-      "basePrice": 30,
-      "beautySalonId": 1
+      "basePrice": 35,
+      "beauty_salon_id": 1
     },
     {
       "id": 2,
       "name": "Coloración",
       "categoryId": 2,
-      "image": "https://peluqueriamimate.es/wp-content/uploads/2023/01/corte-mujer.jpg",
+      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
       "description": "Aplicación de color en el cabello.",
-      "base_price": 50,
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 3,
-      "name": "Corte",
-      "categoryId": 3,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
-      "description": "Corte de cabello.",
-      "base_price": 50,
-      "beauty_salon_id": 1
+      "basePrice": 50,
+      "beauty_salon_id": 2
     },
     {
       "id": 4,
       "name": "Corte",
       "categoryId": 3,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
       "description": "Corte de cabello.",
-      "base_price": 50,
+      "basePrice": 56,
       "beauty_salon_id": 1
+    },
+    {
+      "name": "Teñido",
+      "categoryId": 1,
+      "imageUrl": "https://vanart.com/funciona/wp-content/uploads/2019/02/shutterstock_383281507-1000x665.jpg",
+      "description": "Teñido de cabello",
+      "basePrice": 34,
+      "beauty_salon_id": 1,
+      "id": 29
+    },
+    {
+      "name": "Lavado de cabello",
+      "categoryId": 1,
+      "imageUrl": "https://img.freepik.com/fotos-premium/lavado-cabello-peluqueria-wahsing-cabello-sus-clientes-champu_259150-17249.jpg",
+      "description": "Lavado de Pelo con champú ",
+      "basePrice": 20,
+      "beauty_salon_id": 2,
+      "id": 32
+    }
+  ],
+  "service-details": [
+    {
+      "id": 1,
+      "serviceId": 1,
+      "price": 30,
+      "duration": 45,
+      "customization_options": "Lavado, secado, peinado"
+    },
+    {
+      "id": 2,
+      "serviceId": 2,
+      "price": 50,
+      "duration": 60,
+      "customization_options": "Tinte, mechas, balayage"
+    },
+    {
+      "id": 4,
+      "serviceId": 4,
+      "price": 20,
+      "duration": 30,
+      "customization_options": "Esmalte, cutícula"
     }
   ],
   "reservations": [

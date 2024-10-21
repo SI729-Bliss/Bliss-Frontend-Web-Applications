@@ -23,6 +23,7 @@ export const routes: Routes = [
   { path: 'homeEnterprise', component: HomeEnterpriseComponent },
   { path: 'services', component: ServicesManagementComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'service-details/:id', component: ServicesManagementComponent },
 ];
 
 @NgModule({
