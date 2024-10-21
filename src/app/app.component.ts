@@ -8,14 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatSidenav, MatSidenavModule } from "@angular/material/sidenav";
+import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
-import { ViewChild } from '@angular/core';
 import { TranslateLoader, TranslateModule, TranslateService } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient } from "@angular/common/http";
-import { BreakpointObserver } from "@angular/cdk/layout";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
 import { BookingComponent } from "./enterprise/services/pages/booking/booking.component";
 import { RouterLink } from "@angular/router";
@@ -41,26 +39,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   ]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Bliss-Frontend-Web-Application';
 
-  options = [
-    { icon: 'person', path: '/customer', title: 'Customers' },
-    { icon: 'person', path: '/company', title: 'Companies' },
-    { icon: 'home', path: '/booking', title: 'Booking', class: 'booking-link' },
-    { icon: 'info', path: '/citas', title: 'List', class: 'citas-link' },
-    { icon: 'info', path: '/catalog', title: 'Catalog'},
-    { icon: 'home', path: '/booking', title: 'Booking', class: 'booking-link' },
-    { icon: 'info', path: '/citas', title: 'List', class: 'citas-link' },
-    { icon: 'info', path: '/catalog', title: 'Catalog'}
-  ];
 
-  constructor(private translate: TranslateService, private observer: BreakpointObserver) {
-    translate.setDefaultLang('en');
-    translate.use('en');
-  }
-
-  ngOnInit(): void {
-    // Lógica de inicialización adicional si es necesaria
-  }
 }
+
