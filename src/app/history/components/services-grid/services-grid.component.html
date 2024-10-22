@@ -6,6 +6,7 @@
         <mat-card-subtitle>{{ reservation.reservationDate | date:'shortDate' }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
+        <p> Local : {{ reservation.beautySalon.name }}</p>
         <p>{{ reservation.service.description }}</p>
       </mat-card-content>
       <mat-card-actions>

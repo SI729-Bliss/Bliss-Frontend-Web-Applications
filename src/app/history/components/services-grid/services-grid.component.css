@@ -1,0 +1,91 @@
+mat-grid-list {
+  width: 1200px;
+  height: 765px;
+  padding: 64px;
+  background-color: #fff;
+}
+
+mat-grid-tile {
+  padding: 16px;
+}
+
+mat-card {
+  height: 240px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 8px;
+  border: solid 1px #d9d9d9;
+  background-color: #fff
+}
+
+mat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+mat-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+  color: #9e9e9e;
+}
+
+mat-card-content {
+  margin-top: 8px;
+}
+
+mat-card-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #424242;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-start;
+  padding: 16px 0 0;
+}
+
+button[mat-button] {
+  background-color: #4e114e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-transform: none;
+}
+
+button[mat-button]:hover {
+  background-color: #370837;
+}
+
+button[mat-button][color="warn"] {
+  background-color: #d32f2f;
+}
+
+button[mat-button][color="warn"]:hover {
+  background-color: #b71c1c;
+}
+
+@media (max-width: 768px) {
+  mat-grid-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  mat-grid-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
