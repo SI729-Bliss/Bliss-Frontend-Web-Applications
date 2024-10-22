@@ -65,9 +65,11 @@ export class ServicesGridComponent implements OnInit {
     }).subscribe(({ reservations, services, beautySalons, reviews }) => {
       this.services = services;
       this.beautySalons = beautySalons;
-      this.reservations = reservations.map((reservation: Reservation) => {
-        const review = reviews.find(r => r.reservationId === reservation.id);
-        return {
+      this.reservations = reservations
+        .filter(reservation => reservation.status === 'completed')
+        .map((reservation: Reservation) => {
+          const review = reviews.find(r => r.reservationId === reservation.id);
+          return{
           ...reservation,
           service: this.getServiceById(reservation.serviceId),
           beautySalon: this.getBeautySalonById(reservation.beautySalonId),
@@ -91,7 +93,12 @@ export class ServicesGridComponent implements OnInit {
 
   deleteReview(reviewId: number): void {
     this.reviewService.delete(reviewId).subscribe(() => {
-      this.ngOnInit(); // Refresh the list after deletion
+      this.reservations = this.reservations.map(reservation => {
+        if (reservation.review?.id === reviewId) {
+          return { ...reservation, review: undefined };
+        }
+        return reservation;
+      });
     });
   }
 }
