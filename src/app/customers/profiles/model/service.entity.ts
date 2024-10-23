@@ -1,17 +1,17 @@
 export class Service {
   language: string;
-  stars: number;
-  serviceCategory: string;
+  rating: number;
+  name: string;
   description: string;
-  price: string;
+  basePrice: string;
   image: string;
 
   constructor() {
     this.language = '';
-    this.stars = 0;
-    this.serviceCategory = '';
+    this.rating = 0;
+    this.name = '';
     this.description = '';
-    this.price = '';
+    this.basePrice = '';
     this.image = '';
   }
 }

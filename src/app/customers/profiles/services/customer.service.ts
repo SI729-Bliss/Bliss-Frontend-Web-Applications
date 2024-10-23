@@ -8,7 +8,7 @@ import { Service } from '../model/service.entity';
   providedIn: 'root'
 })
 export class CustomerService {
-  private apiUrl = 'https://my-json-server.typicode.com/Andorla0/dbjson';
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
