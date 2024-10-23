@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ViewChild, ViewEncapsulation} from '@angular/core';
 import { FormsModule, NgForm } from "@angular/forms";
 import { Customer } from '../../model/customer.entity';
 import { CustomerService } from '../../services/customer.service';
@@ -8,6 +8,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { TranslateModule } from "@ngx-translate/core";
+import {MatIcon} from "@angular/material/icon";
 
 
 @Component({
@@ -20,9 +21,12 @@ import { TranslateModule } from "@ngx-translate/core";
     MatButtonModule,
     TranslateModule,
     FormsModule,
+    MatIcon,
   ],
   templateUrl: './customer-create-and-edit.component.html',
-  styleUrls: ['./customer-create-and-edit.component.css']
+  styleUrls: ['./customer-create-and-edit.component.css'],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class CustomerCreateAndEditComponent implements OnInit {
   customers: Customer[] = [];
