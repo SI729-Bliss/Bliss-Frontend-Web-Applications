@@ -1,13 +1,13 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="">
 
   <span>{{ 'bc.hello' | translate }}</span>
   <span class="example-spacer"></span>
 
   @for(option of options; track option.title) {
-    <mat-icon>{{option.icon}}</mat-icon>
     <a mat-button [routerLink]="option.path">{{ option.title }}</a>
   }
-<!--
+  <span class="example-spacer"> </span>
+
   <button mat-icon-button class="example-icon" aria-label="Search icon">
     <mat-icon>search</mat-icon>
   </button>
@@ -17,9 +17,12 @@
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Heart icon">
     <mat-icon>favorite</mat-icon>
   </button>
-  -->
 
   <span class="example-spacer"> </span>
+  <button mat-icon-button class="example-icon favorite-icon profile-icon" aria-label="Heart icon">
+    <mat-icon>person</mat-icon>
+  </button>
+
   <app-language-switcher/>
 
 
