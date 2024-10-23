@@ -5,3 +5,11 @@ body { margin: 0; font-family: 'Tajawal', "Helvetica Neue", sans-serif; }
 body {
   background-color: #FFE8E8;
 }
+
+
+.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--outlined {
+  background-color: white; /* Fondo blanco */
+  color: black;
+  border-bottom: 1px solid #757575; /* Línea inferior gris */
+  outline: none; /* Elimina cualquier outline si lo hay */
+}

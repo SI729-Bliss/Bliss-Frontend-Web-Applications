@@ -8,6 +8,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { TranslateModule } from "@ngx-translate/core";
+import {MatIcon} from "@angular/material/icon";
 
 
 @Component({
@@ -21,6 +22,7 @@ import { TranslateModule } from "@ngx-translate/core";
     TranslateModule,
     FormsModule,
     NgOptimizedImage,
+    MatIcon,
   ],
   templateUrl: './company-create-and-edit.component.html',
   styleUrls: ['./company-create-and-edit.component.css']
