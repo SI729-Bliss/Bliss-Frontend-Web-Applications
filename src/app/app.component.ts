@@ -18,6 +18,7 @@ import { LanguageSwitcherComponent } from "./public/components/language-switcher
 import { BookingComponent } from "./enterprise/services/pages/booking/booking.component";
 import { RouterLink } from "@angular/router";
 import { NgClass, NgForOf } from "@angular/common";
+import {ScrollControlService} from "./shared/services/style.service";
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -41,6 +42,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 export class AppComponent {
   title = 'Bliss-Frontend-Web-Application';
+  constructor(private scrollControlService: ScrollControlService) {} // Inyecta el servicio
 
 
 }
