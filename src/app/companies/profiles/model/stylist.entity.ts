@@ -1,12 +1,13 @@
 export class Stylist {
+  id: any;
   name: string;
-  specialism: string;
-  image: string;
+  profession: string;
+  img: string;
   rating: number;
   constructor() {
     this.name = '';
-    this.specialism = '';
-    this.image = '';
+    this.profession = '';
+    this.img = '';
     this.rating = 0;
   }
 }
