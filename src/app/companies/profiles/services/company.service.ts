@@ -19,7 +19,7 @@ export class CompanyService {
 
   // Obtener lista de servicios
   getServices(): Observable<Stylist[]> {
-    return this.http.get<Stylist[]>(`${this.apiUrl}/stylists`);
+    return this.http.get<Stylist[]>(`${this.apiUrl}/specialists`);
   }
 
   // Agregar un nuevo cliente
