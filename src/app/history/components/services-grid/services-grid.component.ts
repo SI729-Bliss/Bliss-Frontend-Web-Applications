@@ -14,6 +14,8 @@ import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle, M
 import { CurrencyPipe, DatePipe, NgForOf, NgIf } from "@angular/common";
 import { MatButton } from "@angular/material/button";
 import {TranslateModule} from "@ngx-translate/core";
+import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
+
 
 interface ReservationWithDetails extends Reservation {
   service: Service;
@@ -49,14 +51,30 @@ export class ServicesGridComponent implements OnInit {
   reservations: ReservationWithDetails[] = [];
   services: Service[] = [];
   beautySalons: BeautySalon[] = [];
+  cols: number = 1;
 
   constructor(
     private reservationService: ReservationService,
     private reviewService: ReviewService,
-    private router: Router
+    private router: Router,
+    private breakpointObserver: BreakpointObserver
+
   ) {}
 
   ngOnInit(): void {
+    this.breakpointObserver.observe([
+      '(max-width: 599px)',  // Handset
+      '(min-width: 600px) and (max-width: 959px)',  // Tablet
+      '(min-width: 960px)'  // Web
+    ]).subscribe((state: BreakpointState) => {
+      if (state.breakpoints['(max-width: 599px)']) {
+        this.cols = 1;
+      } else if (state.breakpoints['(min-width: 600px) and (max-width: 959px)']) {
+        this.cols = 2;
+      } else if (state.breakpoints['(min-width: 960px)']) {
+        this.cols = 3;
+      }
+    });
     forkJoin({
       reservations: this.reservationService.getAll(),
       services: this.reservationService.getServices(),
@@ -65,9 +83,11 @@ export class ServicesGridComponent implements OnInit {
     }).subscribe(({ reservations, services, beautySalons, reviews }) => {
       this.services = services;
       this.beautySalons = beautySalons;
-      this.reservations = reservations.map((reservation: Reservation) => {
-        const review = reviews.find(r => r.reservationId === reservation.id);
-        return {
+      this.reservations = reservations
+        .filter(reservation => reservation.status === 'completed')
+        .map((reservation: Reservation) => {
+          const review = reviews.find(r => r.reservationId === reservation.id);
+          return{
           ...reservation,
           service: this.getServiceById(reservation.serviceId),
           beautySalon: this.getBeautySalonById(reservation.beautySalonId),
@@ -91,7 +111,13 @@ export class ServicesGridComponent implements OnInit {
 
   deleteReview(reviewId: number): void {
     this.reviewService.delete(reviewId).subscribe(() => {
-      this.ngOnInit(); // Refresh the list after deletion
+      this.reservations = this.reservations.map(reservation => {
+        if (reservation.review?.id === reviewId) {
+          return { ...reservation, review: undefined };
+        }
+        return reservation;
+      });
     });
   }
+
 }
