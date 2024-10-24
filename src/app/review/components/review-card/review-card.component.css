@@ -1,4 +1,27 @@
 /* review-card.component.css */
+.review-card-container {
+  display: flex;
+  justify-content: center; /* Centra el contenedor horizontalmente */
+  align-items: center; /* Centra el contenedor verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+.mat-card-subtitle, span {
+  color: #370837; /* Text color */
+}
+.review-card {
+  min-width: 300px; /* Ancho mínimo para pantallas pequeñas */
+  box-sizing: border-box; /* Incluye padding y border en el ancho y alto */
+  background-color: #ffffff; /* Color de fondo blanco */
+}
+.custom-textarea-container {
+  display: flex;
+  justify-content: center; /* Centra el textarea horizontalmente */
+}
+
+.custom-textarea {
+  width: 80%; /* Ocupa el 80% del ancho de la tarjeta */
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+}
 .stars mat-icon {
   color: gray;
 }
