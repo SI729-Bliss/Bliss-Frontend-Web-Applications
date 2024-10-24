@@ -1,9 +1,11 @@
 /* main container */
 .main-container {
   display: flex;
-  margin-top: 30px;
+  padding-top: 30px;
+  height: auto;
   min-height: 100vh;
   flex-flow: row nowrap;
+
 }
 .prof-info{
   color:#B39DE7 ;
@@ -11,8 +13,17 @@
   font-weight: bold;
   text-align: center;
 }
+
+.container-favorites {
+  overflow-y: auto;
+  margin-bottom: 100px;
+  height: auto; /* Ajusta la altura si es necesario */
+
+}
+
+
 .container-favorites > h3{
-  color:#B39DE7 ;
+  color: black ;
   font-size: 22px;
   font-weight: bold;
   text-align: start;
@@ -29,15 +40,17 @@
   display: flex;
   background-color: #FFE8E8;
   flex-flow: column nowrap;
+  align-content: center;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 30%;
   top: 0; /* Esto asegura que se quede pegado al tope */
   min-height: 100vh;
-  padding: 20px;
+  padding: 20px 20px 120px 20px;
   box-sizing: border-box;
   font-size: smaller;
   color: black;
+
 
 }
 /* en edicion */
@@ -124,7 +137,7 @@ strong{
   flex-flow: column nowrap;
   justify-content: center;
   align-content: center;
-  align-items: center;
+  align-items: start;
   border-radius: 20%;
   max-height: 500px;
   font-size: 18px;
@@ -167,54 +180,79 @@ strong{
   margin-top: 30px;
   display: flex;
   flex-flow: column nowrap;
-  width: 60%;
+  width: 80%;
   height: 100vh;
   overflow-y: scroll; /* El scroll solo afecta al div de la derecha */
   padding: 20px;
 }
 
 .card-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  grid-auto-rows: minmax(150px, auto); /* Asegura que las filas se ajusten a la altura de las tarjetas */
+  gap: 25px;
   width: 100%;
+  padding-bottom: 100px;
 }
 
+
 .card {
+  background-color: white;
+
   display: flex;
   flex-flow: row nowrap;
-  padding: 10px;
-  gap: 15px;
+  border-radius: 20px;
   text-align: left;
   min-width: 30%;
   max-width: 40%;
+  min-height: auto;
+  max-height: none;
   align-items: flex-start;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
+.card-list > div.card > .image-container >img{
+  border-radius: 20px 0 0 20px;
+  height: 100%;
 
+}
 .image-container {
+  background-color: white;
+  border-radius: 20px 0 0 20px;
+  height: 100%;
   flex: 0 0 auto;
 }
 
 .image-container img {
+  background-color: white;
   width: 100%;
-  max-width: 200px;
-  height: 250px;
+  max-width: 170px;
+  height: auto;
   object-fit: cover;
-  background-color: transparent;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-container {
+/*derecha card*/
+
+.card-list > div.card > .content-container{
+  border-radius: 0 20px 20px 0;
   display: flex;
-  flex-flow: column wrap;
-  gap: 15px;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-content: start;
+  align-items: start;
+  max-height: 100%;
+  max-width: 100%;
   width: 100%;
+  height: 100%;
+  padding: 0 12px;
 }
 
+.card-container{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  gap: 10px;
+}
 .row {
   display: flex;
   flex-flow: row nowrap;
@@ -223,7 +261,9 @@ strong{
   align-items: center;
 }
 
+
 .column {
+
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -233,19 +273,74 @@ strong{
 
 .language {
   color: #23A6F0;
+  font-weight: 500;
+}
+.content-container{
+  background-color: white;
+
+}
+.card-list > div.card > .content-container > .card-container > .row > .stars > .mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color{
+  color: #ffae00;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+
+}
+
+.card-list > div.card > .content-container > .card-container > .column{
+  text-align: start;
+  gap: 10px;
+}
+.card-list > div.card > .content-container > .card-container > .column > .description{
+  color: #737373 ;
+  font-size: 15px;
+}
+
+.service-category{
+  color: #37123C ;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.card-list > div.card > .content-container > .card-container{
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  gap: 10px;
+
 }
 
 .stars {
   color: white;
-  background-color: #37123C;
-  border-radius: 90%;
-  width: 40px;
+  background-color: #3C123C;
+  border-radius: 25px;
+  width: 55px;
   display: flex;
+
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+.sales{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1px;
+}
+.base-price{
+  color: #23856D;
+  display: flex;
+  font-weight: bolder;
+  justify-content: start;
+  align-items: center;
+  gap: 1px;
+}
+.card-list > div.card > .content-container > .card-container > .base-price > .mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color{
+  color: #23856D;
+
+}
 .price {
   color: green;
   font-weight: bolder;

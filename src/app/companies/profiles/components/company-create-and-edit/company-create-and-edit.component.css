@@ -12,7 +12,7 @@
   text-align: center;
 }
 .container-favorites > h3{
-  color:#B39DE7 ;
+  color:black ;
   font-size: 22px;
   font-weight: bold;
   text-align: start;
@@ -124,7 +124,7 @@ strong{
   flex-flow: column nowrap;
   justify-content: center;
   align-content: center;
-  align-items: center;
+  align-items: start;
   border-radius: 20%;
   max-height: 500px;
   font-size: 18px;
@@ -181,26 +181,45 @@ button[mat-raised-button]{
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 25px;
   width: 100%;
+  padding-bottom: 100px;
+
+}
+.card{
+  background-color: white;
+  border-radius: 40px 40px  0 0;
+  padding: 20px;
+}
+.card-list > div.card > .card-container{
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.card {
+.sub-card{
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  padding: 10px;
-  gap: 15px;
-  text-align: left;
-  min-width: 30%;
-  max-width: 40%;
-  align-items: flex-start;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
 }
 
-
+.card-list > div.card > .card-container > .specialist-name{
+  color:#37125A ;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* div img */
 .image-container {
   flex: 0 0 auto;
+  width: 100%;
 }
 
 .image-container img {
@@ -209,8 +228,10 @@ button[mat-raised-button]{
   height: 250px;
   object-fit: cover;
   background-color: transparent;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.56);
 }
+
+
 
 .card-container {
   display: flex;
@@ -218,39 +239,29 @@ button[mat-raised-button]{
   gap: 15px;
   width: 100%;
 }
-
-.row {
+/*stars*/
+.card-list > div.card > .card-container > .sub-card > .stars > .mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color{
+  color: #ffae00;
+  font-size: 19px;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-content: center;
   align-items: center;
+
 }
 
-.column {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-
-.language {
-  color: #23A6F0;
-}
 
 .stars {
   color: white;
-  background-color: #37123C;
-  border-radius: 90%;
-  width: 40px;
+  background-color: #9d80e1;
+  border-radius: 25px;
+  width: 55px;
   display: flex;
+
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
 .price {
-  color: green;
+  color: #B39DE7;
   font-weight: bolder;
 }
