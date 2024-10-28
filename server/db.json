@@ -109,237 +109,35 @@
       "rating": 4.5,
       "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
       "beauty_salon_id": 1
-    },
-    {
-      "id": 4,
-      "name": "Coloración",
-      "language": "English",
-      "description": "Aplicación de color en el cabello.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 2
-    },
-    {
-      "id": 1,
-      "name": "Corte de cabello",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
-      "description": "Corte de cabello clásico.",
-      "basePrice": 30,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Coloración",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
-      "description": "Expert hair styling services to give you a fresh, modern look.",
-      "basePrice": 50,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 3,
-      "name": "Manicure & Pedicure",
-      "language": "English",
-      "description": "Complete manicure and pedicure services for flawless hands and feet.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 4,
-      "name": "Coloración",
-      "language": "English",
-      "description": "Aplicación de color en el cabello.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 2
-    },
-    {
-      "id": 1,
-      "name": "Corte de cabello",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
-      "description": "Corte de cabello clásico.",
-      "basePrice": 30,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Coloración",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
-      "description": "Expert hair styling services to give you a fresh, modern look.",
-      "basePrice": 50,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 3,
-      "name": "Manicure & Pedicure",
-      "language": "English",
-      "description": "Complete manicure and pedicure services for flawless hands and feet.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 4,
-      "name": "Coloración",
-      "language": "English",
-      "description": "Aplicación de color en el cabello.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 2
-    },
-    {
-      "id": 1,
-      "name": "Corte de cabello",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
-      "description": "Corte de cabello clásico.",
-      "basePrice": 30,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Coloración",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
-      "description": "Expert hair styling services to give you a fresh, modern look.",
-      "basePrice": 50,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 3,
-      "name": "Manicure & Pedicure",
-      "language": "English",
-      "description": "Complete manicure and pedicure services for flawless hands and feet.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 4,
-      "name": "Coloración",
-      "language": "English",
-      "description": "Aplicación de color en el cabello.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 2
-    },
-    {
-      "id": 1,
-      "name": "Corte de cabello",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
-      "description": "Corte de cabello clásico.",
-      "basePrice": 30,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Coloración",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
-      "description": "Expert hair styling services to give you a fresh, modern look.",
-      "basePrice": 50,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 3,
-      "name": "Manicure & Pedicure",
-      "language": "English",
-      "description": "Complete manicure and pedicure services for flawless hands and feet.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 4,
-      "name": "Coloración",
-      "language": "English",
-      "description": "Aplicación de color en el cabello.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 2
     }
   ],
+
+  "service_customization": [
+    {
+      "serviceId": 1,
+      "customizations": [
+        "Peinado con rizos",
+        "Secado con volumen",
+        "Lavado con shampoo especial"
+      ]
+    },
+    {
+      "serviceId": 2,
+      "customizations": [
+        "Tinte vegano",
+        "Mechas"
+      ]
+    },
+    {
+      "serviceId": 3,
+      "customizations": [
+        "Cuidado de uñas",
+        "Exfoliación de manos",
+        "Masaje de cierre y esmaltado"
+      ]
+    }
+  ],
+
   "specialists": [
     {
       "name": "John Dae",
