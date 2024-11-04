@@ -77,9 +77,11 @@
       <label for="time">Enter time *</label>
       <input id="time" formControlName="time" type="time" required>
     </div>
+    <a mat-stroked-button [routerLink]="['/payment']">
+      <!-- Botón de enviar -->
+      <button [disabled]="!bookingForm.valid" type="submit" >Continue to Payment</button>
+    </a>
 
-    <!-- Botón de enviar -->
-    <button [disabled]="!bookingForm.valid" type="submit">Book Appointment</button>
   </form>
 
   <!-- Mensaje de éxito -->

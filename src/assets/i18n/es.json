@@ -19,6 +19,8 @@
   "Customer Name": "Nombre del Cliente",
   "Rating": "Calificación",
   "Actions": "Acciones",
+  "ServiceM": "Administrar Servicios",
+  "He": "Empresa",
   "bc": {
     "hello": "BLISS ES"
   },

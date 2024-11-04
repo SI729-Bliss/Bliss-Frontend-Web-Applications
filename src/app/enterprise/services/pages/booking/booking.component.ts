@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CitaService } from '../../services/booking.service';
 import {NgForOf, NgIf} from '@angular/common';
 import { Cita } from '../../model/bookingservice.entity';
-
+import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
@@ -11,7 +11,8 @@ import { Cita } from '../../model/bookingservice.entity';
   imports: [
     ReactiveFormsModule,
     NgForOf,
-    NgIf
+    NgIf,
+    RouterLink
   ],
   styleUrls: ['./booking.component.css']
 })

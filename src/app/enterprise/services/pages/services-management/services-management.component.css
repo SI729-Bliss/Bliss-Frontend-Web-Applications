@@ -12,6 +12,10 @@ table {
   width: 100%;
 }
 
+.table-container {
+  padding: 25px;
+}
+
 tr.editable-row {
   background-color: lightblue;
 }

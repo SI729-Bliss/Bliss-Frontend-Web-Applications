@@ -50,7 +50,9 @@ export class HeaderContentComponent implements OnInit{
       'Services History',
       'Customer',
       'Company',
-      'Booking'
+      'Booking',
+      'ServiceM',
+      'He',
     ]).subscribe(translations => {
       this.options = [
         { icon: 'home', path: '/booking', title: translations['Booking'] },
@@ -59,6 +61,8 @@ export class HeaderContentComponent implements OnInit{
         { icon: 'info', path: '/my-services', title: translations['Services History'] },
         { icon: 'person', path: '/customerProfile', title: translations['Customer'] },
         { icon: 'person', path: '/companyProfile', title: translations['Company'] },
+        { icon: 'info', path: '/services', title: translations['ServiceM'] },
+        { icon: 'info', path: '/homeEnterprise', title: translations['He'] },
       ];
     });
   }
