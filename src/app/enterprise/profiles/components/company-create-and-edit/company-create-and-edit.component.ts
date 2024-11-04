@@ -1,9 +1,9 @@
-import {Component, OnInit, Input, Output, EventEmitter, ViewChild, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from "@angular/forms";
-import { Customer } from '../../model/customer.entity';
-import { CustomerService } from '../../services/customer.service';
-import { Service } from '../../model/service.entity';
-import { CommonModule } from '@angular/common';
+import { Company } from '../../model/company.entity';
+import { CompanyService } from '../../services/company.service';
+import { Stylist } from '../../model/stylist.entity';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
@@ -21,63 +21,62 @@ import {MatIcon} from "@angular/material/icon";
     MatButtonModule,
     TranslateModule,
     FormsModule,
+    NgOptimizedImage,
     MatIcon,
   ],
-  templateUrl: './customer-create-and-edit.component.html',
-  styleUrls: ['./customer-create-and-edit.component.css'],
-  encapsulation: ViewEncapsulation.None
-
+  templateUrl: './company-create-and-edit.component.html',
+  styleUrls: ['./company-create-and-edit.component.css']
 })
-export class CustomerCreateAndEditComponent implements OnInit {
-  customers: Customer[] = [];
-  services: Service[] = [];
+export class CompanyCreateAndEditComponent implements OnInit {
+  companies: Company[] = [];
+  stylists: Stylist[] = [];
 
   // Para guardar el cliente original antes de editar
-  originalCustomer: Customer | null = null;
+  originalCustomer: Company | null = null;
 
-  @Input() customer: Customer = {} as Customer;
+  @Input() company: Company = {} as Company;
   @Input() editMode: boolean = false;
 
-  @Output() customerAdded = new EventEmitter<Customer>();
-  @Output() customerUpdated = new EventEmitter<Customer>();
+  @Output() customerAdded = new EventEmitter<Company>();
+  @Output() customerUpdated = new EventEmitter<Company>();
   @Output() editCanceled = new EventEmitter<void>();
 
   @ViewChild('customerForm', { static: false }) customerForm!: NgForm;
 
-  constructor(private customerService: CustomerService) {
-    this.customer = {} as Customer;
+  constructor(private companyService: CompanyService) {
+    this.company = {} as Company;
   }
 
   ngOnInit(): void {
-    this.customerService.getServices().subscribe((data: Service[]) => {
-      this.services = data;
+    this.companyService.getServices().subscribe((data: Stylist[]) => {
+      this.stylists = data;
     });
     this.loadCustomerById('1');
     this.loadServices();
   }
 
   loadCustomers(): void {
-    this.customerService.getCustomers().subscribe((data: Customer[]) => {
-      this.customers = data;
+    this.companyService.getCustomers().subscribe((data: Company[]) => {
+      this.companies = data;
     });
   }
 
   loadCustomerById(id: string): void {
-    this.customerService.getCustomerById(id).subscribe((data: Customer) => {
-      this.customer = data;
+    this.companyService.getCustomerById(id).subscribe((data: Company) => {
+      this.company = data;
     });
   }
 
   loadServices(): void {
-    this.customerService.getServices().subscribe((data: Service[]) => {
-      this.services = data;
+    this.companyService.getServices().subscribe((data: Stylist[]) => {
+      this.stylists = data;
     });
   }
 
   onSubmit(): void {
     if (this.customerForm && this.customerForm.form.valid) {
-      this.customerService.addCustomer(this.customer).subscribe((newCustomer) => {
-        this.customers.push(newCustomer);
+      this.companyService.addCustomer(this.company).subscribe((newCompany) => {
+        this.companies.push(newCompany);
         this.resetForm();
       });
     } else {
@@ -89,13 +88,13 @@ export class CustomerCreateAndEditComponent implements OnInit {
   onUpdate(): void {
 
     if (this.customerForm && this.customerForm.form.valid) {
-      console.log('Updating customer with ID:', this.customer.id);
+      console.log('Updating customer with ID:', this.company.id);
 
-      this.customerService.updateCustomer(this.customer).subscribe(
+      this.companyService.updateCustomer(this.company).subscribe(
         (updatedCustomer) => {
-          const index = this.customers.findIndex(c => c.id === updatedCustomer.id);
+          const index = this.companies.findIndex(c => c.id === updatedCustomer.id);
           if (index !== -1) {
-            this.customers[index] = updatedCustomer;
+            this.companies[index] = updatedCustomer;
           }
           // Emitir evento para notificar a otros componentes
           this.customerUpdated.emit(updatedCustomer);
@@ -111,8 +110,8 @@ export class CustomerCreateAndEditComponent implements OnInit {
   }
 
   resetForm(): void {
-    if(!this.customer) {
-      this.customer = new Customer;
+    if(!this.company) {
+      this.company = new Company;
     }
     if (this.customerForm) {
       this.customerForm.resetForm();
@@ -121,20 +120,20 @@ export class CustomerCreateAndEditComponent implements OnInit {
 
   onCancel(): void {
     if (this.editMode && this.originalCustomer) {
-      this.customer = { ...this.originalCustomer }; // Restaurar el cliente original
+      this.company = { ...this.originalCustomer }; // Restaurar el cliente original
       this.originalCustomer = null;
     }
     this.editMode = false;
     this.editCanceled.emit();
   }
 
-  toggleEdit(customer: Customer): void {
+  toggleEdit(customer: Company): void {
     this.originalCustomer = { ...customer }; // Clonación con el ID intacto
-    this.customer = { ...customer };  // Clonación con el ID intacto
+    this.company = { ...customer };  // Clonación con el ID intacto
     this.editMode = true;
-    console.log('Editing customer with ID:', this.customer.id); // Verifica el ID aquí
+    console.log('Editing customer with ID:', this.company.id); // Verifica el ID aquí
   }
 
   // Para que la clase hija pueda acceder a la clase padre
-  protected readonly Customer = Customer;
+  protected readonly Customer = Company;
 }

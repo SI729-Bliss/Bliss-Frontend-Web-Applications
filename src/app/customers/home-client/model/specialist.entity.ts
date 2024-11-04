@@ -1,19 +1,17 @@
 export class Specialist {
   id: number;
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
-  phone: string;
+  phoneNumber: string;
   profession: string;
   certificationNumber: string;
   img: string;
 
   constructor() {
     this.id = 0;
-    this.firstName = '';
-    this.lastName = '';
+    this.name = '';
     this.email = '';
-    this.phone = '';
+    this.phoneNumber = '';
     this.profession = '';
     this.certificationNumber = '';
     this.img = '';

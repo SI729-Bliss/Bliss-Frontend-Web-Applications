@@ -72,11 +72,11 @@
     {
       "id": 1,
       "name": "Corte de cabello",
-      "categoryId": "1",
+      "language": "English",
+      "categoryId": 1,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
       "description": "Corte de cabello clásico.",
       "basePrice": 30,
-      "categoryId": 1,
       "beautySalon": "SOHO",
       "sales": 15,
       "rating": 4.5,
@@ -86,11 +86,11 @@
     {
       "id": 2,
       "name": "Coloración",
-      "categoryId": 2,
-      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
-      "description": "Aplicación de color en el cabello.",
-      "basePrice": 50,
+      "language": "English",
       "categoryId": 1,
+      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
+      "description": "Expert hair styling services to give you a fresh, modern look.",
+      "basePrice": 50,
       "beautySalon": "SOHO",
       "sales": 15,
       "rating": 4.5,
@@ -99,8 +99,9 @@
     },
     {
       "id": 3,
-      "name": "Coloración",
-      "description": "Aplicación de color en el cabello.",
+      "name": "Manicure & Pedicure",
+      "language": "English",
+      "description": "Complete manicure and pedicure services for flawless hands and feet.",
       "basePrice": 50,
       "categoryId": 1,
       "beautySalon": "SOHO",
@@ -112,6 +113,128 @@
     {
       "id": 4,
       "name": "Coloración",
+      "language": "English",
+      "description": "Aplicación de color en el cabello.",
+      "basePrice": 50,
+      "categoryId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
+      "beauty_salon_id": 2
+    },
+    {
+      "id": 5,
+      "name": "Corte de cabello",
+      "language": "English",
+      "categoryId": 1,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
+      "description": "Corte de cabello clásico.",
+      "basePrice": 30,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 6,
+      "name": "Coloración",
+      "language": "English",
+      "categoryId": 1,
+      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
+      "description": "Expert hair styling services to give you a fresh, modern look.",
+      "basePrice": 50,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 7,
+      "name": "Manicure & Pedicure",
+      "language": "English",
+      "description": "Complete manicure and pedicure services for flawless hands and feet.",
+      "basePrice": 50,
+      "categoryId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 8,
+      "name": "Coloración",
+      "language": "English",
+      "description": "Aplicación de color en el cabello.",
+      "basePrice": 50,
+      "categoryId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
+      "beauty_salon_id": 2
+    },
+    {
+      "id": 9,
+      "name": "Corte de cabello",
+      "language": "English",
+      "categoryId": 1,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
+      "description": "Corte de cabello clásico.",
+      "basePrice": 30,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 10,
+      "name": "Coloración",
+      "language": "English",
+      "categoryId": 1,
+      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
+      "description": "Expert hair styling services to give you a fresh, modern look.",
+      "basePrice": 50,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 11,
+      "name": "Manicure & Pedicure",
+      "language": "English",
+      "description": "Complete manicure and pedicure services for flawless hands and feet.",
+      "basePrice": 50,
+      "categoryId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 19,
+      "name": "Manicure & Pedicure",
+      "language": "English",
+      "description": "Complete manicure and pedicure services for flawless hands and feet.",
+      "basePrice": 50,
+      "categoryId": 1,
+      "beautySalon": "SOHO",
+      "sales": 15,
+      "rating": 4.5,
+      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
+      "beauty_salon_id": 1
+    },
+    {
+      "id": 20,
+      "name": "Coloración",
+      "language": "English",
       "description": "Aplicación de color en el cabello.",
       "basePrice": 50,
       "categoryId": 1,
@@ -124,59 +247,74 @@
   ],
   "specialists": [
     {
-      "firstName": "John",
-      "lastName": "Doe",
+      "name": "John Dae",
       "email": "john.doe@example.com",
-      "phone": "+1234567890",
+      "address": "123 Main St",
+      "phoneNumber": "+1234567890",
       "profession": "Estilist",
+      "rating": 4.5,
       "certificationNumber": "CERT-987654321",
       "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
     },
     {
-      "firstName": "Jane",
-      "lastName": "Smith",
+      "name": "John Dae",
       "email": "jane.smith@example.com",
-      "phone": "+0987654321",
+      "address": "123 Main St",
+      "phoneNumber": "+0987654321",
       "profession": "Estilist",
+      "rating": 4.5,
       "certificationNumber": "CERT-123456789",
       "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
-
     },
     {
-      "firstName": "Carlos",
-      "lastName": "Gonzalez",
+      "name": "John Dae",
       "email": "carlos.gonzalez@example.com",
-      "phone": "+1122334455",
+      "address": "123 Main St",
+      "phoneNumber": "+1122334455",
       "profession": "Estilist",
+      "rating": 4.5,
       "certificationNumber": "CERT-112233445",
       "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
     },
     {
-      "id": 4,
-      "name": "Corte",
-      "categoryId": 3,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
-      "description": "Corte de cabello.",
-      "basePrice": 56,
-      "beauty_salon_id": 1
+      "name": "John Dae",
+      "email": "john.doe@example.com",
+      "address": "123 Main St",
+      "phoneNumber": "+1234567890",
+      "profession": "Estilist",
+      "rating": 4.5,
+      "certificationNumber": "CERT-987654321",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
     },
     {
-      "name": "Teñido",
-      "categoryId": 1,
-      "imageUrl": "https://vanart.com/funciona/wp-content/uploads/2019/02/shutterstock_383281507-1000x665.jpg",
-      "description": "Teñido de cabello",
-      "basePrice": 34,
-      "beauty_salon_id": 1,
-      "id": 29
+      "name": "John Dae",
+      "email": "jane.smith@example.com",
+      "address": "123 Main St",
+      "phoneNumber": "+0987654321",
+      "profession": "Estilist",
+      "rating": 4.5,
+      "certificationNumber": "CERT-123456789",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
     },
     {
-      "name": "Lavado de cabello",
-      "categoryId": 1,
-      "imageUrl": "https://img.freepik.com/fotos-premium/lavado-cabello-peluqueria-wahsing-cabello-sus-clientes-champu_259150-17249.jpg",
-      "description": "Lavado de Pelo con champú ",
-      "basePrice": 20,
-      "beauty_salon_id": 2,
-      "id": 32
+      "name": "John Dae",
+      "email": "carlos.gonzalez@example.com",
+      "address": "123 Main St",
+      "phoneNumber": "+1122334455",
+      "profession": "Estilist",
+      "rating": 4.5,
+      "certificationNumber": "CERT-112233445",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
+    },
+    {
+      "name": "John Dae",
+      "email": "john.doe@example.com",
+      "address": "123 Main St",
+      "phoneNumber": "+1234567890",
+      "profession": "Estilist",
+      "rating": 4.5,
+      "certificationNumber": "CERT-987654321",
+      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
     }
   ],
   "service-details": [
@@ -243,15 +381,28 @@
         "",
         ""
       ]
+    },
+    {
+      "id": 2,
+      "punctuation": 0,
+      "comment": "Buena",
+      "createdDate": "2024-11-04T03:03:28.764Z",
+      "reservationId": 2,
+      "customerId": 1,
+      "images": [
+        "",
+        "",
+        ""
+      ]
     }
   ],
   "customers": [
     {
       "id": "1",
-      "name": "John Doe",
-      "email": "john.doe@example.com",
-      "address": "123 Main St",
-      "phoneNumber": "555-1234"
+      "name": "Juan Flores",
+      "email": "john.do@gmai.",
+      "address": "123 santa rosa",
+      "phoneNumber": "123-456-789"
     },
     {
       "id": "2",
@@ -277,7 +428,6 @@
       "phoneNumber": "555-3214"
     }
   ],
-
   "stylists": [
     {
       "id": "1",
@@ -302,4 +452,3 @@
     }
   ]
 }
-

@@ -1,15 +1,9 @@
-
-/*general*/
-.pink-color, mat-icon, strong { color: #B39DE7; }
-
 /* main container */
 .main-container {
   display: flex;
-  padding-top: 30px;
-  height: auto;
+  margin-top: 30px;
   min-height: 100vh;
   flex-flow: row nowrap;
-
 }
 .prof-info{
   color:#B39DE7 ;
@@ -17,15 +11,8 @@
   font-weight: bold;
   text-align: center;
 }
-
-.container-favorites {
-  overflow-y: auto;
-  margin-bottom: 100px;
-  height: auto; /* Ajusta la altura si es necesario */
-
-}
 .container-favorites > h3{
-  color: black ;
+  color:black ;
   font-size: 22px;
   font-weight: bold;
   text-align: start;
@@ -42,17 +29,15 @@
   display: flex;
   background-color: #FFE8E8;
   flex-flow: column nowrap;
-  align-content: center;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 40%;
   top: 0; /* Esto asegura que se quede pegado al tope */
   min-height: 100vh;
-  padding: 20px 20px 120px 20px;
+  padding: 20px;
   box-sizing: border-box;
   font-size: smaller;
   color: black;
-
 
 }
 /* en edicion */
@@ -71,20 +56,22 @@
   margin-bottom: 60px;
 }
 
-div.profile-img > .mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color{
+.form-section.ng-untouched.ng-pristine.ng-valid > mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color:nth-of-type(1){
   color: white;
   display: flex;
   justify-content: center; /* Centrar horizontalmente */
   align-items: center;
   position: relative;
-  top: 80px;
-  right: 30px;
+  bottom: 40px;
+  left: 150px;
   background-color: #B39DE7;
   border-radius: 100%;
   padding: 0.5px;
   font-size: 15px;
 }
-
+mat-icon{
+  color: #B39DE7;
+}
 
 .mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--outlined {
   background-color: white; /* Fondo blanco */
@@ -127,6 +114,7 @@ div.profile-img{
 }
 
 strong{
+  color: #B39DE7;
   font-size: 18px;
   font-weight: normal;
 }
@@ -144,29 +132,42 @@ strong{
 
 }
 
+.list-actions{
+   display: flex;
+   justify-content: flex-start !important; /* Aligns items to the right */
+   margin-top: 10px;
+}
+.list-actions a {
+  color: #B39DE7; /* Sets the color of the link */
+}
 
 .profile-card > h3{
+  color: #B39DE7;
   font-size: 22px;
   font-weight: bolder;
   text-align: center;
 }
 
 /*buttons */
-.mdc-button.mdc-button--raised.mat-mdc-raised-button.mat-accent.mat-mdc-button-base > .mat-mdc-button-touch-target{
+button[mat-raised-button]{
   background-color: #B39DE7;
   border-radius: 10px;
   padding: 1px;
 }
 
-.mdc-button.mdc-button--raised.mat-mdc-raised-button.mat-warn.mat-mdc-button-base > .mat-mdc-button-touch-target{
-  background-color: #f60e0e;
+.btn-red{
+  background-color: #fd2424;
+  color: white;
+  font-weight: bold;
   border-radius: 10px;
-  padding: 1px;
+  width: 60px;
+  padding: 4px 0;
+  border:none;
 }
-.mdc-button.mdc-button--raised.mat-mdc-raised-button.mat-primary.mat-mdc-button-base > .mat-mdc-button-touch-target{
-  background-color: #B39DE7;
-  border-radius: 10px;
-  padding: 1px;
+
+.btn-red:hover{
+  background-color: #f60e0e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .btns{
   display: flex;
@@ -179,98 +180,76 @@ strong{
   margin-top: 30px;
   display: flex;
   flex-flow: column nowrap;
-  width: 80%;
+  width: 60%;
   height: 100vh;
   overflow-y: scroll; /* El scroll solo afecta al div de la derecha */
   padding: 20px;
 }
 
 .card-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-  grid-auto-rows: minmax(150px, auto); /* Asegura que las filas se ajusten a la altura de las tarjetas */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
   gap: 25px;
   width: 100%;
   padding-bottom: 100px;
+
 }
-
-
-.card {
+.card{
   background-color: white;
-
-  display: flex;
-  flex-flow: row nowrap;
-  border-radius: 20px;
-  text-align: left;
-  min-width: 30%;
-  max-width: 40%;
-  min-height: auto;
-  max-height: none;
-  align-items: flex-start;
-
+  border-radius: 40px 40px  0 0;
+  padding: 20px;
 }
-.card-list > div.card > .image-container >img{
-  border-radius: 20px 0 0 20px;
-  height: 100%;
-
-}
-.image-container {
-  background-color: white;
-  border-radius: 20px 0 0 20px;
-  height: 100%;
-  flex: 0 0 auto;
-}
-.image-container img {
-  background-color: white;
-  width: 100%;
-  max-width: 170px;
-  height: auto;
-  object-fit: cover;
-}
-.card-list > div.card > .content-container{
-  border-radius: 0 20px 20px 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: start;
-  align-content: start;
-  align-items: start;
-  max-height: 100%;
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-  padding: 0 12px;
-}
-
-.card-container{
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-  gap: 10px;
-}
-.row {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-}
-.column {
-
+.card-list > div.card > .card-container{
   display: flex;
   flex-flow: column wrap;
+  gap: 0;
   justify-content: center;
   align-content: center;
   align-items: center;
 }
-.language {
-  color: #23A6F0;
-  font-weight: 500;
-}
-.content-container{
-  background-color: white;
 
+.sub-card{
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
 }
-.card-list > div.card > .content-container > .card-container > .row > .stars > .mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color{
+
+.card-list > div.card > .card-container > .specialist-name{
+  color:#37125A ;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* div img */
+.image-container {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 200px;
+  height: 250px;
+  object-fit: cover;
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.56);
+}
+
+
+
+.card-container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 15px;
+  width: 100%;
+}
+/*stars*/
+.card-list > div.card > .card-container > .sub-card > .stars > .mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color{
   color: #ffae00;
   font-size: 19px;
   display: flex;
@@ -278,32 +257,10 @@ strong{
 
 }
 
-.card-list > div.card > .content-container > .card-container > .column{
-  text-align: start;
-  gap: 10px;
-}
-.card-list > div.card > .content-container > .card-container > .column > .description{
-  color: #737373 ;
-  font-size: 15px;
-}
-
-.service-category{
-  color: #37123C ;
-  font-size: 16px;
-  text-align: center;
-  font-weight: bolder;
-}
-
-.card-list > div.card > .content-container > .card-container{
-  padding-top: 20px;
-  padding-right: 15px;
-  padding-bottom: 10px;
-  gap: 10px;
-}
 
 .stars {
   color: white;
-  background-color: #3C123C;
+  background-color: #9d80e1;
   border-radius: 25px;
   width: 55px;
   display: flex;
@@ -313,20 +270,7 @@ strong{
   text-align: center;
 }
 
-.sales{
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 1px;
-}
-.base-price{
-  color: #23856D;
-  display: flex;
+.price {
+  color: #B39DE7;
   font-weight: bolder;
-  justify-content: start;
-  align-items: center;
 }
-.card-list > div.card > .content-container > .card-container > .base-price > .mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color{
-  color: #23856D;
-}
-

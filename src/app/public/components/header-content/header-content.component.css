@@ -3,14 +3,13 @@
 }
 mat-toolbar {
   background-color: #D1E4FA;
+  color: #37123C;
 }
 .bliss-title{
   font-size: 60px;
   color: #37123C;
 }
-.titles{
-  color: #37123C !important;
-}
+
 
 .toolbar-item {
   margin-right: 48px;
@@ -22,3 +21,13 @@ mat-toolbar {
   width: 100%;
   z-index: 1000;
 }
+
+.mat-mdc-button-base.mat-mdc-button-base.mat-unthemed{
+  color: #37123C;
+}
+
+.profile-icon:hover{
+  background-color: #b6ccf6;
+  transition-duration: 0.7s ;
+}
+
