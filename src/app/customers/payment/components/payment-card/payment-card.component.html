@@ -1,0 +1,48 @@
+<div class="container" >
+  <mat-list>
+    <div mat-subheader>Total a pagar</div>
+    <mat-list-item>
+          <p>USD 55$</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <div mat-subheader>Detalle de servicio</div>
+    <mat-list-item>
+      <div class="rowsnashe">
+        <p>Detalle servicio 1</p>
+        <p>55$</p>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <div mat-subheader>Correo</div>
+    <mat-list-item>
+      <div>
+        <mat-form-field><input matInput placeholder="user@gmail.com" type="email"> </mat-form-field>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <div mat-subheader>Elige tu medio de pago</div>
+    <mat-list-item>
+      <div>
+        <mat-form-field>
+          <mat-select placeholder="Medio de pago">
+            <mat-option value="1">Yape</mat-option>
+            <mat-option value="2">Plin</mat-option>
+            <mat-option value="3">Visa</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <div mat-subheader>Boleta/Factura</div>
+    <mat-list-item>
+      <p><mat-slide-toggle></mat-slide-toggle></p>
+    </mat-list-item>
+    <mat-list-item>
+      <div class="rowsnashe">
+      <mat-checkbox ></mat-checkbox>
+      <p>Acepto los términos y condiciones</p>
+      </div>
+    </mat-list-item>
+  </mat-list>
+  <button mat-button>Pagar</button>
+</div>

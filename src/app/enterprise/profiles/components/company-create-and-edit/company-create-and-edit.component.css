@@ -132,6 +132,15 @@ strong{
 
 }
 
+.list-actions{
+   display: flex;
+   justify-content: flex-start !important; /* Aligns items to the right */
+   margin-top: 10px;
+}
+.list-actions a {
+  color: #B39DE7; /* Sets the color of the link */
+}
+
 .profile-card > h3{
   color: #B39DE7;
   font-size: 22px;

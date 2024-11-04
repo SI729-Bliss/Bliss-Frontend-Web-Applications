@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Reservation } from '../model/reservation.entity';
 import { Service } from '../model/service.entity';
 import { BeautySalon } from '../model/beautySalon.entity';
-import { BaseService } from '../../shared/services/base.service';
+import { BaseService } from '../../../shared/services/base.service';
 import { catchError, Observable } from 'rxjs';
 
 @Injectable({
