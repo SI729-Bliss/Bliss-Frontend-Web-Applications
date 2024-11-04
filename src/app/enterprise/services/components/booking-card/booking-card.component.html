@@ -14,5 +14,38 @@
     <p><strong>Hora:</strong> {{ cita.time }}</p>
     <p *ngIf="cita.message"><strong>Mensaje:</strong> {{ cita.message }}</p>
     <p *ngIf="cita.requirements"><strong>Requisitos:</strong> {{ cita.requirements }}</p>
+    <button (click)="editCita(cita)">Editar</button>
+    <button (click)="deleteCita(cita.id)">Eliminar</button>
+  </div>
+
+  <div *ngIf="selectedCita" class="edit-form">
+    <h3>Editar Cita</h3>
+    <form (ngSubmit)="onSubmit()">
+      <label for="fullName">Nombre Completo:</label>
+      <input id="fullName" [(ngModel)]="selectedCita.fullName" name="fullName" required>
+
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="selectedCita.email" name="email" required>
+
+      <label for="service">Servicio:</label>
+      <input id="service" [(ngModel)]="selectedCita.service" name="service" required>
+
+      <label for="availability">Disponibilidad:</label>
+      <input id="availability" [(ngModel)]="selectedCita.availability" name="availability" required>
+
+      <label for="date">Fecha:</label>
+      <input id="date" [(ngModel)]="selectedCita.date" name="date" required>
+
+      <label for="time">Hora:</label>
+      <input id="time" [(ngModel)]="selectedCita.time" name="time" required>
+
+      <label for="message">Mensaje:</label>
+      <input id="message" [(ngModel)]="selectedCita.message" name="message">
+
+      <label for="requirements">Requisitos:</label>
+      <input id="requirements" [(ngModel)]="selectedCita.requirements" name="requirements">
+
+      <button type="submit">Guardar</button>
+    </form>
   </div>
 </div>
