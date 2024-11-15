@@ -178,6 +178,32 @@
       "beauty_salon_id": 2
     }
   ],
+   "service_customization": [
+    {
+      "serviceId": 1,
+      "customizations": [
+        "Peinado con rizos",
+        "Secado con volumen",
+        "Lavado con shampoo especial"
+      ]
+    },
+    {
+      "serviceId": 2,
+      "customizations": [
+        "Tinte vegano",
+        "Mechas"
+      ]
+    },
+    {
+      "serviceId": 3,
+      "customizations": [
+        "Cuidado de uñas",
+        "Exfoliación de manos",
+        "Masaje de cierre y esmaltado"
+      ]
+    }
+  ],
+  "booking_service": [],
   "specialists": [
     {
       "name": "John Dae",

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Cita } from '../model/bookingservice.entity';
 import { tap } from 'rxjs/operators';
 
@@ -10,6 +9,8 @@ import { tap } from 'rxjs/operators';
 })
 export class CitaService {
   private apiUrl = 'http://localhost:3000';
+  private citasSubject = new BehaviorSubject<Cita[]>([]);
+  citas$ = this.citasSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -25,11 +26,39 @@ export class CitaService {
     );
   }
 
-  private citasSubject = new BehaviorSubject<Cita[]>([]);
-  citas$ = this.citasSubject.asObservable();
-
-  addCita(cita: Cita) {
+  addCita(cita: Cita): void {
     const currentCitas = this.citasSubject.value;
     this.citasSubject.next([...currentCitas, cita]);
+    this.saveCitaToServer(cita).subscribe();
+  }
+
+  private saveCitaToServer(cita: Cita): Observable<Cita> {
+    return this.http.post<Cita>(`${this.apiUrl}/booking_service`, cita).pipe(
+      tap(data => console.log('Cita saved:', data))
+    );
+  }
+
+  getCitasFromServer(): void {
+    this.http.get<Cita[]>(`${this.apiUrl}/booking_service`).subscribe(citas => {
+      this.citasSubject.next(citas);
+    });
+  }
+
+  editCita(cita: Cita): Observable<Cita> {
+    return this.http.put<Cita>(`${this.apiUrl}/booking_service/${cita.id}`, cita).pipe(
+      tap(updatedCita => {
+        const currentCitas = this.citasSubject.value.map(c => c.id === updatedCita.id ? updatedCita : c);
+        this.citasSubject.next(currentCitas);
+      })
+    );
+  }
+
+  deleteCita(citaId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/booking_service/${citaId}`).pipe(
+      tap(() => {
+        const currentCitas = this.citasSubject.value.filter(c => c.id !== citaId);
+        this.citasSubject.next(currentCitas);
+      })
+    );
   }
 }
