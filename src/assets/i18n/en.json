@@ -1,9 +1,9 @@
 {
-  "BLISS": "BLISS EN",
+  "BLISS": "BLISS",
   "Home": "Home",
   "Booking": "Booking",
-  "Customer": "Customer",
-  "Company": "Company",
+  "CustomerPr": "Customer Profile",
+  "CompanyPr": "Company Profile",
   "My Services": "My Services",
   "Schedule": "Schedule",
   "Catalog": "Catalog",
@@ -20,9 +20,8 @@
   "Rating": "Rating",
   "Actions": "Actions",
   "ServiceM": "Service Management",
-  "He": "Enterprise",
   "bc": {
-    "hello": "BLISS EN"
+    "hello": "BLISS"
   },
   "bc-2": {
 

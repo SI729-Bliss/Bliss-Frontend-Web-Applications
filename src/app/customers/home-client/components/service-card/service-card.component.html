@@ -10,11 +10,11 @@
           <mat-card-content>
             <p class="service-name">{{service.name}}</p>
             <p class="description">{{service.description}}</p>
-            <p class="sales">{{service.sales}} sales</p>
+            <p class="sales"><mat-icon matPrefix>card_giftcard</mat-icon> {{service.sales}} sales</p>
             <p class="price">${{service.basePrice}}</p>
           </mat-card-content>
           <mat-card-actions align="start">
-            <button mat-button>Learn More ></button>
+            <a mat-stroked-button [routerLink]="['/booking']" class="btn-check">Check now</a>
           </mat-card-actions>
         </div>
     </mat-card>
