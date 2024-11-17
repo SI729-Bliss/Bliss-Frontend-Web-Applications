@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { BaseService } from "../../../shared/services/base.service";
 import { HttpClient } from "@angular/common/http";
-import { Service } from "../model/payment.entity";
+import {Payment} from "../model/payment.entity";
 
 
 @Injectable({
