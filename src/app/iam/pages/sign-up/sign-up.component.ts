@@ -8,6 +8,7 @@ import {MatError, MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {NgIf} from "@angular/common";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-sign-up',
@@ -22,7 +23,8 @@ import {NgIf} from "@angular/common";
     MatButton,
     MatCardTitle,
     MatError,
-    NgIf
+    NgIf,
+    TranslateModule
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'

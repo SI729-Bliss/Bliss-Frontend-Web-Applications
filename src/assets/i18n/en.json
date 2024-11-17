@@ -32,7 +32,7 @@
   "bc-4": {
     "id": "Number",
     "eTitle": "Edit Services",
-    "mTitle": "Services Details",
+    "mTitle": "Service List",
 
     "cardtitle1": "Need more of Bliss?",
     "subtitle1": "Get a subscription",
@@ -63,7 +63,11 @@
     "formAdvice": "The services will be validated",
     "formAdviceName": "Service already exists",
 
-    "addIfOne": "Can't delete all services"
+    "addIfOne": "Can't delete all services",
+    "addName": "Not update with existing names",
+    "addDetail": "Detail",
+    "formDetails": "Add service details",
+    "addButton": "Add"
   },
 
   "bc-5": {
@@ -100,6 +104,13 @@
       "cardsTitle": "Salons near to me",
       "newcardsTitle": "Recommended Services"
     }
+  },
+
+  "iam": {
+    "username": "Username",
+    "password": "Password",
+    "sign-in": "Sign in",
+    "sign-up": "Sign up"
   }
 
 
