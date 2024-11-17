@@ -3,15 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Customer } from '../model/customer.entity';
 import { Service } from '../model/service.entity';
+import {BaseService} from "../../../shared/services/base.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService {
+export class CustomerService extends BaseService<Customer> {
   private apiUrl = 'https://my-json-server.typicode.com/Andorla0/dbjson';
 
-  constructor(private http: HttpClient) {}
-
+  constructor(http: HttpClient) {
+    super(http);
+    this.resourceEndpoint = '/customers';
+  }
   // Obtener lista de clientes
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>(`${this.apiUrl}/customers`);
