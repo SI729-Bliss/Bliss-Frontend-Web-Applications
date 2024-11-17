@@ -9,6 +9,8 @@ import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { TranslateModule } from "@ngx-translate/core";
 import {MatIcon} from "@angular/material/icon";
+import { ReviewService } from '../../services/review.service';
+import { Review } from '../../model/review.entity';
 
 
 @Component({
@@ -23,6 +25,7 @@ import {MatIcon} from "@angular/material/icon";
     FormsModule,
     NgOptimizedImage,
     MatIcon,
+
   ],
   templateUrl: './company-create-and-edit.component.html',
   styleUrls: ['./company-create-and-edit.component.css']
@@ -30,6 +33,7 @@ import {MatIcon} from "@angular/material/icon";
 export class CompanyCreateAndEditComponent implements OnInit {
   companies: Company[] = [];
   stylists: Stylist[] = [];
+  reviews: Review[] = [];
 
   // Para guardar el cliente original antes de editar
   originalCustomer: Company | null = null;
@@ -43,7 +47,7 @@ export class CompanyCreateAndEditComponent implements OnInit {
 
   @ViewChild('customerForm', { static: false }) customerForm!: NgForm;
 
-  constructor(private companyService: CompanyService) {
+  constructor(private companyService: CompanyService, private reviewService: ReviewService) {
     this.company = {} as Company;
   }
 
@@ -53,6 +57,13 @@ export class CompanyCreateAndEditComponent implements OnInit {
     });
     this.loadCustomerById('1');
     this.loadServices();
+    this.loadReviews();
+  }
+
+  loadReviews(): void {
+    this.reviewService.getReviews().subscribe((data: Review[]) => {
+      this.reviews = data;
+    });
   }
 
   loadCustomers(): void {

@@ -82,23 +82,41 @@
             <div class="specialist-name">{{ stylist.name }}</div>
             <div class="sub-card">
               <div class="price">{{ stylist.profession }}</div>
-
               <div class="stars">
                 <mat-icon matPrefix>star</mat-icon>
                 {{ stylist.rating }}
               </div>
-
             </div>
-
           </div>
           <div class="image-container">
             <img [src]="stylist.img" alt="foto de perfil del estilista">
           </div>
-
         </div>
       }
       @empty {
         <p>No hay estilistas disponibles</p>
+      }
+    </div>
+  </div>
+
+  <!-- New section for reviews -->
+  <div class="container-reviews">
+    <h3>Reviews</h3>
+    <div class="card-list">
+      @for (review of reviews; track review.id) {
+        <div class="card">
+          <div class="card-container">
+            <div class="reviewer-name">{{ review.customerName }}</div>
+            <div class="stars">
+              <mat-icon matPrefix>star</mat-icon>
+              {{ review.rating }}
+            </div>
+            <div class="comment">{{ review.comment }}</div>
+          </div>
+        </div>
+      }
+      @empty {
+        <p>No hay reviews disponibles</p>
       }
     </div>
   </div>
