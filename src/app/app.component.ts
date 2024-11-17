@@ -19,6 +19,7 @@ import { BookingComponent } from "./enterprise/services/pages/booking/booking.co
 import { RouterLink } from "@angular/router";
 import { NgClass, NgForOf } from "@angular/common";
 import {ScrollControlService} from "./shared/services/style.service";
+import { AuthenticationSectionComponent } from "./iam/components/authentication-section/authentication-section.component";
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -28,7 +29,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   standalone: true,
   imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatCardModule, MatIconModule, MatGridListModule,
     MatBadgeModule, MatMenuModule, MatSidenavModule, MatDividerModule, MatListModule, TranslateModule,
-    HeaderContentComponent, LanguageSwitcherComponent, BookingComponent, NgForOf, NgClass, RouterLink],
+    HeaderContentComponent, LanguageSwitcherComponent, BookingComponent, NgForOf, NgClass, RouterLink, AuthenticationSectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [
@@ -43,7 +44,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 export class AppComponent {
   title = 'Bliss-Frontend-Web-Application';
   constructor(private scrollControlService: ScrollControlService) {} // Inyecta el servicio
-
 
 }
 
