@@ -29,6 +29,9 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaymentCardComponent {
+  payment: Array<Payment> = [];
+  displayedColumns: string[] = ['name','description','basePrice','image','beautySalon','sales','rating'];
+  dataSource: any;
   readonly dialog = inject(MatDialog);
 
 services = [
