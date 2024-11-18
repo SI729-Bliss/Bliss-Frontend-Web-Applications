@@ -56,7 +56,7 @@ export class CompanyCreateAndEditComponent implements OnInit {
     this.companyService.getServices().subscribe((data: Stylist[]) => {
       this.stylists = data;
     });
-    const currentCompanyId = this.authenticationService.currentUserId;
+    const currentCompanyId = this.authenticationService.getCurrentUserId;
     this.loadCompanyById(currentCompanyId);
     this.loadServices();
     this.loadReviews();
@@ -92,7 +92,7 @@ export class CompanyCreateAndEditComponent implements OnInit {
     if (this.customerForm && this.customerForm.form.valid) {
       // Obtener el ID del usuario actual
       // Asignar el ID del usuario actual al perfil
-      this.company.id = this.authenticationService.currentUserId;
+      this.company.id = this.authenticationService.getCurrentUserId;
 
       this.companyService.addCustomer(this.company).subscribe((newCompany) => {
         this.companies.push(newCompany);
@@ -152,7 +152,7 @@ export class CompanyCreateAndEditComponent implements OnInit {
     this.company = { ...company };  // Clonación con el ID intacto
     this.editMode = true;
     console.log('Editing company with ID:', this.company.id); // Verifica el ID aquí
-    console.log(this.authenticationService.currentUserId);
+    console.log("get current company id: ", this.authenticationService.currentUserId);
   }
   // Para que la clase hija pueda acceder a la clase padre
   protected readonly Customer = Company;

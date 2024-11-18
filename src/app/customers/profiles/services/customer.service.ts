@@ -34,7 +34,7 @@ export class CustomerService extends BaseService<Customer> {
     return this.http.put<Customer>(`${this.basePath}${this.resourceEndpoint}/${customer.id}`, customer);
   }
 
-  getCustomerById(id: string): Observable<Customer> {
+  getCustomerById(id: number): Observable<Customer> {
     return this.http.get<Customer>(`${this.basePath}${this.resourceEndpoint}/${id}`);
   }
 

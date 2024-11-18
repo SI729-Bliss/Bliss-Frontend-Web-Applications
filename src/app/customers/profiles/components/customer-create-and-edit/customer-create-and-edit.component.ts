@@ -9,6 +9,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { TranslateModule } from "@ngx-translate/core";
 import {MatIcon} from "@angular/material/icon";
+import {AuthenticationService} from "../../../../iam/services/authentication.service";
 
 
 @Component({
@@ -44,7 +45,7 @@ export class CustomerCreateAndEditComponent implements OnInit {
 
   @ViewChild('customerForm', { static: false }) customerForm!: NgForm;
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService, private authenticationService: AuthenticationService) {
     this.customer = {} as Customer;
   }
 
@@ -52,7 +53,8 @@ export class CustomerCreateAndEditComponent implements OnInit {
     this.customerService.getServices().subscribe((data: Service[]) => {
       this.services = data;
     });
-    this.loadCustomerById('1');
+    const currentCustomerId = this.authenticationService.getCurrentUserId;
+    this.loadCustomerById(currentCustomerId);
     this.loadServices();
   }
 
@@ -62,7 +64,7 @@ export class CustomerCreateAndEditComponent implements OnInit {
     });
   }
 
-  loadCustomerById(id: string): void {
+  loadCustomerById(id: number): void {
     this.customerService.getCustomerById(id).subscribe((data: Customer) => {
       this.customer = data;
     });
@@ -76,6 +78,7 @@ export class CustomerCreateAndEditComponent implements OnInit {
 
   onSubmit(): void {
     if (this.customerForm && this.customerForm.form.valid) {
+      this.customer.id = this.authenticationService.getCurrentUserId;
       this.customerService.addCustomer(this.customer).subscribe((newCustomer) => {
         this.customers.push(newCustomer);
         this.resetForm();
@@ -133,6 +136,7 @@ export class CustomerCreateAndEditComponent implements OnInit {
     this.customer = { ...customer };  // Clonación con el ID intacto
     this.editMode = true;
     console.log('Editing customer with ID:', this.customer.id); // Verifica el ID aquí
+    console.log("get current user id: ",this.authenticationService.getCurrentUserId)
   }
 
   // Para que la clase hija pueda acceder a la clase padre
