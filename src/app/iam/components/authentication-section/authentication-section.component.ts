@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {AuthenticationService} from "../../services/authentication.service";
 import {NgIf} from "@angular/common";
 import {MatButton} from "@angular/material/button";
@@ -9,7 +9,8 @@ import {MatButton} from "@angular/material/button";
   standalone: true,
   imports: [
     NgIf,
-    MatButton
+    MatButton,
+    RouterLink
   ],
   templateUrl: './authentication-section.component.html',
   styleUrl: './authentication-section.component.css'
