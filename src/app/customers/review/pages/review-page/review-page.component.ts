@@ -19,7 +19,7 @@ export class ReviewPageComponent implements OnInit {
   review: Review = new Review();
   booking: Booking = new Booking();
   service: Service = new Service();
-  reservation: Booking = new Booking(); // Add this line
+  reservation: Booking = new Booking();
   userName: string = 'Juan Pérez';
 
   constructor(
@@ -35,17 +35,12 @@ export class ReviewPageComponent implements OnInit {
         this.review = reviews[0];
       } else {
         this.review.reservationId = bookingId;
-        this.review.createdAt = new Date().toISOString();
-        this.review.updatedAt = new Date().toISOString();
       }
     });
 
     this.bookingService.getBookingById(bookingId).subscribe(booking => {
       this.booking = booking;
-      this.reservation = booking; // Add this line
-      this.bookingService.getServiceById(booking.serviceId).subscribe(service => {
-        this.service = service;
-      });
+      this.reservation = booking;
     });
   }
 }

@@ -5,7 +5,6 @@
         <mat-card-title>{{ service.name }}</mat-card-title>
         <mat-card-subtitle>
           <div style="display: flex; flex-direction: column;">
-            <span>{{ 'Service Date' | translate }}: {{ reservation.bookingDate | date:'shortDate' }}</span>
             <span><strong>{{ userName }}</strong> - {{ todayDate | date:'shortDate' }}</span>
           </div>
         </mat-card-subtitle>
@@ -36,3 +35,5 @@
         </mat-card-actions>
       </mat-card-footer>
     </mat-card>
+  </mat-card>
+</div>

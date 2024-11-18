@@ -1,19 +1,16 @@
 <div class="container responsive-grid">
-  <mat-grid-list cols="{{ cols }}" rowHeight="1:1">
+  <mat-grid-list [cols]="cols">
     <mat-grid-tile *ngFor="let booking of bookings">
-      <mat-card>
+      <mat-card class="Reservation-Card">
         <mat-card-header>
-          <mat-card-title>{{ booking.service.name }}</mat-card-title>
-          <mat-card-subtitle>{{ booking.company.name }}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="booking.service.imageUrl" alt="{{ booking.service.name }}">
-        <mat-card-content>
-          <p>{{ booking.service.description }}</p>
-          <p>{{ 'Total Amount' | translate }}: {{ booking.totalAmount | currency }}</p>
-          <p>{{ 'Booking Date' | translate }}: {{ booking.bookingDate | date:'shortDate' }}</p>
+        <mat-card-content class="Info">
+          <p class="Title"> Company: {{ booking.company?.name }}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="goToReviewPage(booking.id)">{{ 'Review' | translate }}</button>
+          <button mat-button (click)="goToReviewPage(booking.id)">{{ 'Add Review' | translate }}</button>
+          <button mat-button color="accent" (click)="updateReview(booking.id)">{{ 'Update Review' | translate }}</button>
+          <button mat-button color="warn" (click)="deleteReview(booking.review?.id)">{{ 'Delete Review' | translate }}</button>
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>

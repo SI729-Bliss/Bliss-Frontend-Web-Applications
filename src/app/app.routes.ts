@@ -8,13 +8,11 @@ import {ServicesHistoryComponent} from "./customers/history/pages/services-histo
 /*Review client*/
 import {ReviewPageComponent} from "./customers/review/pages/review-page/review-page.component";
 /*Reservation/Booking*/
-import { BookingComponent } from "./enterprise/services/pages/booking/booking.component";
 /*Authentication*/
 import {authenticationGuard} from "./iam/services/authentication.guard";
 import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
 import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
 /*Future services Client*/
-import { CitasListComponent } from "./enterprise/services/components/booking-card/booking-card.component";
 
 import { HomeEnterpriseComponent } from "./enterprise/services/pages/home-enterprise/home-enterprise.component";
 import { ServicesManagementComponent } from "./enterprise/services/pages/services-management/services-management.component";
@@ -30,8 +28,7 @@ export const routes: Routes = [
   /*Client*/
   { path: 'catalog', component: HomeComponent , canActivate: [authenticationGuard]},
   { path: 'services-history', component: ServicesHistoryComponent },
-  { path: 'booking', component: BookingComponent },
-  { path: 'my-reservations', component: CitasListComponent },
+
   { path: 'review-page/:id', component: ReviewPageComponent },
   { path: 'review-page', component: ReviewPageComponent },
   { path: 'customerProfile', component: CustomerCreateAndEditComponent },

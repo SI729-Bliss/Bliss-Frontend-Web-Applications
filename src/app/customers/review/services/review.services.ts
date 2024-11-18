@@ -11,34 +11,34 @@ import { environment } from '../../../../environments/environment.development';
 export class ReviewService extends BaseService<Review> {
   constructor(http: HttpClient) {
     super(http);
-    this.resourceEndpoint = '/api/v1/reviews';
+    this.resourceEndpoint = '/reviews';
   }
 
   getReviewById(id: number): Observable<Review> {
-    return this.http.get<Review>(`${environment.serverBasePath}${this.resourceEndpoint}/${id}`);
+    return this.http.get<Review>(`${this.basePath}${this.resourceEndpoint}/${id}`);
   }
 
   getReviewsByCustomerId(customerId: number): Observable<Review[]> {
-    return this.http.get<Review[]>(`${environment.serverBasePath}${this.resourceEndpoint}/customer/${customerId}`);
+    return this.http.get<Review[]>(`${this.basePath}${this.resourceEndpoint}/user/${customerId}`);
   }
 
   getReviewsByReservationId(reservationId: number): Observable<Review[]> {
-    return this.http.get<Review[]>(`${environment.serverBasePath}${this.resourceEndpoint}/reservation/${reservationId}`);
+    return this.http.get<Review[]>(`${this.basePath}${this.resourceEndpoint}/reservation/${reservationId}`);
   }
 
   getReviewsByCompanyId(companyId: number): Observable<Review[]> {
-    return this.http.get<Review[]>(`${environment.serverBasePath}${this.resourceEndpoint}/company/${companyId}`);
+    return this.http.get<Review[]>(`${this.basePath}${this.resourceEndpoint}/company/${companyId}`);
   }
 
   createReview(review: Review): Observable<Review> {
-    return this.http.post<Review>(`${environment.serverBasePath}${this.resourceEndpoint}`, review);
+    return this.http.post<Review>(`${this.basePath}${this.resourceEndpoint}`, review);
   }
 
   updateReview(id: number, review: Review): Observable<Review> {
-    return this.http.put<Review>(`${environment.serverBasePath}${this.resourceEndpoint}/${id}`, review);
+    return this.http.put<Review>(`${this.basePath}${this.resourceEndpoint}/${id}`, review);
   }
 
   deleteReview(id: number): Observable<void> {
-    return this.http.delete<void>(`${environment.serverBasePath}${this.resourceEndpoint}/${id}`);
+    return this.http.delete<void>(`${this.basePath}${this.resourceEndpoint}/${id}`);
   }
 }
