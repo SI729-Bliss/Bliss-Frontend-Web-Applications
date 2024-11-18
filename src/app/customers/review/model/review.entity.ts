@@ -1,20 +1,28 @@
 // review.entity.ts
 export class Review {
   id: number;
+  createdAt: string;
+  updatedAt: string;
+  reservationId: number;
   punctuation: number;
   comment: string;
-  createdDate: string;
-  reservationId: number;
-  customerId: number;
-  images: string[]; // Add this line
+  reservationInfo: {
+    serviceId: number;
+    companyId: number;
+  };
+  imageUrls: string[];
 
   constructor() {
     this.id = 0;
+    this.createdAt = '';
+    this.updatedAt = '';
+    this.reservationId = 0;
     this.punctuation = 0;
     this.comment = '';
-    this.createdDate = '';
-    this.reservationId = 0;
-    this.customerId = 0;
-    this.images = []; // Initialize the array
+    this.reservationInfo = {
+      serviceId: 0,
+      companyId: 0
+    };
+    this.imageUrls = [];
   }
 }

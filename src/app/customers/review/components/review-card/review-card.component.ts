@@ -2,7 +2,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Review } from '../../model/review.entity';
 import { Service } from '../../../history/model/service.entity';
-import { Reservation } from '../../../history/model/reservation.entity';
+import { Booking } from '../../../history/model/booking.entity';
 import { ReviewService } from '../../services/review.services';
 import { Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
@@ -14,13 +14,12 @@ import { FormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import axios from 'axios';
 import { Cloudinary } from 'cloudinary-core';
-import {TranslateModule} from "@ngx-translate/core";
+import { TranslateModule } from "@ngx-translate/core";
 
 const cloudinaryInstance = new Cloudinary({
   cloud_name: 'dmeftoblw',
   secure: true
 });
-
 
 @Component({
   selector: 'app-review-card',
@@ -48,7 +47,7 @@ const cloudinaryInstance = new Cloudinary({
 })
 export class ReviewCardComponent implements OnInit {
   @Input() review: Review = new Review();
-  @Input() reservation: Reservation = new Reservation();
+  @Input() reservation: Booking = new Booking();
   @Input() service: Service = new Service();
   @Input() userName: string = '';
   todayDate: Date = new Date();
@@ -91,7 +90,7 @@ export class ReviewCardComponent implements OnInit {
         const response = await axios.post(`https://api.cloudinary.com/v1_1/dmeftoblw/image/upload`, formData);
         if (response.data && response.data.secure_url) {
           this.images[index] = response.data.secure_url;
-          this.review.images[index] = response.data.secure_url;
+          this.review.imageUrls[index] = response.data.secure_url;
         } else {
           console.error('Invalid response from Cloudinary', response);
         }
@@ -104,15 +103,16 @@ export class ReviewCardComponent implements OnInit {
   saveReview(): void {
     this.review.punctuation = this.rating;
     this.review.reservationId = this.reservation.id;
-    this.review.customerId = 1; // Assuming user ID is 1
-    this.review.createdDate = new Date().toISOString(); // Set current date and time
-    this.review.images = this.images; // Save image URLs
+    this.review.createdAt = new Date().toISOString();
+    this.review.updatedAt = new Date().toISOString();
+    this.review.imageUrls = this.images;
+
     if (this.review.id) {
-      this.reviewService.update(this.review.id, this.review).subscribe(() => {
+      this.reviewService.updateReview(this.review.id, this.review).subscribe(() => {
         this.router.navigate(['/my-services']);
       });
     } else {
-      this.reviewService.create(this.review).subscribe(() => {
+      this.reviewService.createReview(this.review).subscribe(() => {
         this.router.navigate(['/my-services']);
       });
     }
