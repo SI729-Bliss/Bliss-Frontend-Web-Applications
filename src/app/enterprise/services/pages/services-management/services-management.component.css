@@ -1,6 +1,25 @@
-.custom-title{
-  color: #ffffff;
+.details-tittle {
   text-align: center;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.details-form {
+  display: flex;
+  justify-content: center;
+}
+
+.details-form mat-form-field {
+  margin: 3px;
+}
+
+.details-form button {
+  margin: 3px;
+}
+
+.custom-title{
+  text-align: center;
+  font-size: 16px;
 }
 
 .table-wrapper {

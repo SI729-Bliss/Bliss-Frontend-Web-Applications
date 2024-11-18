@@ -6,7 +6,7 @@ import { FormsModule, NgForm } from "@angular/forms";
 import { MatFormField } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
-import {TranslateModule} from "@ngx-translate/core";
+import {TranslateModule, TranslateService} from "@ngx-translate/core";
 import { MatIconModule } from '@angular/material/icon';
 
 import {MatCardModule} from '@angular/material/card';
@@ -41,7 +41,7 @@ export class ServicesCreateAndEditComponent implements OnInit{
   @ViewChild('entserviceFrom', {static: false}) entserviceForm!: NgForm;
 
   // Methods
-  constructor(private entserviceService: EntsevicesService) {
+  constructor(private entserviceService: EntsevicesService, private translate: TranslateService) {
     this.entservice = {} as Entservice;
   }
 
@@ -71,9 +71,9 @@ export class ServicesCreateAndEditComponent implements OnInit{
   // Event Handlers
 
   onSubmit(): void {
+    this.loadExistingNames();
     if (!this.isNameUnique(this.entservice.name) && !this.editMode) {
       this.nameAddvice = true;
-      console.log("name already exists");
       return
     }
 

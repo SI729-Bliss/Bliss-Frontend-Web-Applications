@@ -67,7 +67,11 @@
     "addName": "No actualizar con nombres ya existentes",
     "addDetail": "Detalle",
     "formDetails": "Añadir detalles de servicios",
-    "addButton": "Añadir"
+    "addButton": "Añadir",
+
+    "selected": " seleccionado para añadir detalles",
+    "detailMsg": " detalle añadido correctamente!",
+    "detailWrong": "El detalle ya existe para el servicio seleccionado"
   },
 
   "service": {

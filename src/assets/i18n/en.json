@@ -67,7 +67,11 @@
     "addName": "Not update with existing names",
     "addDetail": "Detail",
     "formDetails": "Add service details",
-    "addButton": "Add"
+    "addButton": "Add",
+
+    "selected": " selected to add details",
+    "detailMsg": " detail added correctly!",
+    "detailWrong": "Detail already exists for selected service"
   },
 
   "bc-5": {

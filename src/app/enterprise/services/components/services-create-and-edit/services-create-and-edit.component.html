@@ -75,7 +75,7 @@
 
         <mat-form-field>
           <mat-label>{{ 'bc-4.basePrice' | translate }}</mat-label>
-          <input matInput type="number" placeholder="$ 10 - 100" name="basePrice" required min="10" max="100" [(ngModel)]="entservice.basePrice">
+          <input matInput type="number" placeholder="s/. 1 - 100" name="basePrice" required min="10" max="100" [(ngModel)]="entservice.basePrice">
         </mat-form-field>
 
         <br>
@@ -116,7 +116,7 @@
       </mat-card>
     </div>
 
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <button mat-button [matMenuTriggerFor]="menu"></button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="setSalon(1)">1</button>
       <button mat-menu-item (click)="setSalon(2)">2</button>
