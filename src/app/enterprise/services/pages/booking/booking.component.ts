@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CitaService } from '../../services/booking.service';
+import { ReservationService } from '../../services/reservation.service';
 import {NgForOf, NgIf} from '@angular/common';
-import { Cita } from '../../model/bookingservice.entity';
+import { Reservation } from '../../model/reservation.entity';
 import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-booking',
@@ -22,10 +22,9 @@ export class BookingComponent implements OnInit {
   customizations: string[] = [];
   successMessage: string | null = null;
 
-  constructor(private fb: FormBuilder, private citaService: CitaService) {
+  constructor(private fb: FormBuilder, private reservationService: ReservationService) {
     this.bookingForm = this.fb.group({
       fullName: [''],
-      email: [''],
       service: [''],
       availability: [''],
       message: [''],
@@ -40,7 +39,7 @@ export class BookingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.citaService.getServices().subscribe(
+    this.reservationService.getAll().subscribe(
       data => {
         this.services = data;
         console.log('Services loaded:', this.services);

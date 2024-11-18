@@ -1,6 +1,5 @@
+<h2>Make an Appointment</h2>
 <div class="appointment-container">
-  <h2>Make an Appointment</h2>
-
   <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
 
     <!-- Primera fila: Full Name y Email en la misma fila -->
@@ -15,23 +14,14 @@
       </div>
     </div>
 
-    <!-- Segunda fila: Please Select y Available -->
+    <!-- Segunda fila: Please Select y Available
     <div class="input-row">
       <div class="input-group">
-        <label for="service">Please Select *</label>
-        <select id="service" formControlName="service" required>
-          <option value="" disabled>Select a service</option>
-          <option *ngFor="let service of services" [value]="service.id">{{ service.name }}</option>
-        </select>
-      </div>
-      <div class="input-group">
-        <label for="availability">Available *</label>
-        <select id="availability" formControlName="availability" required>
-          <option value="available">Available</option>
-        </select>
+        <label>Service Name:</label>
+            <p>{{service.name}} </p>
       </div>
     </div>
-
+    -->
     <!-- Campo de mensaje -->
     <div class="input-group">
       <label for="message">Message</label>
@@ -49,24 +39,19 @@
 
     <!-- Campo de fecha -->
     <div class="input-group">
-      <label for="date">Date *</label>
-      <input id="date" formControlName="date" type="date" required>
+      <label for="bookingDate">Date *</label>
+      <input id="bookingDate" formControlName="bookingDate" type="date" required>
     </div>
 
     <!-- Campo de hora -->
     <div class="input-group">
-      <label for="time">Enter time *</label>
-      <input id="time" formControlName="time" type="time" required>
+      <label for="bookingTime">Enter time *</label>
+      <input id="bookingTime" formControlName="bookingTime" type="time" required>
     </div>
     <a mat-stroked-button [routerLink]="['/payment']">
       <!-- Botón de enviar -->
-      <button [disabled]="!bookingForm.valid" type="submit" >Continue to Payment</button>
+      <button [disabled]="!bookingForm.valid" type="submit" onclick="OnSubmit()">Continue to Payment</button>
     </a>
-
   </form>
 
-  <!-- Mensaje de éxito -->
-  <div *ngIf="successMessage" class="success-message">
-    {{ successMessage }}
-  </div>
 </div>

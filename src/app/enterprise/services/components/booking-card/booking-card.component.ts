@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CitaService } from '../../services/booking.service';
-import { Cita } from '../../model/bookingservice.entity';
+import { ReservationService } from '../../services/reservation.service';
+import { Reservation } from '../../model/reservation.entity';
 import { NgForOf, NgIf } from '@angular/common';
 import {FormsModule} from "@angular/forms";
 
@@ -16,31 +16,30 @@ import {FormsModule} from "@angular/forms";
   styleUrls: ['./booking-card.component.css']
 })
 export class CitasListComponent implements OnInit {
-  citas: Cita[] = [];
-  selectedCita: Cita | null = null;
+  reservations: Reservation[] = [];
+  selectedReservation: Reservation | null = null;
 
-  constructor(private citaService: CitaService) {}
+  constructor(private reservationService: ReservationService) {}
 
-  ngOnInit() {
-    this.citaService.getCitasFromServer();
-    this.citaService.citas$.subscribe(citas => {
-      this.citas = citas;
+  ngOnInit(): void {
+    this.reservationService.getReservationsFromServer.subscribe(reservations => {
+      this.reservations = reservations;
     });
   }
 
-  editCita(cita: Cita) {
-    this.selectedCita = { ...cita };
+  editReservation(reservation: Reservation) {
+    this.selectedReservation = { ...reservation };
   }
 
-  deleteCita(citaId: number) {
-    this.citaService.deleteCita(citaId).subscribe(() => {
+  deleteReservation(reservationId: number) {
+    this.reservationService.deleteReservation(reservationId).subscribe(() => {
     });
   }
 
   onSubmit() {
-    if (this.selectedCita) {
-      this.citaService.editCita(this.selectedCita).subscribe(() => {
-        this.selectedCita = null;
+    if (this.selectedReservation) {
+      this.reservationService.editReservation(this.selectedReservation).subscribe(() => {
+        this.selectedReservation = null;
       });
     }
   }
