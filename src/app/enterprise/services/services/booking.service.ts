@@ -8,7 +8,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CitaService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'http://localhost:8092/api/v1/bookings';
   private citasSubject = new BehaviorSubject<Cita[]>([]);
   citas$ = this.citasSubject.asObservable();
 

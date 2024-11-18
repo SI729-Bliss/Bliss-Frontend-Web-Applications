@@ -9,8 +9,8 @@
                                [entservice]="entservicesData"
                                 [totalservices]="totalServices"/>
 
-  <!-- Service Details -->
-  <h4 class="custom-title">{{ 'bc-4.mTitle' | translate }}</h4>
+  <!-- Services List -->
+  <div class="custom-title">{{ 'bc-4.mTitle' | translate }}</div>
 
   <div class="table-container">
 
@@ -74,6 +74,10 @@
               <mat-icon>delete</mat-icon>
               <span>Delete</span>
             </button>
+            <button mat-menu-item (click)="onAddDetail(element)">
+              <mat-icon>add_circle</mat-icon>
+              <span>Details</span>
+            </button>
           </mat-menu>
         </td>
       </ng-container>
@@ -85,6 +89,24 @@
     <!-- Paginator child component-->
     <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 
+  </div>
+
+  <!-- Services Details -->
+  <div class="mid">
+    <div class="details-tittle">{{ 'bc-4.formDetails' | translate }}:</div>
+    <div class="details-form">
+      <form #detailsForm="ngForm" (submit)="addDetail()">
+        <mat-form-field>
+          <mat-label>{{ 'bc-4.addDetail' | translate }}</mat-label>
+          <input matInput placeholder="...." name="detail" required [(ngModel)]="detail.detail">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>{{ 'bc-4.basePrice' | translate }}</mat-label>
+          <input matInput type="number" placeholder="s/. 1 - 100" name="price" required min="1" max="100" [(ngModel)]="detail.price">
+        </mat-form-field>
+        <button mat-raised-button color="primary">{{ 'bc-4.addButton' | translate }}</button>
+      </form>
+    </div>
   </div>
 
 </div>

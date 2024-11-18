@@ -33,7 +33,7 @@
   "bc-4": {
     "id": "Núm.",
     "eTitle": "Edit Services",
-    "mTitle": "Detalles de servicios",
+    "mTitle": "Lista de Servicios",
 
     "cardtitle1": "¿Utiliza mucho Bliss?",
     "subtitle1": "Obten una suscripción",
@@ -63,7 +63,15 @@
     "formAdvice": "Los servicios serán validados",
     "formAdviceName": "El servicio ya existe",
 
-    "addIfOne": "No puede eliminar todos los servicios"
+    "addIfOne": "No puede eliminar todos los servicios",
+    "addName": "No actualizar con nombres ya existentes",
+    "addDetail": "Detalle",
+    "formDetails": "Añadir detalles de servicios",
+    "addButton": "Añadir",
+
+    "selected": " seleccionado para añadir detalles",
+    "detailMsg": " detalle añadido correctamente!",
+    "detailWrong": "El detalle ya existe para el servicio seleccionado"
   },
 
   "service": {
@@ -100,5 +108,12 @@
       "cardsTitle": "Salones cerca de mí",
       "newcardsTitle": "Servicios Recomendados"
     }
+  },
+
+  "iam": {
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "sign-in": "Iniciar Sesión",
+    "sign-up": "Ingresar"
   }
 }

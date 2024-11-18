@@ -10,6 +10,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {TranslateModule} from "@ngx-translate/core";
 import {MatIcon} from "@angular/material/icon";
 import {AuthenticationService} from "../../../../iam/services/authentication.service";
+import { ReviewService } from '../../services/review.service';
+import { Review } from '../../model/review.entity';
 
 
 @Component({
@@ -31,6 +33,7 @@ import {AuthenticationService} from "../../../../iam/services/authentication.ser
 export class CompanyCreateAndEditComponent implements OnInit {
   companies: Company[] = [];
   stylists: Stylist[] = [];
+  reviews: Review[] = [];
 
   // Para guardar el cliente original antes de editar
   originalCustomer: Company | null = null;
@@ -45,7 +48,7 @@ export class CompanyCreateAndEditComponent implements OnInit {
   @ViewChild('customerForm', { static: false }) customerForm!: NgForm;
 
 
-  constructor(private companyService: CompanyService, private authenticationService: AuthenticationService) {
+  constructor(private companyService: CompanyService, private authenticationService: AuthenticationService, private reviewService: ReviewService) {
     this.company = {} as Company;
   }
 
@@ -56,6 +59,13 @@ export class CompanyCreateAndEditComponent implements OnInit {
     const currentCompanyId = this.authenticationService.currentUserId;
     this.loadCompanyById(currentCompanyId);
     this.loadServices();
+    this.loadReviews();
+  }
+
+  loadReviews(): void {
+    this.reviewService.getReviews().subscribe((data: Review[]) => {
+      this.reviews = data;
+    });
   }
 
   loadCustomers(): void {

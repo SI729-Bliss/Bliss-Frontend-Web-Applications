@@ -29,20 +29,20 @@ export const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent},
   /*Client*/
   { path: 'catalog', component: HomeComponent , canActivate: [authenticationGuard]},
-  { path: 'services-history', component: ServicesHistoryComponent },
-  { path: 'booking', component: BookingComponent },
-  { path: 'my-reservations', component: CitasListComponent },
-  { path: 'review-page/:id', component: ReviewPageComponent },
-  { path: 'review-page', component: ReviewPageComponent },
-  { path: 'customerProfile', component: CustomerCreateAndEditComponent },
-  {path: 'payment', component:PaymentComponent},
+  { path: 'services-history', component: ServicesHistoryComponent, canActivate: [authenticationGuard] },
+  { path: 'booking', component: BookingComponent, canActivate: [authenticationGuard] },
+  { path: 'my-reservations', component: CitasListComponent, canActivate: [authenticationGuard] },
+  { path: 'review-page/:id', component: ReviewPageComponent, canActivate: [authenticationGuard] },
+  { path: 'review-page', component: ReviewPageComponent, canActivate: [authenticationGuard] },
+  { path: 'customerProfile', component: CustomerCreateAndEditComponent, canActivate: [authenticationGuard] },
+  {path: 'payment', component:PaymentComponent , canActivate: [authenticationGuard]},
   /*Enterprise*/
-  { path: 'my-services', component: HomeEnterpriseComponent },
-  { path: 'services', component: ServicesManagementComponent },
-  { path: 'service-details/:id', component: ServicesManagementComponent },
-  { path: 'companyProfile', component: CompanyCreateAndEditComponent },
+  { path: 'my-services', component: HomeEnterpriseComponent, canActivate: [authenticationGuard] },
+  { path: 'services', component: ServicesManagementComponent, canActivate: [authenticationGuard] },
+  { path: 'service-details/:id', component: ServicesManagementComponent, canActivate: [authenticationGuard] },
+  { path: 'companyProfile', component: CompanyCreateAndEditComponent, canActivate: [authenticationGuard] },
 
-  { path: '', redirectTo: 'customerProfile', pathMatch: 'full' },
+  { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

@@ -5,7 +5,7 @@ export class Entservice {
   imageUrl: string;
   description: string;
   basePrice: number;
-  beauty_salon_id: number;
+  salonId: number;
 
   constructor() {
     this.id = 0;
@@ -14,6 +14,6 @@ export class Entservice {
     this.imageUrl = "";
     this.description = "";
     this.basePrice = 0;
-    this.beauty_salon_id = 0;
+    this.salonId = 0;
   }
 }

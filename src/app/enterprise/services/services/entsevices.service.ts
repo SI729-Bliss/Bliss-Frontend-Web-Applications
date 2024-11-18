@@ -5,6 +5,8 @@ import { HttpClient } from "@angular/common/http";
 import { Entservice } from "../model/entservice.entity";
 import {catchError, Observable, retry} from "rxjs";
 
+import {AuthenticationService} from "../../../iam/services/authentication.service";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,18 +14,23 @@ export class EntsevicesService extends BaseService<Entservice>{
 
   salonContextId: number;
 
-  constructor(http: HttpClient, private httpForEnt: HttpClient) {
+  constructor(http: HttpClient, private httpForEnt: HttpClient, private authentication: AuthenticationService) {
     super(http);
     this.resourceEndpoint = '/services';
     this.salonContextId = 0;
   }
 
-  getSalonContextId(): number {
-    return this.salonContextId;
+  getSalonContextId() {
+    this.authentication.currentUserId.subscribe((response: any) => {
+      console.log(response);
+      this.salonContextId = response;
+    })
+    //console.log("id" + this.salonContextId)
   }
 
   getAllServicesBySalonId(): Observable<Entservice> {
-    return this.httpForEnt.get<Entservice>(`${this.basePath}${this.resourceEndpoint}?beauty_salon_id=${ this.salonContextId }`, this.httpOptions)
+    //console.log("id in get " + this.salonContextId)
+    return this.httpForEnt.get<Entservice>(`${this.basePath}${this.resourceEndpoint}/findBySalon?BeautySalonId=${ this.salonContextId }`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
