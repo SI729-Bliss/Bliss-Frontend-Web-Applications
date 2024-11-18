@@ -36,15 +36,6 @@ export class HomeEnterpriseComponent implements OnInit{
     })
   }
 
-  /*private getAllEntservices(): void {
-    this.entservicesService.getAll().subscribe((response: any) => {
-      this.entserviceData = response;
-      console.log("EntservicesData:", this.entserviceData);
-    })
-  }*/
-
-
-
   ngOnInit(): void {
     this.getServicesBySalon();
   }
