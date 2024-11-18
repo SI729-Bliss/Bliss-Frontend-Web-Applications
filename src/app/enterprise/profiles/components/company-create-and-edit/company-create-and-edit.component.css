@@ -322,9 +322,3 @@ button[mat-raised-button]{
   overflow-y: auto;
   padding: 20px;
 }
-
-.container-reviews {
-  margin-top: 20px;
-  width: 100%;
-  overflow-y: auto;
-}
