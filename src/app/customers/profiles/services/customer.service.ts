@@ -9,7 +9,7 @@ import {BaseService} from "../../../shared/services/base.service";
   providedIn: 'root'
 })
 export class CustomerService extends BaseService<Customer> {
-  private apiUrl = 'https://my-json-server.typicode.com/Andorla0/dbjson';
+
 
   constructor(http: HttpClient) {
     super(http);
@@ -20,8 +20,8 @@ export class CustomerService extends BaseService<Customer> {
     return this.http.get<Customer[]>(`${this.basePath}${this.resourceEndpoint}`);
   }
   // Obtener lista de servicios
-  getServices(): Observable<Service[]> {
-    return this.http.get<Service[]>(`${this.resourceEndpoint}/services`);
+  getServicesByCustomerId(id:number): Observable<Service[]> {
+    return this.http.get<Service[]>(`${this.basePath}/bookings/customer/${id}`);
   }
 
   // Agregar un nuevo cliente

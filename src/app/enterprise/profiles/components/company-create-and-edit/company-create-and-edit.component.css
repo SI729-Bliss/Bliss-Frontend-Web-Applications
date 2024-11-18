@@ -1,93 +1,65 @@
 /* main container */
 .main-container {
   display: flex;
+  flex-direction: row; /* Diseño horizontal */
+  justify-content: flex-start;
+  align-items: flex-start;
   margin-top: 30px;
   min-height: 100vh;
-  flex-flow: row nowrap;
-}
-.prof-info{
-  color:#B39DE7 ;
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-}
-.container-favorites > h3{
-  color:black ;
-  font-size: 22px;
-  font-weight: bold;
-  text-align: start;
-}
-.profile-card h3.prof-info {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color:#B39DE7 ;
-
+  gap: 20px; /* Espaciado entre los elementos */
 }
 
-/* card customer */
-.container {
+/* Left section: Profile card */
+.left-section {
   display: flex;
-  background-color: #FFE8E8;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
-  top: 0; /* Esto asegura que se quede pegado al tope */
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  font-size: smaller;
-  color: black;
-
+  flex-direction: column;
+  align-items: flex-start;
+  flex-basis: 30%;
+  margin-left: 40px;
 }
-/* en edicion */
-.profile-card-edit{
-  background-color: white ;
+
+/* Right section: Stylists list and Reviews */
+.right-section {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-basis: 70%;
+  gap: 20px;
+}
+
+/* profile card */
+.profile-card-edit {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
   width: 250px;
-  height: auto ;
-  color: black;
   padding: 25px;
   border-radius: 10px;
   justify-content: center;
-  align-content: center;
   align-items: center;
   margin-bottom: 60px;
 }
 
-.form-section.ng-untouched.ng-pristine.ng-valid > mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color:nth-of-type(1){
-  color: white;
+/* Stylist and Review sections */
+.container-favorites,
+.container-reviews {
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center;
-  position: relative;
-  bottom: 40px;
-  left: 150px;
-  background-color: #B39DE7;
-  border-radius: 100%;
-  padding: 0.5px;
-  font-size: 15px;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffe8e8;
+  border-radius: 10px;
 }
-mat-icon{
-  color: #B39DE7;
+.container-favorites > h3,
+.container-reviews > h3 {
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: start;
 }
 
-.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--outlined {
-  background-color: white; /* Fondo blanco */
-  color: black;
-  border-bottom: 1px solid #757575; /* Línea inferior gris */
-  outline: none; /* Elimina cualquier outline si lo hay */
-}
-mat-label{
-  color: #757575;
-}
-#mat-input-0, #mat-input-1, #mat-input-2, #mat-input-3{
-  color: #1A1C3D;
-}
 /* Imagen de perfil */
 .profile-img img {
-
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -95,97 +67,12 @@ mat-label{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
-div.profile-img{
+div.profile-img {
   display: flex;
   justify-content: center;
-
 }
 
-/* en vista */
-.container > div.profile-card:nth-of-type(1) > .profile-card{
-  color: black;
-  display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center;
-  background-color: white;
-  height: auto;
-  padding: 20px;
-  font-size: 15px;
-}
-
-strong{
-  color: #B39DE7;
-  font-size: 18px;
-  font-weight: normal;
-}
-
-.profile-card{
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: start;
-  border-radius: 20%;
-  max-height: 500px;
-  font-size: 18px;
-  font-weight: normal;
-
-}
-
-.list-actions{
-   display: flex;
-   justify-content: flex-start !important; /* Aligns items to the right */
-   margin-top: 10px;
-}
-.list-actions a {
-  color: #B39DE7; /* Sets the color of the link */
-}
-
-.profile-card > h3{
-  color: #B39DE7;
-  font-size: 22px;
-  font-weight: bolder;
-  text-align: center;
-}
-
-/*buttons */
-button[mat-raised-button]{
-  background-color: #B39DE7;
-  border-radius: 10px;
-  padding: 1px;
-}
-
-.btn-red{
-  background-color: #fd2424;
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  width: 60px;
-  padding: 4px 0;
-  border:none;
-}
-
-.btn-red:hover{
-  background-color: #f60e0e;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.btns{
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-/* favorites container */
-.container-favorites {
-  margin-top: 30px;
-  display: flex;
-  flex-flow: column nowrap;
-  width: 60%;
-  height: 100vh;
-  overflow-y: scroll; /* El scroll solo afecta al div de la derecha */
-  padding: 20px;
-}
-
+/* Card stylists and reviews */
 .card-list {
   display: flex;
   flex-flow: row wrap;
@@ -193,14 +80,14 @@ button[mat-raised-button]{
   gap: 25px;
   width: 100%;
   padding-bottom: 100px;
-
 }
-.card{
+
+.card {
   background-color: white;
-  border-radius: 40px 40px  0 0;
+  border-radius: 40px 40px 0 0;
   padding: 20px;
 }
-.card-list > div.card > .card-container{
+.card-list > div.card > .card-container {
   display: flex;
   flex-flow: column wrap;
   gap: 0;
@@ -209,54 +96,20 @@ button[mat-raised-button]{
   align-items: center;
 }
 
-.sub-card{
-  padding: 12px;
-  border-radius: 10px;
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-}
-
-.card-list > div.card > .card-container > .specialist-name{
-  color:#37125A ;
-  font-size: 18px;
-  font-weight: bold;
-}
-/* div img */
-.image-container {
-  flex: 0 0 auto;
-  width: 100%;
-}
-
-.image-container img {
-  width: 100%;
-  max-width: 200px;
-  height: 250px;
-  object-fit: cover;
-  background-color: transparent;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.56);
-}
-
-
-
 .card-container {
   display: flex;
   flex-flow: column wrap;
   gap: 15px;
   width: 100%;
 }
-/*stars*/
-.card-list > div.card > .card-container > .sub-card > .stars > .mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color{
+
+/* Stars */
+.card-list > div.card > .card-container > .sub-card > .stars > .mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
   color: #ffae00;
   font-size: 19px;
   display: flex;
   align-items: center;
-
 }
-
 
 .stars {
   color: white;
@@ -264,22 +117,14 @@ button[mat-raised-button]{
   border-radius: 25px;
   width: 55px;
   display: flex;
-
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
 .price {
-  color: #B39DE7;
+  color: #b39de7;
   font-weight: bolder;
-}
-
-.card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
 }
 
 .card {
@@ -297,34 +142,40 @@ button[mat-raised-button]{
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.reviewer-name {
+/* Buttons */
+button[mat-raised-button] {
+  background-color: #b39de7;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+.btn-red {
+  background-color: #fd2424;
+  color: white;
   font-weight: bold;
-  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 60px;
+  padding: 4px 0;
+  border: none;
 }
 
-.stars {
+.btn-red:hover {
+  background-color: #f60e0e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.btns {
   display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  justify-content: center;
+  gap: 10px;
 }
 
-.comment {
-  font-size: 0.95em;
-  color: #555;
-}
-
+/* Favorites container */
 .container-favorites {
   margin-top: 30px;
   display: flex;
-  flex-direction: column;
-  width: 60%;
-  height: 100vh;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: auto;
   overflow-y: auto;
   padding: 20px;
-}
-
-.container-reviews {
-  margin-top: 20px;
-  width: 100%;
-  overflow-y: auto;
 }

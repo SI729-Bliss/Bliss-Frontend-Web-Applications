@@ -10,8 +10,6 @@ import {MatButtonModule} from "@angular/material/button";
 import {TranslateModule} from "@ngx-translate/core";
 import {MatIcon} from "@angular/material/icon";
 import {AuthenticationService} from "../../../../iam/services/authentication.service";
-import { ReviewService } from '../../services/review.service';
-import { Review } from '../../model/review.entity';
 
 
 @Component({
@@ -33,7 +31,6 @@ import { Review } from '../../model/review.entity';
 export class CompanyCreateAndEditComponent implements OnInit {
   companies: Company[] = [];
   stylists: Stylist[] = [];
-  reviews: Review[] = [];
 
   // Para guardar el cliente original antes de editar
   originalCustomer: Company | null = null;
@@ -48,7 +45,7 @@ export class CompanyCreateAndEditComponent implements OnInit {
   @ViewChild('customerForm', { static: false }) customerForm!: NgForm;
 
 
-  constructor(private companyService: CompanyService, private authenticationService: AuthenticationService, private reviewService: ReviewService) {
+  constructor(private companyService: CompanyService, private authenticationService: AuthenticationService) {
     this.company = {} as Company;
   }
 
@@ -59,13 +56,6 @@ export class CompanyCreateAndEditComponent implements OnInit {
     const currentCompanyId = this.authenticationService.getCurrentUserId;
     this.loadCompanyById(currentCompanyId);
     this.loadServices();
-    this.loadReviews();
-  }
-
-  loadReviews(): void {
-    this.reviewService.getReviews().subscribe((data: Review[]) => {
-      this.reviews = data;
-    });
   }
 
   loadCustomers(): void {
@@ -120,7 +110,7 @@ export class CompanyCreateAndEditComponent implements OnInit {
           this.resetForm();
           console.log('Company updated successfully:', updatedCustomer);
         },
-        error => console.error('Error updating company:', error)
+        error => console.error(`Error updating company with ID ${this.company.id}:`, error)
       );
     } else {
       console.error('Invalid data in form');
@@ -152,7 +142,7 @@ export class CompanyCreateAndEditComponent implements OnInit {
     this.company = { ...company };  // Clonación con el ID intacto
     this.editMode = true;
     console.log('Editing company with ID:', this.company.id); // Verifica el ID aquí
-    console.log("get current company id: ", this.authenticationService.currentUserId);
+    console.log("get current company id: ", this.authenticationService.getCurrentUserId);
   }
   // Para que la clase hija pueda acceder a la clase padre
   protected readonly Customer = Company;
