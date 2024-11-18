@@ -17,26 +17,25 @@ export class CustomerService extends BaseService<Customer> {
   }
   // Obtener lista de clientes
   getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(`${this.apiUrl}/customers`);
+    return this.http.get<Customer[]>(`${this.basePath}${this.resourceEndpoint}`);
   }
-
   // Obtener lista de servicios
   getServices(): Observable<Service[]> {
-    return this.http.get<Service[]>(`${this.apiUrl}/services`);
+    return this.http.get<Service[]>(`${this.resourceEndpoint}/services`);
   }
 
   // Agregar un nuevo cliente
   addCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(`${this.apiUrl}/customers`, customer);
+    return this.http.post<Customer>(`${this.basePath}${this.resourceEndpoint}`, customer);
   }
 
   // Actualizar cliente existente
   updateCustomer(customer: Customer): Observable<Customer> {
-    return this.http.put<Customer>(`${this.apiUrl}/customers/${customer.id}`, customer);
+    return this.http.put<Customer>(`${this.basePath}${this.resourceEndpoint}/${customer.id}`, customer);
   }
 
   getCustomerById(id: string): Observable<Customer> {
-    return this.http.get<Customer>(`${this.apiUrl}/customers/${id}`);
+    return this.http.get<Customer>(`${this.basePath}${this.resourceEndpoint}/${id}`);
   }
 
 }

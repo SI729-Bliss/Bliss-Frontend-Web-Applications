@@ -3,37 +3,40 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Company } from '../model/company.entity';
 import { Stylist } from '../model/stylist.entity';
+import {BaseService} from "../../../shared/services/base.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CompanyService {
-  private apiUrl = 'https://my-json-server.typicode.com/Andorla0/dbjson';
+export class CompanyService extends BaseService<Company> {
 
-  constructor(private http: HttpClient) {}
+  constructor(http: HttpClient) {
+    super(http);
+    this.resourceEndpoint = '/companies';
+  }
 
   // Obtener lista de clientes
-  getCustomers(): Observable<Company[]> {
-    return this.http.get<Company[]>(`${this.apiUrl}/companies`);
+  getCompanies(): Observable<Company[]> {
+    return this.http.get<Company[]>(`${this.basePath}${this.resourceEndpoint}`);
   }
 
   // Obtener lista de servicios
   getServices(): Observable<Stylist[]> {
-    return this.http.get<Stylist[]>(`${this.apiUrl}/specialists`);
+    return this.http.get<Stylist[]>(`${this.basePath}${this.resourceEndpoint}`);
   }
 
   // Agregar un nuevo cliente
   addCustomer(company: Company): Observable<Company> {
-    return this.http.post<Company>(`${this.apiUrl}/companies`, company);
+    return this.http.post<Company>(`${this.basePath}${this.resourceEndpoint}`, company);
   }
 
   // Actualizar cliente existente
   updateCustomer(company: Company): Observable<Company> {
-    return this.http.put<Company>(`${this.apiUrl}/companies/${company.id}`, company);
+    return this.http.put<Company>(`${this.basePath}${this.resourceEndpoint}/${company.id}`, company);
   }
 
-  getCustomerById(id: string): Observable<Company> {
-    return this.http.get<Company>(`${this.apiUrl}/companies/${id}`);
+  getCompanyById(id: number): Observable<Company> {
+    return this.http.get<Company>(`${this.basePath}${this.resourceEndpoint}/${id}`);
   }
 
 }
