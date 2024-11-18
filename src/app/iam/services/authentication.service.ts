@@ -27,9 +27,12 @@ export class AuthenticationService {
   }
 
   get currentUserId() {
-    return this.signedInUserId.value;
+    return this.signedInUserId.asObservable();
   }
 
+  get getCurrentUserId() {
+    return this.signedInUserId.value;
+  }
   get currentUsername() {
     return this.signedInUsername.asObservable();
   }
