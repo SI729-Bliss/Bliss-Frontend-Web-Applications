@@ -105,7 +105,12 @@ export class ServicesGridComponent implements OnInit {
   deleteReview(reviewId?: number): void {
     if (reviewId) {
       this.reviewService.deleteReview(reviewId).subscribe(() => {
-        this.reviews = this.reviews.filter(booking => booking.review?.id !== reviewId);
+        this.bookings = this.bookings.map(booking => {
+          if (booking.review?.id === reviewId) {
+            booking.review = undefined;
+          }
+          return booking;
+        });
       });
     } else {
       console.error('Review ID is undefined');
