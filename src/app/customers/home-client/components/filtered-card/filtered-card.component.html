@@ -1,0 +1,23 @@
+<div class="container">
+  <div *ngFor="let service of dataSource.filteredData">
+    <mat-card class="service-card">
+      <img mat-card-image [src]="service.image" alt="Service Image">
+      <div class="text-content">
+        <mat-card-header>
+          <mat-card-title>{{service.beautySalon}}</mat-card-title>
+          <mat-card-subtitle><mat-icon>star</mat-icon>  {{service.rating}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="service-name">{{service.name}}</p>
+          <p class="description">{{service.description}}</p>
+          <p class="sales"><mat-icon matPrefix>card_giftcard</mat-icon> {{service.sales}} sales</p>
+          <p class="price">${{service.basePrice}}</p>
+          <p class="category">{{service.category}}</p>
+        </mat-card-content>
+        <mat-card-actions align="start">
+          <a mat-stroked-button [routerLink]="['/booking']" class="btn-check">Check now</a>
+        </mat-card-actions>
+      </div>
+    </mat-card>
+  </div>
+</div>

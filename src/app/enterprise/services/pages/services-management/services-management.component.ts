@@ -33,7 +33,7 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
   // Attributes
   entservicesData: Entservice;
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['table-number', 'name', 'categoryId', 'imageUrl', 'description', 'basePrice', 'actions'];
+  displayedColumns: string[] = ['table-number', 'name', 'category', 'imageUrl', 'description', 'basePrice', 'actions'];
   isEditMode: boolean;
   totalServices: number;
 

@@ -15,27 +15,32 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
 @Component({
-  selector: 'app-service-card',
+  selector: 'app-filtered-card',
   standalone: true,
   imports: [MatCardModule,  MatInputModule, MatFormFieldModule,CommonModule, MatButtonModule, MatIconModule, RouterLink, TranslateModule],
-  templateUrl: './service-card.component.html',
-  styleUrl: './service-card.component.css',
+  templateUrl: './filtered-card.component.html',
+  styleUrl: './filtered-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ServiceCardComponent{
-  services: Array<Service> = [];
-  displayedColumns: string[] = ['name','description','basePrice','image','beautySalon','sales','rating'];
-  dataSource: any;
-  constructor(private serviceApiService: ServicesService){}
+export class FilteredCardComponent implements OnInit {
+  @Input() category: string = '';
+    services: Array<Service> = [];
+    displayedColumns: string[] = ['name', 'description', 'basePrice', 'image', 'category', 'beautySalon', 'sales', 'rating'];
+    dataSource: any;
 
-  applyFilter(event: Event) {
+    constructor(private serviceApiService: ServicesService) {}
+
+    applyFilter(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
     }
-  ngOnInit(): void {
-        this.serviceApiService.getAll().subscribe((data: any) => {
-            this.services = data;
-            this.dataSource = new MatTableDataSource(this.services);
+
+    ngOnInit(): void {
+      if (this.category) {
+        this.serviceApiService.getServicesByCategoryId(this.category).subscribe((data: any) => {
+          this.services = data;
+          this.dataSource = new MatTableDataSource(this.services);
         });
+      }
     }
 }

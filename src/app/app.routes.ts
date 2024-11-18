@@ -1,6 +1,7 @@
 import { Routes} from '@angular/router';
 /*Catalog Client*/
 import { HomeComponent } from './customers/home-client/pages/home/home.component';
+import { ServicesSearchingComponent } from './customers/home-client/pages/services-searching/services-searching.component';
 /*Page not found*/
 import { PageNotFoundComponent } from "./public/pages/page-not-found/page-not-found.component";
 /*Services history*/
@@ -29,6 +30,7 @@ export const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent},
   /*Client*/
   { path: 'catalog', component: HomeComponent , canActivate: [authenticationGuard]},
+  { path: 'services-search',component: ServicesSearchingComponent},
   { path: 'services-history', component: ServicesHistoryComponent, canActivate: [authenticationGuard] },
   { path: 'booking', component: BookingComponent, canActivate: [authenticationGuard] },
   { path: 'my-reservations', component: CitasListComponent, canActivate: [authenticationGuard] },

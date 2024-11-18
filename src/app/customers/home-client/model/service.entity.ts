@@ -3,7 +3,7 @@ export class Service {
   name:string;
   description:string;
   basePrice:number;
-  categoryId:number;
+  category:string;
   beautySalon:string;
   sales:number;
   rating:number;
@@ -13,7 +13,7 @@ export class Service {
     this.name ='' ;
     this.description = '';
     this.basePrice =0 ;
-    this.categoryId = 0;
+    this.category = '';
     this.sales = 0;
     this.rating = 0;
     this.beautySalon = '';

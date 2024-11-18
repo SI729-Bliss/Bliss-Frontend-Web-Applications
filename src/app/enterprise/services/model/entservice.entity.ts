@@ -1,7 +1,7 @@
 export class Entservice {
   id: number;
   name: string;
-  categoryId: string;
+  category: string;
   imageUrl: string;
   description: string;
   basePrice: number;
@@ -10,7 +10,7 @@ export class Entservice {
   constructor() {
     this.id = 0;
     this.name = "";
-    this.categoryId = "";
+    this.category = "";
     this.imageUrl = "";
     this.description = "";
     this.basePrice = 0;
