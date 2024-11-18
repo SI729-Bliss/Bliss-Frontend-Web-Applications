@@ -27,7 +27,7 @@ export class AuthenticationService {
   }
 
   get currentUserId() {
-    return this.signedInUserId.asObservable();
+    return this.signedInUserId.value;
   }
 
   get currentUsername() {
@@ -40,6 +40,7 @@ export class AuthenticationService {
    * @returns The sign up response.
    */
   signUp(signUpRequest: SignUpRequest) {
+
     return this.http.post<SignUpResponse>(`${this.basePath}/authentication/sign-up`, signUpRequest, this.httpOptions)
       .subscribe({
         next: (response) => {
