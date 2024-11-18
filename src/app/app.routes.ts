@@ -35,7 +35,7 @@ export const routes: Routes = [
   { path: 'review-page/:id', component: ReviewPageComponent, canActivate: [authenticationGuard] },
   { path: 'review-page', component: ReviewPageComponent, canActivate: [authenticationGuard] },
   { path: 'customerProfile', component: CustomerCreateAndEditComponent, canActivate: [authenticationGuard] },
-  {path: 'payment', component:PaymentComponent , canActivate: [authenticationGuard]},
+  {path: 'payment', component:PaymentComponent },
   /*Enterprise*/
   { path: 'my-services', component: HomeEnterpriseComponent, canActivate: [authenticationGuard] },
   { path: 'services', component: ServicesManagementComponent, canActivate: [authenticationGuard] },
