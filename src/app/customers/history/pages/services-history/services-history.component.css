@@ -1,9 +1,27 @@
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+/* src/app/history/pages/services-history/services-history.component.css */
+.table-container {
+  max-width: 70%; /* Limits the table width */
+  margin: auto; /* Centers the table */
+  overflow-x: auto; /* Makes the table responsive */
+  background-color: #370837; /* Light background color */
+  padding: 16px; /* Adds padding */
+  border-radius: 8px; /* Rounded corners */
 }
 
-.review-card {
-  width: 300px;
+table.mat-elevation-z8 {
+  width: 100%; /* Ensures the table occupies the full container width */
+  background-color: #37123C; /* Table background color */
+  border-collapse: collapse; /* Collapses table borders */
+}
+
+th.mat-header-cell, td.mat-cell {
+  padding: 8px; /* Adds padding to cells */
+  text-align: left; /* Aligns text to the left */
+  border-bottom: 1px solid #ff0606; /* Adds a bottom border */
+}
+
+th.mat-header-cell {
+  background-color: #370837; /* Header background color */
+  font-weight: bold; /* Bold text for headers */
+  color: #000000 !important; /* Text color */
 }
