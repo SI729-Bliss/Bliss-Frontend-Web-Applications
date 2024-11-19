@@ -66,9 +66,7 @@
 
       }
     </div>
-    <div class="list-actions">
-      <a>My Finance</a>
-    </div>
+
   </div>
 
 
@@ -81,20 +79,16 @@
           <div class="card-container">
             <div class="specialist-name">{{ stylist.name }}</div>
             <div class="sub-card">
-              <div class="price">{{ stylist.profession }}</div>
-
+              <div class="price">{{ stylist.specialism }}</div>
               <div class="stars">
                 <mat-icon matPrefix>star</mat-icon>
                 {{ stylist.rating }}
               </div>
-
             </div>
-
           </div>
           <div class="image-container">
             <img [src]="stylist.img" alt="foto de perfil del estilista">
           </div>
-
         </div>
       }
       @empty {
@@ -102,5 +96,6 @@
       }
     </div>
   </div>
+
 </div>
 

@@ -1,17 +1,15 @@
 <div class="main-container">
   <div class="container-services">
 
-    <p>Service we offer</p>
-
+    <p>My Services</p>
+    <!--Button to services-->
+    <div class="services-button">
+      <a mat-stroked-button [routerLink]="['/services']"> {{ 'bc-4.addservice' | translate }} </a>
+    </div>
     <div class="card-services">
       <ng-container *ngFor="let entservice of entserviceData">
         <app-service-card [entservice]="entservice">  </app-service-card>
       </ng-container>
-    </div>
-
-    <!--Button to services-->
-    <div class="services-button">
-      <a mat-stroked-button [routerLink]="['/services']"> {{ 'bc-4.addservice' | translate }} </a>
     </div>
 
   </div>

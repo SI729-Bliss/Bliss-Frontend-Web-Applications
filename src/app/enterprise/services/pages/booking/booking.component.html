@@ -1,4 +1,3 @@
-<!-- src/app/enterprise/services/pages/booking/booking.component.html -->
 <div class="appointment-container">
   <h2>Make an Appointment</h2>
 
@@ -46,24 +45,6 @@
         <option value="" disabled selected>Select requirements</option>
         <option *ngFor="let customization of customizations" [value]="customization">{{ customization }}</option>
       </select>
-    </div>
-
-    <!-- Switches -->
-    <div class="switch-group">
-      <label for="switch1">Do you want this on?</label>
-      <input id="switch1" type="checkbox" formControlName="switch1">
-    </div>
-    <div class="switch-group">
-      <label for="switch2">This one is already on</label>
-      <input id="switch2" type="checkbox" formControlName="switch2">
-    </div>
-    <div class="switch-group">
-      <label for="switch3">Sorry, can't change this</label>
-      <input id="switch3" type="checkbox" formControlName="switch3">
-    </div>
-    <div class="switch-group">
-      <label for="switch4">This one isn't available right now</label>
-      <input id="switch4" type="checkbox" formControlName="switch4">
     </div>
 
     <!-- Campo de fecha -->

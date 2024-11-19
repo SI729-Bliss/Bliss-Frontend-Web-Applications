@@ -8,13 +8,17 @@ import { importProvidersFrom } from '@angular/core';
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
+
+import { withInterceptors } from "@angular/common/http";
+import { authenticationInterceptor } from "./iam/services/authentication.interceptor";
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync(),
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([authenticationInterceptor])),
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {

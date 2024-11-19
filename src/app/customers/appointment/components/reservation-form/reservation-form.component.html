@@ -1,0 +1,26 @@
+<div class="appointment-container">
+  <p>Service: {{ serviceName }}</p>
+  <p>Company: {{ companyName }}</p>
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <!-- Campo de mensaje -->
+    <div class="input-group">
+      <label for="message">Message</label>
+      <textarea id="message" formControlName="message" rows="4"></textarea>
+    </div>
+
+    <!-- Campo de fecha -->
+    <div class="input-group">
+      <label for="bookingDate">Date *</label>
+      <input id="bookingDate" formControlName="bookingDate" type="date" required>
+    </div>
+
+    <!-- Campo de hora -->
+    <div class="input-group">
+      <label for="bookingTime">Enter time *</label>
+      <input id="bookingTime" formControlName="bookingTime" type="time" required>
+    </div>
+
+    <!-- Botón de enviar -->
+    <button [disabled]="!bookingForm.valid" type="submit">Continue to Payment</button>
+  </form>
+</div>

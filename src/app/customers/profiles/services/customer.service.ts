@@ -3,37 +3,39 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Customer } from '../model/customer.entity';
 import { Service } from '../model/service.entity';
+import {BaseService} from "../../../shared/services/base.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService {
-  private apiUrl = 'https://my-json-server.typicode.com/Andorla0/dbjson';
+export class CustomerService extends BaseService<Customer> {
 
-  constructor(private http: HttpClient) {}
 
+  constructor(http: HttpClient) {
+    super(http);
+    this.resourceEndpoint = '/customers';
+  }
   // Obtener lista de clientes
   getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(`${this.apiUrl}/customers`);
+    return this.http.get<Customer[]>(`${this.basePath}${this.resourceEndpoint}`);
   }
-
   // Obtener lista de servicios
-  getServices(): Observable<Service[]> {
-    return this.http.get<Service[]>(`${this.apiUrl}/services`);
+  getServicesByCustomerId(customerId:number): Observable<Service[]> {
+    return this.http.get<Service[]>(`${this.basePath}/bookings/customer/${customerId}`);
   }
 
   // Agregar un nuevo cliente
   addCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(`${this.apiUrl}/customers`, customer);
+    return this.http.post<Customer>(`${this.basePath}${this.resourceEndpoint}`, customer);
   }
 
   // Actualizar cliente existente
   updateCustomer(customer: Customer): Observable<Customer> {
-    return this.http.put<Customer>(`${this.apiUrl}/customers/${customer.id}`, customer);
+    return this.http.put<Customer>(`${this.basePath}${this.resourceEndpoint}/${customer.id}`, customer);
   }
 
-  getCustomerById(id: string): Observable<Customer> {
-    return this.http.get<Customer>(`${this.apiUrl}/customers/${id}`);
+  getCustomerById(id: number): Observable<Customer> {
+    return this.http.get<Customer>(`${this.basePath}${this.resourceEndpoint}/${id}`);
   }
 
 }

@@ -1,9 +1,9 @@
 {
-  "BLISS": "BLISS EN",
+  "BLISS": "BLISS",
   "Home": "Home",
   "Booking": "Booking",
-  "Customer": "Customer",
-  "Company": "Company",
+  "CustomerPr": "Customer Profile",
+  "CompanyPr": "Company Profile",
   "My Services": "My Services",
   "Schedule": "Schedule",
   "Catalog": "Catalog",
@@ -20,9 +20,8 @@
   "Rating": "Rating",
   "Actions": "Actions",
   "ServiceM": "Service Management",
-  "He": "Enterprise",
   "bc": {
-    "hello": "BLISS EN"
+    "hello": "BLISS"
   },
   "bc-2": {
 
@@ -33,7 +32,7 @@
   "bc-4": {
     "id": "Number",
     "eTitle": "Edit Services",
-    "mTitle": "Services Details",
+    "mTitle": "Service List",
 
     "cardtitle1": "Need more of Bliss?",
     "subtitle1": "Get a subscription",
@@ -64,7 +63,15 @@
     "formAdvice": "The services will be validated",
     "formAdviceName": "Service already exists",
 
-    "addIfOne": "Can't delete all services"
+    "addIfOne": "Can't delete all services",
+    "addName": "Not update with existing names",
+    "addDetail": "Detail",
+    "formDetails": "Add service details",
+    "addButton": "Add",
+
+    "selected": " selected to add details",
+    "detailMsg": " detail added correctly!",
+    "detailWrong": "Detail already exists for selected service"
   },
 
   "bc-5": {
@@ -101,6 +108,13 @@
       "cardsTitle": "Salons near to me",
       "newcardsTitle": "Recommended Services"
     }
+  },
+
+  "iam": {
+    "username": "Username",
+    "password": "Password",
+    "sign-in": "Sign in",
+    "sign-up": "Sign up"
   }
 
 

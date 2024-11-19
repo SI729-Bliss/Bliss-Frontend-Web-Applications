@@ -7,4 +7,5 @@ export const environment = {
 //serverBasePath: 'http://localhost:8090/api/v1'
 };
 */
-export const environment = { production: true, serverBasePath: undefined,}
+export const environment = {production: true, serverBasePath: 'http://localhost:8092/api/v1' };
+

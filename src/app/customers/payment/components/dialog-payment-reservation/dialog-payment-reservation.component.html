@@ -1,0 +1,12 @@
+<h2>{{payment?.id}}</h2>
+<div class="form-section">
+  <mat-dialog-content *ngIf="payment">
+    <p>ReservationID: {{payment.reservationId}}</p>
+    <p>Amount: {{payment.amount}}</p>
+    <p>Appoint date: {{payment.date}}</p>
+    <p>{{payment.paymentMethod}}</p>
+    <p>Status: {{payment.status}}</p>
+    <p>{{payment.invoiceType}}</p>
+    <p>{{payment.customerId}}</p>
+  </mat-dialog-content>
+</div>

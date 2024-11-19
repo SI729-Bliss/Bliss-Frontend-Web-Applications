@@ -8,16 +8,24 @@ import { MatIconModule } from "@angular/material/icon";
 import { EntsevicesService } from "../../services/entsevices.service";
 import { Entservice } from "../../model/entservice.entity";
 import { ServicesCreateAndEditComponent } from "../../components/services-create-and-edit/services-create-and-edit.component";
-import { NgClass } from "@angular/common";
+import {NgClass, NgForOf} from "@angular/common";
 import {TranslateModule, TranslateService} from "@ngx-translate/core";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from "@angular/forms";
+import {Detail} from "../../model/detail.entity";
+import {DetailsService} from "../../services/details.service";
+import {formToJSON} from "axios";
+import {error} from "@angular/compiler-cli/src/transformers/util";
+import {MatCardModule} from "@angular/material/card";
 
 @Component({
   selector: 'app-services-management',
   standalone: true,
   imports: [MatPaginator, MatSort, MatIconModule, ServicesCreateAndEditComponent, MatTableModule,
-    NgClass, TranslateModule, MatMenuModule, MatButtonModule],
+    NgClass, TranslateModule, MatMenuModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule, MatCardModule, NgForOf],
   templateUrl: './services-management.component.html',
   styleUrl: './services-management.component.css'
 })
@@ -26,9 +34,13 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
   // Attributes
   entservicesData: Entservice;
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['table-number', 'name', 'categoryId', 'imageUrl', 'description', 'basePrice', 'actions'];
+  displayedColumns: string[] = ['table-number', 'name', 'category', 'imageUrl', 'description', 'basePrice', 'actions'];
   isEditMode: boolean;
   totalServices: number;
+
+  serviceForDetail: Entservice;
+  detail: Detail;
+  detailsList: any[];
 
   @ViewChild(MatPaginator, { static: false}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false}) sort!: MatSort;
@@ -36,11 +48,17 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
   @ViewChild(ServicesCreateAndEditComponent) createEditComponent!: ServicesCreateAndEditComponent;
 
   // Constructor
-  constructor(private entserviceService: EntsevicesService, private translate: TranslateService) {
+  constructor(private entserviceService: EntsevicesService,
+              private translate: TranslateService,
+              private detailService: DetailsService) {
     this.isEditMode = false;
     this.entservicesData = {} as Entservice;
     this.dataSource = new MatTableDataSource<any>();
     this.totalServices = 0;
+
+    this.serviceForDetail = {} as Entservice;
+    this.detail = {} as Detail;
+    this.detailsList = [];
   }
 
   // Private Methods
@@ -50,16 +68,6 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
   }
 
   // CRUD Actions
-
-  /*
-  private getAllEntservices(): void {
-    this.entserviceService.getAll()
-      .subscribe((response: any) => {
-        this.dataSource.data = response;
-        console.log("data for table", this.dataSource.data);
-      });
-  };
-  */
 
   //Get services by salon id
   private getServicesBySalon(): void {
@@ -82,12 +90,15 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
   // Additional functions
 
   private createEntservice(): void {
+
     // Set salon id
-    this.entservicesData.beauty_salon_id = this.entserviceService.getSalonContextId();
+    this.entservicesData.salonId = this.entserviceService.salonContextId;
+
     this.entserviceService.create(this.entservicesData)
       .subscribe((response: any) => {
         this.dataSource.data.push({...response});
-        // Actualiza el dataSource.data con los service actuales, para que Angular detecte el cambio y actualice la vista.
+
+        // Actualiza el dataSource.data con los service actuales.
         this.dataSource.data = this.dataSource.data
           .map((service: Entservice) => {
             return service;
@@ -97,6 +108,7 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
 
   private updateEntservice(): void {
     let entserviceToUpdate: Entservice = this.entservicesData;
+
     this.entserviceService.update(this.entservicesData.id, entserviceToUpdate)
       .subscribe((response: any) => {
         this.dataSource.data = this.dataSource.data
@@ -143,6 +155,42 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
         }
       })
     }
+    this.getTotalServices();
+  }
+
+  getDetailsByService(){
+    this.detailService.getAllDetailsByService(this.serviceForDetail.id).subscribe((response: any) => {
+      this.detailsList = response;
+    })
+  }
+
+  onAddDetail(element: Entservice){
+    this.serviceForDetail = element;
+
+    this.getDetailsByService();
+
+    this.translate.get('bc-4.selected').subscribe((translatedMessage: string) =>
+    { window.alert(this.serviceForDetail.name + translatedMessage); })
+  }
+
+  addDetail(){
+    this.detail.serviceId = this.serviceForDetail.id;
+    //let added = null;
+
+    this.detailService.create(this.detail).subscribe((response: any) => {
+      console.log(response.detail);
+
+      if (response.detail == this.detail.detail){
+        this.translate.get('bc-4.detailMsg').subscribe((translatedMessage: string) =>
+        { window.alert(this.detail.detail + translatedMessage); })
+      } else {
+        this.translate.get('bc-4.detailWrong').subscribe((translatedMessage: string) =>
+        { window.alert(translatedMessage); })
+      }
+    })
+
+    this.getDetailsByService();
+
   }
 
   onCancelEdit() {
@@ -174,6 +222,8 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     // Get total amount of services
+    this.entserviceService.getSalonContextId()
+
     this.getTotalServices();
     this.getServicesBySalon()
   }

@@ -6,6 +6,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LanguageSwitcherComponent } from "../language-switcher/language-switcher.component";
 import {TranslateModule, TranslateService} from "@ngx-translate/core";
 import {BreakpointObserver} from "@angular/cdk/layout";
+import {
+  AuthenticationSectionComponent
+} from "../../../iam/components/authentication-section/authentication-section.component";
 
 
 
@@ -19,6 +22,7 @@ import {BreakpointObserver} from "@angular/cdk/layout";
     MatIconModule,
     LanguageSwitcherComponent,
     TranslateModule,
+    AuthenticationSectionComponent,
   ],
   templateUrl: './header-content.component.html',
   styleUrl: './header-content.component.css'
@@ -44,25 +48,24 @@ export class HeaderContentComponent implements OnInit{
   }
   loadTranslations(): void {
     this.translate.get([
-      'bc.hello',
-      'List',
+      'BLISS',
+      'My Reservations',
       'Catalog',
       'Services History',
-      'Customer',
-      'Company',
+      'CustomerPr',
+      'CompanyPr',
       'Booking',
       'ServiceM',
-      'He',
+      'My Services',
     ]).subscribe(translations => {
       this.options = [
-        { icon: 'home', path: '/booking', title: translations['Booking'] },
-        { icon: 'info', path: '/citas', title: translations['List'] },
         { icon: 'info', path: '/catalog', title: translations['Catalog'] },
-        { icon: 'info', path: '/my-services', title: translations['Services History'] },
-        { icon: 'person', path: '/customerProfile', title: translations['Customer'] },
-        { icon: 'person', path: '/companyProfile', title: translations['Company'] },
-        { icon: 'info', path: '/services', title: translations['ServiceM'] },
-        { icon: 'info', path: '/homeEnterprise', title: translations['He'] },
+        { icon: 'info', path: '/my-reservations', title: translations['My Reservations'] },
+        { icon: 'info', path: '/services-history', title: translations['Services History'] },
+        { icon: 'person', path: '/customerProfile', title: translations['CustomerPr'] },
+
+        { icon: 'person', path: '/companyProfile', title: translations['CompanyPr'] },
+        { icon: 'info', path: '/my-services', title: translations['My Services'] },
       ];
     });
   }

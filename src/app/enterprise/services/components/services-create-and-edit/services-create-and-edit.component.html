@@ -11,7 +11,7 @@
         <mat-card-subtitle>{{ totalservices ?  totalservices : 'bc-4.amountServices' | translate }}</mat-card-subtitle>
 
         <mat-card-actions align="end">
-          <a mat-stroked-button [routerLink]="['/home']"> {{ 'bc-4.viewservice' | translate }} </a>
+          <a mat-stroked-button [routerLink]="['/my-services']"> {{ 'bc-4.viewservice' | translate }} </a>
         </mat-card-actions>
       </mat-card>
     </div>
@@ -54,7 +54,7 @@
 
         <mat-form-field>
           <mat-label>{{ 'bc-4.categoryId' | translate }}</mat-label>
-          <input matInput type="number" placeholder="..." name="category" required min="1" [(ngModel)]="entservice.categoryId">
+          <input matInput  placeholder="..." name="category" required [(ngModel)]="entservice.category">
         </mat-form-field>
 
         <br>
@@ -75,7 +75,7 @@
 
         <mat-form-field>
           <mat-label>{{ 'bc-4.basePrice' | translate }}</mat-label>
-          <input matInput type="number" placeholder="$ 10 - 100" name="basePrice" required min="10" max="100" [(ngModel)]="entservice.basePrice">
+          <input matInput type="number" placeholder="s/. 1 - 100" name="basePrice" required min="10" max="100" [(ngModel)]="entservice.basePrice">
         </mat-form-field>
 
         <br>
@@ -116,7 +116,7 @@
       </mat-card>
     </div>
 
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <button mat-button [matMenuTriggerFor]="menu"></button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="setSalon(1)">1</button>
       <button mat-menu-item (click)="setSalon(2)">2</button>
