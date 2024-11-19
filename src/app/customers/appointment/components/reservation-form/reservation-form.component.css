@@ -1,32 +1,20 @@
-/* Texto de servicio y precio */
-.service-details {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.service-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.price {
-  font-size: 1.2rem;
-  color: #28a745;
-  font-weight: bold;
-}
-
 .appointment-container {
-  max-width: 750px;
-  margin: 20px auto;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
-  background: #ffffff;
+  background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2, p {
-  margin: 0 0 10px 0;
+.service-name, .company-name {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .input-group {
@@ -34,39 +22,32 @@ h2, p {
 }
 
 .input-group label {
-  font-weight: bold;
+  display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .form-control {
-  width: 90%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-textarea.form-control {
-  resize: none;
-}
-
-.btn-primary {
   width: 100%;
-  padding: 12px;
-  font-size: 1.1rem;
-  background-color:  #59116B;
-  color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #8EBEF7;
+  color: white;
 }
 
 .btn-primary:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
-}
-
-.btn-primary:hover {
-  background-color:  #370942;
 }

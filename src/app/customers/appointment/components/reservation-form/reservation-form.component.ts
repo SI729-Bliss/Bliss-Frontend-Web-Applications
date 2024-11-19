@@ -7,12 +7,11 @@ import { CompanyService } from '../../services/company.service';
 import { Service } from '../../model/service.entity';
 import { Reservation } from '../../model/reservation.entity';
 import {AuthenticationService} from "../../../../iam/services/authentication.service";
-import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-reservation-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, MatIcon],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './reservation-form.component.html',
   styleUrl: './reservation-form.component.css'
 })

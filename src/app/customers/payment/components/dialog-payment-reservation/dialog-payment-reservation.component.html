@@ -1,29 +1,12 @@
-<h2 mat-dialog-title class="dialog-title">Payment Information</h2>
+<h2 mat-dialog-title>{{payment?.id}}</h2>
 <div class="form-section">
-  <mat-dialog-content *ngIf="payment" class="dialog-content">
-    <div class="info-group">
-      <span class="info-label">Reservation ID:</span>
-      <span class="info-value">{{payment?.reservationId}}</span>
-    </div>
-    <div class="info-group">
-      <span class="info-label">Amount:</span>
-      <span class="info-value">{{payment?.amount}}$</span>
-    </div>
-    <div class="info-group">
-      <span class="info-label">Appointment Date: </span>
-      <span class="info-value"> {{payment?.date}}</span>
-    </div>
-    <div class="info-group">
-      <span class="info-label">Payment Method:</span>
-      <span class="info-value">{{payment?.paymentMethod}}</span>
-    </div>
-    <div class="info-group">
-      <span class="info-label">Status:</span>
-      <span class="info-value">{{payment?.status}}</span>
-    </div>
-    <div class="info-group">
-      <span class="info-label">Invoice:</span>
-      <span class="info-value">{{payment?.invoiceType}}</span>
-    </div>
+  <mat-dialog-content *ngIf="payment">
+    <p>ReservationID: {{payment?.reservationId}}</p>
+    <p>Amount: {{payment?.amount}}</p>
+    <p>Appoint date: {{payment?.date}}</p>
+    <p>PaymentMethod:{{payment?.paymentMethod}}</p>
+    <p>Status: {{payment?.status}}</p>
+    <p>Invoice: {{payment?.invoiceType}}</p>
+    <p>CustomerId:{{payment?.customerId}}</p>
   </mat-dialog-content>
 </div>
