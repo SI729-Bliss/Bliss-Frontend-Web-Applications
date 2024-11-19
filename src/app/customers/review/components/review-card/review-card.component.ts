@@ -107,13 +107,17 @@ export class ReviewCardComponent implements OnInit {
     this.review.updatedAt = new Date().toISOString();
     this.review.imageUrls = this.images;
 
+    console.log('Review object:', this.review); // Log the Review object
+
     if (this.review.id) {
-      this.reviewService.updateReview(this.review.id, this.review).subscribe(() => {
-        this.router.navigate(['/my-services']);
+      this.reviewService.updateReview(this.review.id, this.review).subscribe({
+        next: () => this.router.navigate(['/services-history']),
+        error: (error) => console.error('Update review failed', error)
       });
     } else {
-      this.reviewService.createReview(this.review).subscribe(() => {
-        this.router.navigate(['/my-services']);
+      this.reviewService.createReview(this.review).subscribe({
+        next: () => this.router.navigate(['/services-history']),
+        error: (error) => console.error('Create review failed', error)
       });
     }
   }

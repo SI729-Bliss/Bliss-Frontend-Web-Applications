@@ -1,11 +1,12 @@
+import {Time} from "@angular/common";
+
 export class Booking {
   id: number;
   customerId: number;
   serviceId: number;
   companyId: number;
   totalAmount: number;
-  bookingDate: string;
-  bookingTime: string;
+  bookingDate: Date;
   bookingStatus: boolean;
   requirements: string[];
 
@@ -15,8 +16,7 @@ export class Booking {
     this.serviceId = 0;
     this.companyId = 0;
     this.totalAmount = 0;
-    this.bookingDate = '';
-    this.bookingTime = '';
+    this.bookingDate = new Date();
     this.bookingStatus = false;
     this.requirements = [];
   }

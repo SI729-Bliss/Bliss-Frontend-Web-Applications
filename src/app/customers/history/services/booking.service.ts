@@ -31,7 +31,11 @@ export class BookingService extends BaseService<Booking> {
     );
   }
 
-
+  getServiceById(serviceId: number): Observable<Service> {
+  return this.http.get<Service>(`${this.basePath}/services/${serviceId}`).pipe(retry(2),
+    catchError(this.handleError)
+  );
+  }
 
   getBookingsByCustomerId(customerId: number): Observable<Booking[]> {
     return this.http.get<Booking[]>(`${this.basePath}${this.resourceEndpoint}/customer/${customerId}`).pipe(retry(2), catchError(this.handleError));

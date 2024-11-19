@@ -4,6 +4,7 @@ export class Review {
   createdAt: string;
   updatedAt: string;
   reservationId: number;
+  userId: number;
   punctuation: number;
   comment: string;
   reservationInfo: {
@@ -17,6 +18,7 @@ export class Review {
     this.createdAt = '';
     this.updatedAt = '';
     this.reservationId = 0;
+    this.userId = 0;
     this.punctuation = 0;
     this.comment = '';
     this.reservationInfo = {

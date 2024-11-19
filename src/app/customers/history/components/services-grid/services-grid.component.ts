@@ -14,9 +14,11 @@ import { MatButton } from "@angular/material/button";
 import { TranslateModule } from "@ngx-translate/core";
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import {Review} from "../../../review/model/review.entity";
+import {Service} from "../../model/service.entity";
 
 interface BookingWithDetails extends Booking {
   company: Company;
+  service: Service;
   review?: Review;
 }
 
@@ -46,6 +48,7 @@ interface BookingWithDetails extends Booking {
 })
 export class ServicesGridComponent implements OnInit {
   bookings: BookingWithDetails[] = [];
+  reviews: Review[] = []; // Add this line to define the reviews property
   cols: number = 1;
 
   constructor(
@@ -83,11 +86,12 @@ export class ServicesGridComponent implements OnInit {
       const filteredBookings = bookings.filter(booking => booking.bookingStatus);
       const companyRequests = filteredBookings.map(booking => this.bookingService.getCompanyById(booking.companyId));
       const reviewRequests = filteredBookings.map(booking => this.reviewService.getReviewsByReservationId(booking.id));
-
-      forkJoin([forkJoin(companyRequests), forkJoin(reviewRequests)]).subscribe(([companies, reviews]) => {
+      const serviceRequests = filteredBookings.map(booking => this.bookingService.getServiceById(booking.serviceId));
+      forkJoin([forkJoin(companyRequests),forkJoin(serviceRequests), forkJoin(reviewRequests)]).subscribe(([companies, services, reviews]) => {
         this.bookings = filteredBookings.map((booking, index) => ({
           ...booking,
           company: companies[index],
+          service:services[index],
           review: reviews[index][0] // Assuming each booking has one review
         }));
       });
@@ -111,9 +115,20 @@ export class ServicesGridComponent implements OnInit {
           }
           return booking;
         });
+        this.refreshReviews(); // Call refreshBookings to update the table
       });
     } else {
       console.error('Review ID is undefined');
     }
+  }
+
+  private refreshReviews(): void {
+    this.authService.currentUserId.subscribe(userId => {
+      if (userId) {
+        this.reviewService.getReviewsByCustomerId(userId).subscribe(reviews => {
+          this.reviews = reviews;
+        });
+      }
+    });
   }
 }

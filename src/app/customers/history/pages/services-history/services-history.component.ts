@@ -6,6 +6,7 @@ import { DatePipe, NgForOf } from '@angular/common';
 import { ServicesGridComponent } from '../../components/services-grid/services-grid.component';
 import { TranslateModule } from "@ngx-translate/core";
 import { AuthenticationService } from '../../../../iam/services/authentication.service';
+import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
 
 @Component({
   selector: 'app-services-history',
@@ -15,14 +16,19 @@ import { AuthenticationService } from '../../../../iam/services/authentication.s
     NgForOf,
     ServicesGridComponent,
     DatePipe,
-    TranslateModule
+    TranslateModule,
+    MatCardContent,
+    MatCardTitle,
+    MatCardActions,
+    MatCardHeader,
+    MatCard
   ],
   templateUrl: './services-history.component.html',
   styleUrls: ['./services-history.component.css']
 })
 export class ServicesHistoryComponent implements OnInit {
   reviews: Review[] = [];
-  displayedColumns: string[] = ['bookingId', 'punctuation', 'comment', 'createdDate'];
+  displayedColumns: string[] = ['bookingId', 'punctuation', 'comment'];
 
   constructor(
     private reviewService: ReviewService,
@@ -33,7 +39,10 @@ export class ServicesHistoryComponent implements OnInit {
     this.authService.currentUserId.subscribe(userId => {
       if (userId) {
         this.reviewService.getReviewsByCustomerId(userId).subscribe(reviews => {
-          this.reviews = reviews.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+          this.reviews = reviews.map(review => {
+            review.userId = userId;
+            return review;
+          });
         });
       }
     });
