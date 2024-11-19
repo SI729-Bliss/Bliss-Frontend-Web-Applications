@@ -74,8 +74,8 @@ export class ServicesGridComponent implements OnInit {
       }
     });
 
-const getCurrentUserId = this.authService.getCurrentUserId;
-        this.getBookingsWithDetailsByCustomerId(getCurrentUserId);
+    const getCurrentUserId = this.authService.getCurrentUserId;
+    this.getBookingsWithDetailsByCustomerId(getCurrentUserId);
 
   }
 

@@ -104,29 +104,29 @@ export class ReviewCardComponent implements OnInit {
   saveReview(): void {
     const currentUserId = this.authService.getCurrentUserId;
 
-        this.review.userId = currentUserId;
-        this.review.punctuation = this.rating;
-        this.review.reservationId = this.reservation.id;
-        this.review.createdAt = new Date().toISOString();
-        this.review.updatedAt = new Date().toISOString();
-        this.review.imageUrls = this.images;
+    this.review.userId = currentUserId;
+    this.review.punctuation = this.rating;
+    this.review.reservationId = this.reservation.id;
+    this.review.createdAt = new Date().toISOString();
+    this.review.updatedAt = new Date().toISOString();
+    this.review.imageUrls = this.images;
 
-        console.log('Review object:', this.review); // Log the Review object
+    console.log('Review object:', this.review); // Log the Review object
 
-        if (this.review.id) {
-          this.reviewService.updateReview(this.review.id, this.review).subscribe({
-            next: () => this.router.navigate(['/services-history']),
-            error: (error) => console.error('Update review failed', error)
-          });
-        } else {
-          this.reviewService.createReview(this.review).subscribe({
-            next: () => {
-              this.router.navigate(['/services-history']);
+    if (this.review.id) {
+      this.reviewService.updateReview(this.review.id, this.review).subscribe({
+        next: () => this.router.navigate(['/services-history']),
+        error: (error) => console.error('Update review failed', error)
+      });
+    } else {
+      this.reviewService.createReview(this.review).subscribe({
+        next: () => {
+          this.router.navigate(['/services-history']);
 
-            },
-                error: (error) => console.error('Create review failed', error)
-          });
-        }
+        },
+        error: (error) => console.error('Create review failed', error)
+      });
+    }
 
 
   }

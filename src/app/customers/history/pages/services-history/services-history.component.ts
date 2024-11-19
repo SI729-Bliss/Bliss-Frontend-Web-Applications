@@ -48,13 +48,13 @@ export class ServicesHistoryComponent implements OnInit {
     this.reviewService.getReviewsByCustomerId(userId).subscribe(reviews => {
       console.log('Reviews fetched:', reviews);
       this.reviews = reviews.map(review => {
-          return review;
+        return review;
       })
       this.refreshReviews()
-  })
+    })
   }
   refreshReviews(): void {
     const getCurrentUserId = this.authService.getCurrentUserId;
     this.loadReviewsByCustomerId(getCurrentUserId);
   }
-  }
+}
