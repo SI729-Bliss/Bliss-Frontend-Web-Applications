@@ -21,7 +21,7 @@ export class ReservationFormComponent implements OnInit {
   companyName: string = '';
   serviceId: number = 0;
   companyId: number = 0;
-  predefinedTotalAmount: number = 60;
+  basePrice: number = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -46,6 +46,7 @@ export class ReservationFormComponent implements OnInit {
       this.serviceId = +serviceId;
       this.reservationService.getServiceById(this.serviceId).subscribe(service => {
         this.serviceName = service.name;
+        this.basePrice = service.basePrice; // Assign basePrice
 
         const salonId = service.salonId;
 
@@ -70,11 +71,11 @@ export class ReservationFormComponent implements OnInit {
       reservation.bookingTime = this.bookingForm.value.bookingTime;
       reservation.bookingStatus = false;
       reservation.requirements = this.bookingForm.value.requirements.split(',').map((req: string) => req.trim());
-      reservation.totalAmount = this.predefinedTotalAmount;
+      reservation.totalAmount = this.basePrice; // Use basePrice for totalAmount
 
       this.reservationService.create(reservation).subscribe(response => {
         console.log('Reservation created:', response);
-        this.router.navigate(['/payment']);
+        this.router.navigate(['/payment'], { queryParams: { totalAmount: reservation.totalAmount } });
       });
     }
   }

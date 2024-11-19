@@ -3,6 +3,9 @@ import { Routes} from '@angular/router';
 import { HomeComponent } from './customers/home-client/pages/home/home.component';
 /*Page not found*/
 import { PageNotFoundComponent } from "./public/pages/page-not-found/page-not-found.component";
+/*Reservations*/
+import { ReservationComponent } from "./customers/appointment/pages/reservation/reservation.component";
+import { ServicesSearchingComponent } from "./customers/home-client/pages/services-searching/services-searching.component";
 /*Services history*/
 import {ServicesHistoryComponent} from "./customers/history/pages/services-history/services-history.component";
 /*Review client*/
@@ -28,6 +31,8 @@ export const routes: Routes = [
   /*Client*/
   { path: 'catalog', component: HomeComponent , canActivate: [authenticationGuard]},
   { path: 'services-history', component: ServicesHistoryComponent },
+  { path: 'booking',component:ReservationComponent},
+  {path: 'searching-services', component: ServicesSearchingComponent},
 
   { path: 'review-page/:id', component: ReviewPageComponent },
   { path: 'review-page', component: ReviewPageComponent },
@@ -39,7 +44,7 @@ export const routes: Routes = [
   { path: 'service-details/:id', component: ServicesManagementComponent },
   { path: 'companyProfile', component: CompanyCreateAndEditComponent },
 
-  { path: '', redirectTo: 'customerProfile', pathMatch: 'full' },
+  { path: '', redirectTo: 'catalog', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
