@@ -1,15 +1,36 @@
 .appointment-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 700px; /* Increase the maximum width of the container */
+  margin: 0 auto; /* Center the container */
+  padding: 30px; /* Add more padding */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a modern font */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.service-name, .company-name {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+.service-name {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px; /* Increase font size */
+  margin-bottom: 25px; /* Add more space below each element */
+  color: #333; /* Darker text color */
+}
+
+.service-name-value {
+  margin-left: auto; /* Push the service name to the right */
+}
+
+.company-name, .base-price {
+  font-size: 20px; /* Increase font size */
+  margin-bottom: 20px; /* Add more space below each element */
+  color: #333; /* Darker text color */
+}
+.light-text {
+  font-weight: 300; /* Light */
+}
+
+.bold-text {
+  font-weight: bold; /* Bold */
 }
 
 .booking-form {
@@ -18,36 +39,44 @@
 }
 
 .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 25px; /* Add more space between input groups */
 }
 
 .input-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  font-size: 18px; /* Increase font size of labels */
+  margin-bottom: 10px; /* Add more space below labels */
+  color: #555; /* Slightly darker label color */
 }
 
-.form-control {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+.input-group .form-control {
+  font-size: 16px; /* Increase font size of input fields */
+  padding: 12px; /* Add more padding to input fields */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  transition: border-color 0.3s; /* Smooth transition for border color */
 }
 
-.btn {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.input-group .form-control:focus {
+  border-color: #007BFF; /* Border color on focus */
+  outline: none; /* Remove default outline */
 }
 
 .btn-primary {
-  background-color: #8EBEF7;
-  color: white;
+  font-size: 18px; /* Increase font size of the button */
+  padding: 14px 24px; /* Add more padding to the button */
+  background-color: #59116B; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.btn-primary:hover {
+  background-color: #370942; /* Darker background color on hover */
 }
 
 .btn-primary:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
+  background-color: #ccc; /* Background color for disabled button */
+  cursor: not-allowed; /* Not-allowed cursor for disabled button */
 }

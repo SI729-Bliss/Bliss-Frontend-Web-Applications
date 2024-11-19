@@ -48,3 +48,7 @@ mat-divider {
   justify-content: center;
   margin: 10px 0;
 }
+
+.highlight {
+  color: #370942; /* Replace with your desired color */
+}

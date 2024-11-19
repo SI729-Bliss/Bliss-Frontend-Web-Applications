@@ -11,6 +11,6 @@ export class BottomFilterComponent {
   constructor(private router: Router) {}
 
     filterByCategory(category: string) {
-      this.router.navigate(['/services-search'], { queryParams: { category } });
+      this.router.navigate(['/searching-services'], { queryParams: { category } });
     }
 }

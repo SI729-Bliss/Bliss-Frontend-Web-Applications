@@ -1,23 +1,33 @@
 <div class="appointment-container">
-  <p class="service-name">Service: {{ serviceName }}</p>
-  <p class="company-name">Compania: {{ companyName }}</p>
-  <p class="base-price">Base Price: {{ basePrice }}</p> <!-- Mostrar basePrice -->
+  <p class="service-name">
+    <span class="light-text">Service</span>
+    <span class="bold-text service-name-value">{{ serviceName }}</span>
+  </p>
+  <p class="company-name">
+    <span class="light-text">Is from </span>
+    <span class="bold-text">{{ companyName }}</span>
+    <span class="light-text"> company</span>
+  </p>
+  <p class="base-price">
+    <span class="light-text">Base Price </span>
+    <span class="bold-text">{{ basePrice }}$</span>
+  </p> <!-- Mostrar basePrice -->
   <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
     <!-- Campo de fecha -->
     <div class="input-group">
-      <label for="bookingDate">Date *</label>
+      <label for="bookingDate">Date * </label>
       <input id="bookingDate" formControlName="bookingDate" type="date" required class="form-control">
     </div>
 
     <!-- Campo de hora -->
     <div class="input-group">
-      <label for="bookingTime">Enter time *</label>
+      <label for="bookingTime">Enter time * </label>
       <input id="bookingTime" formControlName="bookingTime" type="time" required class="form-control">
     </div>
 
     <!-- Campo de mensaje -->
     <div class="input-group">
-      <label for="message">Message</label>
+      <label for="message">Message </label>
       <textarea id="message" formControlName="message" rows="4" class="form-control"></textarea>
     </div>
     <!-- Botón de enviar -->

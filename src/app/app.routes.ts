@@ -30,19 +30,19 @@ export const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent},
   /*Client*/
   { path: 'catalog', component: HomeComponent , canActivate: [authenticationGuard]},
-  { path: 'services-history', component: ServicesHistoryComponent },
-  { path: 'booking',component:ReservationComponent},
-  {path: 'searching-services', component: ServicesSearchingComponent},
+  { path: 'services-history', component: ServicesHistoryComponent  , canActivate: [authenticationGuard]},
+  { path: 'booking',component:ReservationComponent , canActivate: [authenticationGuard]},
+  {path: 'searching-services', component: ServicesSearchingComponent , canActivate: [authenticationGuard]},
 
-  { path: 'review-page/:id', component: ReviewPageComponent },
-  { path: 'review-page', component: ReviewPageComponent },
-  { path: 'customerProfile', component: CustomerCreateAndEditComponent },
+  { path: 'review-page/:id', component: ReviewPageComponent , canActivate: [authenticationGuard] },
+  { path: 'review-page', component: ReviewPageComponent , canActivate: [authenticationGuard] },
+  { path: 'customerProfile', component: CustomerCreateAndEditComponent},
   {path: 'payment', component:PaymentComponent},
   /*Enterprise*/
-  { path: 'my-services', component: HomeEnterpriseComponent },
-  { path: 'services', component: ServicesManagementComponent },
-  { path: 'service-details/:id', component: ServicesManagementComponent },
-  { path: 'companyProfile', component: CompanyCreateAndEditComponent },
+  { path: 'my-services', component: HomeEnterpriseComponent , canActivate: [authenticationGuard] },
+  { path: 'services', component: ServicesManagementComponent  , canActivate: [authenticationGuard]},
+  { path: 'service-details/:id', component: ServicesManagementComponent , canActivate: [authenticationGuard] },
+  { path: 'companyProfile', component: CompanyCreateAndEditComponent , canActivate: [authenticationGuard] },
 
   { path: '', redirectTo: 'catalog', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
