@@ -31,3 +31,7 @@ mat-toolbar {
   transition-duration: 0.7s ;
 }
 
+.bliss-title {
+  font-size: 36px; /* Aumenta el tamaño de la fuente solo para BLISS */
+  color: #37123C;
+}

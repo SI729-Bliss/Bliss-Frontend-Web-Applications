@@ -1,60 +1,74 @@
-  <div class="sidebar">
-    <h5>FILTER BY</h5>
-    <input type="text" placeholder="Search">
-    <div class="dropdown">
-      <button class="dropbtn">Hair <span>&#9660;</span></button>
-      <div class="dropdown-content">
-        <a href="#">Gel</a>
-        <a href="#">Manicure</a>
-        <a href="#">Pedicure</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Nails <span>&#9660;</span></button>
-      <div class="dropdown-content">
-        <a href="#">Nails 1</a>
-        <a href="#">{{ 'bc-5.booking.nailType2' | translate }}</a>
-        <a href="#">{{ 'bc-5.booking.nailType3' | translate }}</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Makeup <span>&#9660;</span></button>
-      <div class="dropdown-content">
-        <a href="#">{{ 'bc-5.booking.makeupType1' | translate }}</a>
-        <a href="#">{{ 'bc-5.booking.makeupType2' | translate }}</a>
-        <a href="#">{{ 'bc-5.booking.makeupType3' | translate }}</a>
-      </div>
-    </div>
-    <hr class="divider">
-    <div class="dropdown">
-      <button class="dropbtn">Salon <span>&#9660;</span></button>
-      <div class="dropdown-content">
-        <a href="#">{{ 'bc-5.booking.salonType1' | translate }}</a>
-        <a href="#">{{ 'bc-5.booking.salonType2' | translate }}</a>
-        <a href="#">{{ 'bc-5.booking.salonType3' | translate }}</a>
-      </div>
-    </div>
-    <hr class="divider">
-    <div class="dropdown">
-      <button class="dropbtn">Category <span>&#9660;</span></button>
-      <div class="dropdown-content">
-        <a href="#">{{ 'bc-5.booking.categoryType1' | translate }}</a>
-        <a href="#">{{ 'bc-5.booking.categoryType2' | translate }}</a>
-        <a href="#">{{ 'bc-5.booking.categoryType3' | translate }}</a>
-      </div>
-    </div>
-    <hr class="divider">
-    <div class="popular-tags">
-      <h5>POPULAR TAGS</h5>
-      <div class="tag" *ngFor="let tag of popularTags">
-        {{ tag }} <span class="close-btn" (click)="removeTag(tag)">&times;</span>
-      </div>
-    </div>
-    <hr class="divider">
-    <div class="filter-by-price">
-      <h5>FILTER NOW</h5>
-      <input type="range" min="0" max="200" value="50" class="slider" id="priceRange" (input)="updatePrice($event)">
-      <div class="price-box">{{ price | currency }}</div>
-      <button class="filter-button">{{ 'bc-5.booking.filter' | translate }}</button>
+<div class="sidebar">
+  <h5>FILTER BY</h5>
+
+  <!-- Hair Dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn" (click)="toggleDropdown('hair')">
+      Hair <span>&#9660;</span>
+    </button>
+    <div class="dropdown-content" [hidden]="!dropdownStates['hair']">
+      <a (click)="filterByCategory('Gel')">Gel</a>
+      <a (click)="filterByCategory('Manicure')">Manicure</a>
+      <a (click)="filterByCategory('Pedicure')">Pedicure</a>
     </div>
   </div>
+
+  <!-- Nails Dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn" (click)="toggleDropdown('nails')">
+      Nails <span>&#9660;</span>
+    </button>
+    <div class="dropdown-content" [hidden]="!dropdownStates['nails']">
+      <a (click)="filterByCategory('Nails 1')">Nails 1</a>
+      <a (click)="filterByCategory('Pedicure')">{{ 'bc-5.booking.nailType2' | translate }}</a>
+      <a (click)="filterByCategory('Nail Art')">{{ 'bc-5.booking.nailType3' | translate }}</a>
+    </div>
+  </div>
+
+  <!-- Makeup Dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn" (click)="toggleDropdown('makeup')">
+      Makeup <span>&#9660;</span>
+    </button>
+    <div class="dropdown-content" [hidden]="!dropdownStates['makeup']">
+      <a (click)="filterByCategory('Foundation')">{{ 'bc-5.booking.makeupType1' | translate }}</a>
+        <a (click)="filterByCategory('Eyeshadow')">{{ 'bc-5.booking.makeupType2' | translate }}</a>
+      <a (click)="filterByCategory('Lipstick')">{{ 'bc-5.booking.makeupType3' | translate }}</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Salon Dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn" (click)="toggleDropdown('salon')">
+      Salon <span>&#9660;</span>
+    </button>
+    <div class="dropdown-content" [hidden]="!dropdownStates['salon']">
+      <a (click)="filterByCategory('Haircut')">{{ 'bc-5.booking.salonType1' | translate }}</a>
+      <a (click)="filterByCategory('Coloring')">{{ 'bc-5.booking.salonType2' | translate }}</a>
+      <a (click)="filterByCategory('Styling')">{{ 'bc-5.booking.salonType3' | translate }}</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Category Dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn" (click)="toggleDropdown('category')">
+      Category <span>&#9660;</span>
+    </button>
+    <div class="dropdown-content" [hidden]="!dropdownStates['category']">
+      <a (click)="filterByCategory('Hairs')">{{ 'bc-5.booking.categoryType1' | translate }}</a>
+      <a (click)="filterByCategory('Nails')">{{ 'bc-5.booking.categoryType2' | translate }}</a>
+      <a (click)="filterByCategory('Makeup')">{{ 'bc-5.booking.categoryType3' | translate }}</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Filter By Price -->
+  <div class="filter-by-price">
+    <button class="filter-button">{{ 'bc-5.booking.filter' | translate }}</button>
+  </div>
+</div>

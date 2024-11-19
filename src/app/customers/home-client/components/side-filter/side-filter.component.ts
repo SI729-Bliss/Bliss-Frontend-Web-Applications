@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-filter',
@@ -11,23 +11,19 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './side-filter.component.css'
 })
 export class SideFilterComponent {
-popularTags: string[] = ['Manicure', 'Eyeshadow', 'Curly'];
-  price: number = 50;
+  constructor(private router: Router) {}
+    filterByCategory(category: string) {
+          this.router.navigate(['/searching-services'], { queryParams: { category } });
+        }
 
-  cards = [
-    { title: "Vera's Salon", description: 'We focus on ergonomics and meeting you where you work. it`s only a keystroke away.' },
-    { title: 'My Lucky', description: 'We focus on ergonomics and meeting you where you work. it`s only a keystroke away.' },
-  ];
-
-  newCards = [
-    { title: 'SOHO', subtitle:"Simple gel nail",  description: 'Our haircut service offers a personalized experience taoiloned to your style and preferences' },
-    { title: 'HoneyMoon', subtitle:"Botox Treat",  description: 'We focus on ergonomics and meeting you where you work. It`s only a keystroke away' },
-  ];
-removeTag(tag: string) {
-    this.popularTags = this.popularTags.filter(t => t !== tag);
-  }
-
-  updatePrice(event: any) {
-    this.price = event.target.value;
-  }
+      toggleDropdown(key: string): void {
+          this.dropdownStates[key] = !this.dropdownStates[key];
+        }
+  dropdownStates: { [key: string]: boolean } = {
+      hair: false,
+      nails: false,
+      makeup: false,
+      salon: false,
+      category: false
+    };
 }

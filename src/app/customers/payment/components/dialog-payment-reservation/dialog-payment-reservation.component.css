@@ -1,37 +1,58 @@
-mat-dialog-title {
-  font-size: 24px;
+/* Contenedor principal */
+.dialog-title {
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #370942; /* Title color */
   text-align: center;
   margin-bottom: 20px;
 }
 
 .form-section {
-  font-size: 18px;
-  color: #555; /* Content text color */
-  text-align: center; /* Center the content */
-  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
 }
 
-mat-dialog-content p {
-  margin: 10px 0;
-}
-
-mat-dialog-actions {
+/* Contenido del diálogo */
+.dialog-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
-button[mat-button] {
-  background-color: #59116B; /* Button background color */
-  color: white; /* Button text color */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.info-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-button[mat-button]:hover {
-  background-color: #370942; /* Darker background color on hover */
+/* Estilo para las etiquetas */
+.info-label {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Estilo para los valores */
+.info-value {
+  font-weight: normal;
+  color: #333;
+}
+
+/* Mejoras responsivas */
+@media (max-width: 768px) {
+  .dialog-content {
+    gap: 8px;
+  }
+
+  .info-group {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .info-label, .info-value {
+    font-size: 0.9rem;
+  }
 }

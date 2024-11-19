@@ -1,5 +1,7 @@
 <div class="container">
-  <button mat-button (click)="goBack()">Back</button>
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+  </div>
   <div class="service-cards">
     <app-filtered-card [category]="selectedCategory"></app-filtered-card>
   </div>

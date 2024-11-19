@@ -18,9 +18,17 @@
   gap: 20px;
 }
 
-.service-cards, .specialist-cards {
-  padding: 10px;
+/* Style for all h3 headers in service and specialist sections */
+.service-cards h3,
+.specialist-cards h3 {
+  font-size: 1.8rem; /* Slightly larger font for emphasis */
+  font-weight: bold;
+  color: #59116B; /* Primary purple color */
+  margin-bottom: 12px;
+  text-align: left; /* Align left for consistency */
+  padding-bottom: 8px; /* Spacing between text and underline */
 }
+
 
 .bottom-filter {
   grid-column: span 2;

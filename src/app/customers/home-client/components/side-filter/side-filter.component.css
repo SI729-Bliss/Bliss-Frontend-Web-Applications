@@ -1,201 +1,150 @@
+/* Sidebar container */
 .sidebar {
-    width: 100% !important;
-    padding: 10px;
-    background-color: #ffffff;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  width: 300px;
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
+/* Section headers (h5) */
 .sidebar h5 {
-    margin-top: 0;
-    font-size: 18px;
-    color: rgb(203,175,199);
+  font-size: 1.2rem;
+  color: #59116B; /* Vibrant purple */
+  margin-bottom: 12px;
+  font-weight: normal; /* Remove bold for all h5 elements */
 }
 
+/* Input field */
 .sidebar input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 5px 10px;
-    margin-bottom: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
 }
 
-.dropdown {
-    display: block;
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-
+/* Dropdown buttons */
 .dropbtn {
-    color: rgb(203,175,199); /* Color rosado */
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    background: none; /* Sin fondo */
+  width: 100%;
+  background-color: #59116B; /* Purple */
+  color: white;
+  font-size: 1rem;
+  padding: 10px 16px;
+  text-align: left;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dropbtn span {
-    float: right; /* Mueve la flecha a la derecha */
-    margin-left: 100px; /* Aumenta la distancia entre el texto y la flecha */
+.dropbtn:hover {
+  background-color: #400B4D; /* Darker purple */
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px; /* Aumenta el ancho mínimo */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 16px; /* Aumenta el padding */
-    font-size: 18px; /* Aumenta el tamaño de la fuente */
+  display: block;
+  position: relative;
+  background-color: #f9f9f9;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden; /* Ensures hidden content doesn't overflow */
+  max-height: 300px; /* Default maximum height when expanded */
+  opacity: 1; /* Fully visible when expanded */
+}
+
+.dropdown-content[hidden] {
+  max-height: 0; /* Collapsed height */
+  opacity: 0; /* Hidden */
+  padding: 0; /* Remove padding when hidden */
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  color: #333;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
+/* Show dropdown with smooth transition */
 .dropdown:hover .dropdown-content {
-    display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
-.dropdown:hover .dropbtn {
-    background: none; /* Sin fondo al hacer hover */
-}
-
+/* Dividers */
 .divider {
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 16px 0;
 }
 
+/* Tags section */
 .popular-tags {
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.popular-tags .tag {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 5px;
-    border: 1px solid rgb(203,175,199);
-    border-radius: 4px;
-    background-color: #ffffff;
-    color: rgb(203,175,199);
-    position: relative;
+.tag {
+  background-color: #eee;
+  color: #59116B;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
 }
 
-.popular-tags .tag .close-btn {
-    margin-left: 10px;
-    cursor: pointer;
-    color: rgb(203,175,199);
+.tag .close-btn {
+  margin-left: 8px;
+  color: #59116B;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
-.filter-by-price {
-    margin-top: 20px;
-}
-
-.filter-by-price h5 {
-    font-size: 18px;
-    color: rgb(203,175,199);
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-.slider:hover {
-    opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: rgb(203,175,199);
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: rgb(203,175,199);
-    cursor: pointer;
+/* Filter by price */
+.filter-by-price input[type="range"] {
+  width: 100%;
+  margin: 12px 0;
 }
 
 .price-box {
-    margin-top: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    text-align: center;
-    font-size: 16px;
-    color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #59116B;
+  text-align: center;
+  margin-bottom: 12px;
 }
 
+/* Filter button */
 .filter-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: rgb(203,175,199);
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
+  background-color: #59116B;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .filter-button:hover {
-    background-color: rgb(183,155,179);
-}
-
-.sidebar {
-    width: 25%;
-    padding: 10px;
-}
-
-.cards-container {
-    width: 75%;
-    padding: 10px;
-    margin-left: 180px;
-    margin-top: 40px
-}
-
-.cards-title {
-    margin-bottom: 10px;
-}
-
-.cards-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.card {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    width: calc(33.333% - 20px); /* 3 cards per row with 10px gap */
-    box-sizing: border-box;
+  background-color: #400B4D;
 }

@@ -1,6 +1,6 @@
 <mat-toolbar color="">
 
-  <span>{{ 'BLISS' | translate }}</span>
+  <a mat-button [routerLink]="'/catalog'" class="bliss-title">{{ 'BLISS' | translate }}</a>
   <span class="example-spacer"></span>
 
   @for(option of options; track option.title) {

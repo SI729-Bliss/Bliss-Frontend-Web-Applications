@@ -1,54 +1,180 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
+/* Contenedor principal */
+.payment-container {
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-  color: #37123C;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
 }
 
-.rowsnashe {
-  display: flex !important;
-  flex-direction: row;
+/* Total a pagar */
+.total-section {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.total-label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #59116B;
+}
+
+.total-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #59116B;
+}
+
+/* Cabeceras de secciones */
+.section-header {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #59116B;
+  margin: 10px 0 5px;
+}
+
+/* Detalle de servicio */
+.service-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.service-name {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.service-price {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #B085C2; /* Verde para precios */
+}
+
+/* Campos de formulario */
+.full-width {
   width: 100%;
 }
 
-.example-margin {
-  margin: 0 10px;
-}
-
-p {
-  color: #37123C;
-}
-
-button {
-  background-color: #8EBEF7;
-  color: white;
-  margin-top: 20px;
-}
-
-mat-form-field {
+.mat-form-field {
   width: 100%;
+  margin: 8px 0;
 }
 
-mat-list-item {
-  width: 100%;
-}
-
-mat-divider {
-  margin: 10px 0;
-}
+/* Botones toggle (BOLETA y FACTURA) */
 .center-toggle-group {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin: 15px 0;
+}
+
+.toggle-group {
+  display: flex;
+  border: 2px solid #59116B; /* Borde principal */
+  border-radius: 8px;
+  background-color: #f8f9fa; /* Fondo claro */
+  overflow: hidden; /* Esquinas redondeadas */
+}
+
+.mat-button-toggle {
+  color: #59116B; /* Color del texto */
+  font-weight: bold;
+  font-size: 1rem;
+  flex: 1; /* Ambos botones del mismo tamaño */
+  text-align: center;
+}
+
+.mat-button-toggle-checked {
+  background-color: #59116B !important; /* Fondo al seleccionar */
+  color: #ffffff !important; /* Texto blanco al seleccionar */
+}
+
+.mat-button-toggle:hover {
+  background-color: rgba(89, 17, 107, 0.1); /* Fondo claro al pasar el cursor */
+}
+
+.mat-button-toggle-group.mat-button-toggle-group-appearance-standard .mat-button-toggle-checked {
+  box-shadow: 0 0 10px rgba(89, 17, 107, 0.4); /* Resalta el botón seleccionado */
+}
+
+/* Checkbox de términos */
+.terms-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
 }
 
 .highlight {
-  color: #370942; /* Replace with your desired color */
+  color: #59116B;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Botón de pago */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button[mat-raised-button] {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 12px;
+  background-color: #59116B;
+  color: #ffffff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #400b4d;
+  box-shadow: 0 4px 12px rgba(89, 17, 107, 0.3);
+}
+
+button[mat-raised-button][disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .payment-container {
+    padding: 15px;
+  }
+
+  .total-label, .total-value {
+    font-size: 1.1rem;
+  }
+
+  .section-header {
+    font-size: 0.9rem;
+  }
+
+  .mat-button-toggle {
+    font-size: 0.9rem;
+  }
+
+  button[mat-raised-button] {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .total-value {
+    font-size: 1.2rem;
+  }
+
+  .mat-button-toggle {
+    font-size: 0.8rem;
+  }
+
+  button[mat-raised-button] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
 }

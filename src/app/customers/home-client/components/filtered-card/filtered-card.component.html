@@ -5,7 +5,7 @@
       <div class="text-content">
         <mat-card-header>
           <mat-card-title>{{service.beautySalon}}</mat-card-title>
-          <mat-card-subtitle><mat-icon>star</mat-icon>  {{service.rating}}</mat-card-subtitle>
+          <mat-card-subtitle>{{service.category}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <p class="service-name">{{service.name}}</p>
@@ -15,7 +15,7 @@
           <p class="category">{{service.category}}</p>
         </mat-card-content>
         <mat-card-actions align="start">
-          <a mat-stroked-button [routerLink]="['/booking']" class="btn-check">Check now</a>
+          <a mat-stroked-button [routerLink]="['/booking']" class="btn-check">Check now ></a>
         </mat-card-actions>
       </div>
     </mat-card>

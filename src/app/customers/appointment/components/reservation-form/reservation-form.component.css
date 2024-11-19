@@ -1,82 +1,72 @@
+/* Texto de servicio y precio */
+.service-details {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
 .appointment-container {
-  max-width: 700px; /* Increase the maximum width of the container */
-  margin: 0 auto; /* Center the container */
-  padding: 30px; /* Add more padding */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a modern font */
-  background-color: #f9f9f9; /* Light background color */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.service-name {
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px; /* Increase font size */
-  margin-bottom: 25px; /* Add more space below each element */
-  color: #333; /* Darker text color */
-}
-
-.service-name-value {
-  margin-left: auto; /* Push the service name to the right */
-}
-
-.company-name, .base-price {
-  font-size: 20px; /* Increase font size */
-  margin-bottom: 20px; /* Add more space below each element */
-  color: #333; /* Darker text color */
-}
-.light-text {
-  font-weight: 300; /* Light */
-}
-
-.bold-text {
-  font-weight: bold; /* Bold */
-}
-
-.booking-form {
-  display: flex;
-  flex-direction: column;
+h2, p {
+  margin: 0 0 10px 0;
 }
 
 .input-group {
-  margin-bottom: 25px; /* Add more space between input groups */
+  margin-bottom: 15px;
 }
 
 .input-group label {
-  font-size: 18px; /* Increase font size of labels */
-  margin-bottom: 10px; /* Add more space below labels */
-  color: #555; /* Slightly darker label color */
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.input-group .form-control {
-  font-size: 16px; /* Increase font size of input fields */
-  padding: 12px; /* Add more padding to input fields */
-  border: 1px solid #ccc; /* Border color */
-  border-radius: 5px; /* Rounded corners */
-  transition: border-color 0.3s; /* Smooth transition for border color */
+.form-control {
+  width: 90%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-.input-group .form-control:focus {
-  border-color: #007BFF; /* Border color on focus */
-  outline: none; /* Remove default outline */
+textarea.form-control {
+  resize: none;
 }
 
 .btn-primary {
-  font-size: 18px; /* Increase font size of the button */
-  padding: 14px 24px; /* Add more padding to the button */
-  background-color: #59116B; /* Button background color */
-  color: white; /* Button text color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Smooth transition for background color */
-}
-
-.btn-primary:hover {
-  background-color: #370942; /* Darker background color on hover */
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color:  #59116B;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary:disabled {
-  background-color: #ccc; /* Background color for disabled button */
-  cursor: not-allowed; /* Not-allowed cursor for disabled button */
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-primary:hover {
+  background-color:  #370942;
 }

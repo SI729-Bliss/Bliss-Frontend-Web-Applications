@@ -4,8 +4,7 @@
       <img mat-card-image [src]="service.imageUrl" alt="Service Image">
       <div class="text-content">
         <mat-card-header>
-          <mat-card-title>{{service.salonId}}</mat-card-title>
-          <mat-card-subtitle><mat-icon>star</mat-icon> rating</mat-card-subtitle>
+          <mat-card-title>{{service.category}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <p class="service-name">{{service.name}}</p>
@@ -14,7 +13,7 @@
           <p class="price">${{service.basePrice}}</p>
         </mat-card-content>
         <mat-card-actions align="start">
-          <button mat-stroked-button (click)="navigateToAppointment(service)" class="btn-check">Check now</button>
+          <button mat-stroked-button (click)="navigateToAppointment(service)" class="btn-check">Check now > </button>
         </mat-card-actions>
       </div>
     </mat-card>

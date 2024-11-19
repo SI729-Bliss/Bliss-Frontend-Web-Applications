@@ -1,55 +1,68 @@
-<div class="container">
+<div class="payment-container">
   <mat-list>
+    <!-- Total a pagar -->
     <mat-list-item>
-      <div class="rowsnashe">
-        <p>Total a pagar</p>
-        <p>{{ predefinedTotalAmount }}$</p>
+      <div class="total-section">
+        <p class="total-label">Total to pay</p>
+        <p class="total-value">{{ predefinedTotalAmount }}$</p>
       </div>
     </mat-list-item>
     <mat-divider></mat-divider>
-    <div mat-subheader>Detalle de servicio</div>
+
+    <!-- Detalle de servicio -->
+    <div mat-subheader class="section-header">Service details</div>
     <mat-list-item *ngFor="let service of services">
-      <div class="rowsnashe">
-        <p>{{ service.detail }}</p>
-        <p>{{ service.price }}$</p>
+      <div class="service-detail">
+        <p class="service-name">{{ service.detail }}</p>
+        <p class="service-price">{{ service.price }}$</p>
       </div>
     </mat-list-item>
     <mat-divider></mat-divider>
-    <div mat-subheader>Correo</div>
+
+    <!-- Correo -->
+    <div mat-subheader class="section-header">Email</div>
     <mat-list-item>
-      <div>
-        <mat-form-field>
-          <input matInput placeholder="user@gmail.com" type="email">
-        </mat-form-field>
-      </div>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="user@gmail.com" type="email">
+      </mat-form-field>
     </mat-list-item>
     <mat-divider></mat-divider>
-    <div mat-subheader>Elige tu medio de pago</div>
+
+    <!-- Medio de pago -->
+    <div mat-subheader class="section-header">Choose Your Payment Method</div>
     <mat-list-item>
-      <div>
-        <mat-form-field>
-          <mat-select placeholder="Medio de pago" [(ngModel)]="payment.paymentMethod">
-            <mat-option value="YAPE">Yape</mat-option>
-            <mat-option value="PLIN">Plin</mat-option>
-            <mat-option value="VISA">Visa</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Payment Method" [(ngModel)]="payment.paymentMethod">
+          <mat-option value="YAPE">Yape</mat-option>
+          <mat-option value="PLIN">Plin</mat-option>
+          <mat-option value="VISA">Visa</mat-option>
+        </mat-select>
+      </mat-form-field>
     </mat-list-item>
     <mat-divider></mat-divider>
-    <div mat-subheader>Tipo de comprobante</div>
+
+    <!-- Tipo de comprobante -->
+    <div mat-subheader class="section-header">Invoice Type</div>
     <div class="center-toggle-group">
-      <mat-button-toggle-group [(ngModel)]="payment.invoiceType">
+      <mat-button-toggle-group [(ngModel)]="payment.invoiceType" class="toggle-group">
         <mat-button-toggle value="BOLETA">BOLETA</mat-button-toggle>
         <mat-button-toggle value="FACTURA">FACTURA</mat-button-toggle>
       </mat-button-toggle-group>
     </div>
+
+    <!-- Aceptar términos -->
     <mat-list-item>
-      <div class="rowsnashe">
+      <div class="terms-container">
         <mat-checkbox></mat-checkbox>
-        <p>Acepto los <u class="highlight">términos</u> y <u class="highlight">condiciones</u></p>
+        <p>I accept the <u class="highlight">terms</u> and <u class="highlight">conditions</u></p>
       </div>
     </mat-list-item>
   </mat-list>
-  <button mat-button (click)="submitPayment()">Pagar</button>
+
+  <!-- Botón de pago -->
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="submitPayment()">
+      Pay Now
+    </button>
+  </div>
 </div>
