@@ -1,7 +1,7 @@
 <div class="appointment-container">
   <p>Service: {{ serviceName }}</p>
   <p>Company: {{ companyName }}</p>
-  <form [formGroup]="bookingForm">
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
     <!-- Campo de mensaje -->
     <div class="input-group">
       <label for="message">Message</label>
@@ -19,9 +19,8 @@
       <label for="bookingTime">Enter time *</label>
       <input id="bookingTime" formControlName="bookingTime" type="time" required>
     </div>
-    <a mat-stroked-button [routerLink]="['/payment']">
-      <!-- Botón de enviar -->
-      <button [disabled]="!bookingForm.valid" type="submit">Continue to Payment</button>
-    </a>
+
+    <!-- Botón de enviar -->
+    <button [disabled]="!bookingForm.valid" type="submit">Continue to Payment</button>
   </form>
 </div>
