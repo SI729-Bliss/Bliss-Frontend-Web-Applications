@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {RouterLink,Router} from "@angular/router";
 import {ChangeDetectionStrategy} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { MatTableDataSource } from '@angular/material/table';
@@ -22,11 +22,14 @@ import {MatIconModule} from '@angular/material/icon';
   styleUrl: './service-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ServiceCardComponent{
+export class ServiceCardComponent implements OnInit {
+  @Input() service!: Service;
+  @Input() customerId!: number;
+  @Input() companyId!: number;
   services: Array<Service> = [];
-  displayedColumns: string[] = ['name','description','basePrice','image','beautySalon','sales','rating'];
+  displayedColumns: string[] = ['name','category','imageUrl','description','basePrice','imageUrl','salonId','sales'];
   dataSource: any;
-  constructor(private serviceApiService: ServicesService){}
+  constructor(private serviceApiService: ServicesService, private router: Router){}
 
   applyFilter(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
@@ -38,4 +41,14 @@ export class ServiceCardComponent{
             this.dataSource = new MatTableDataSource(this.services);
         });
     }
+
+  navigateToAppointment(service: Service) {
+    this.router.navigate(['/booking'], {
+      queryParams: {
+        serviceId: service.id,
+        customerId: this.customerId,
+        companyId: this.companyId
+      }
+    });
+  }
 }

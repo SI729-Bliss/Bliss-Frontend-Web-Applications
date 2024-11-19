@@ -9,6 +9,7 @@ import {ServicesHistoryComponent} from "./customers/history/pages/services-histo
 /*Review client*/
 import {ReviewPageComponent} from "./customers/review/pages/review-page/review-page.component";
 /*Reservation/Booking*/
+import { ReservationComponent } from "./customers/appointment/pages/reservation/reservation.component";
 import { BookingComponent } from "./enterprise/services/pages/booking/booking.component";
 /*Authentication*/
 import {authenticationGuard} from "./iam/services/authentication.guard";
@@ -32,7 +33,7 @@ export const routes: Routes = [
   { path: 'catalog', component: HomeComponent , canActivate: [authenticationGuard]},
   { path: 'services-search',component: ServicesSearchingComponent},
   { path: 'services-history', component: ServicesHistoryComponent, canActivate: [authenticationGuard] },
-  { path: 'booking', component: BookingComponent, canActivate: [authenticationGuard] },
+  { path: 'booking', component: ReservationComponent, canActivate: [authenticationGuard] },
   { path: 'my-reservations', component: CitasListComponent, canActivate: [authenticationGuard] },
   { path: 'review-page/:id', component: ReviewPageComponent, canActivate: [authenticationGuard] },
   { path: 'review-page', component: ReviewPageComponent, canActivate: [authenticationGuard] },
