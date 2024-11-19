@@ -48,7 +48,7 @@ interface BookingWithDetails extends Booking {
 })
 export class ServicesGridComponent implements OnInit {
   bookings: BookingWithDetails[] = [];
-  reviews: Review[] = []; // Add this line to define the reviews property
+  reviews: Review[] = [];
   cols: number = 1;
 
   constructor(
@@ -74,11 +74,9 @@ export class ServicesGridComponent implements OnInit {
       }
     });
 
-    this.authService.currentUserId.subscribe(userId => {
-      if (userId) {
-        this.getBookingsWithDetailsByCustomerId(userId);
-      }
-    });
+const getCurrentUserId = this.authService.getCurrentUserId;
+        this.getBookingsWithDetailsByCustomerId(getCurrentUserId);
+
   }
 
   private getBookingsWithDetailsByCustomerId(customerId: number): void {
@@ -92,7 +90,7 @@ export class ServicesGridComponent implements OnInit {
           ...booking,
           company: companies[index],
           service:services[index],
-          review: reviews[index][0] // Assuming each booking has one review
+          review: reviews[index][0]
         }));
       });
     });
@@ -104,6 +102,7 @@ export class ServicesGridComponent implements OnInit {
 
   updateReview(bookingId: number): void {
     this.router.navigate(['/review-page', bookingId]);
+    this.refreshReviews();
   }
 
   deleteReview(reviewId?: number): void {
@@ -115,12 +114,13 @@ export class ServicesGridComponent implements OnInit {
           }
           return booking;
         });
-        this.refreshReviews(); // Call refreshBookings to update the table
+        this.refreshReviews();
       });
     } else {
       console.error('Review ID is undefined');
     }
   }
+
 
   private refreshReviews(): void {
     this.authService.currentUserId.subscribe(userId => {
