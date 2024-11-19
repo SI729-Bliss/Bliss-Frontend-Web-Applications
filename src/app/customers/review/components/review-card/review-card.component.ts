@@ -15,7 +15,7 @@ import { MatButton } from '@angular/material/button';
 import axios from 'axios';
 import { Cloudinary } from 'cloudinary-core';
 import { TranslateModule } from "@ngx-translate/core";
-
+import { AuthenticationService } from '../../../../iam/services/authentication.service';
 const cloudinaryInstance = new Cloudinary({
   cloud_name: 'dmeftoblw',
   secure: true
@@ -55,7 +55,8 @@ export class ReviewCardComponent implements OnInit {
   rating: number = 0;
   images: string[] = ['', '', ''];
 
-  constructor(private reviewService: ReviewService, private router: Router) {}
+
+  constructor(private reviewService: ReviewService, private router: Router,  private authService:AuthenticationService) {}
 
   ngOnInit(): void {
     if (this.review) {
@@ -101,25 +102,33 @@ export class ReviewCardComponent implements OnInit {
   }
 
   saveReview(): void {
-    this.review.punctuation = this.rating;
-    this.review.reservationId = this.reservation.id;
-    this.review.createdAt = new Date().toISOString();
-    this.review.updatedAt = new Date().toISOString();
-    this.review.imageUrls = this.images;
+    const currentUserId = this.authService.getCurrentUserId;
 
-    console.log('Review object:', this.review); // Log the Review object
+        this.review.userId = currentUserId;
+        this.review.punctuation = this.rating;
+        this.review.reservationId = this.reservation.id;
+        this.review.createdAt = new Date().toISOString();
+        this.review.updatedAt = new Date().toISOString();
+        this.review.imageUrls = this.images;
 
-    if (this.review.id) {
-      this.reviewService.updateReview(this.review.id, this.review).subscribe({
-        next: () => this.router.navigate(['/services-history']),
-        error: (error) => console.error('Update review failed', error)
-      });
-    } else {
-      this.reviewService.createReview(this.review).subscribe({
-        next: () => this.router.navigate(['/services-history']),
-        error: (error) => console.error('Create review failed', error)
-      });
-    }
+        console.log('Review object:', this.review); // Log the Review object
+
+        if (this.review.id) {
+          this.reviewService.updateReview(this.review.id, this.review).subscribe({
+            next: () => this.router.navigate(['/services-history']),
+            error: (error) => console.error('Update review failed', error)
+          });
+        } else {
+          this.reviewService.createReview(this.review).subscribe({
+            next: () => {
+              this.router.navigate(['/services-history']);
+
+            },
+                error: (error) => console.error('Create review failed', error)
+          });
+        }
+
+
   }
 
   cleanInputs(): void {

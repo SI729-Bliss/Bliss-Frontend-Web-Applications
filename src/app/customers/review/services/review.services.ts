@@ -18,10 +18,10 @@ export class ReviewService extends BaseService<Review> {
     return this.http.get<Review>(`${this.basePath}${this.resourceEndpoint}/${id}`);
   }
 
-  getReviewsByCustomerId(customerId: number): Observable<Review[]> {
-    return this.http.get<Review[]>(`${this.basePath}${this.resourceEndpoint}/user/${customerId}`);
+  getReviewsByCustomerId(userId: number): Observable<Review[]> {
+    console.log('Fetching reviews for userId:', userId);
+    return this.http.get<Review[]>(`${this.basePath}${this.resourceEndpoint}/user/${userId}`);
   }
-
   getReviewsByReservationId(reservationId: number): Observable<Review[]> {
     return this.http.get<Review[]>(`${this.basePath}${this.resourceEndpoint}/reservation/${reservationId}`);
   }

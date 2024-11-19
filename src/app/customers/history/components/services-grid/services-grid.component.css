@@ -93,3 +93,17 @@ button[mat-button][color="warn"] {
 button[mat-button][color="warn"]:hover {
   background-color: #b71c1c;
 }
+/* src/app/customers/history/components/services-grid/services-grid.component.css */
+.Reservation-Card .Info {
+  text-align: center;
+}
+
+.Reservation-Card .Title {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #1f194c;
+  margin: 1em 0;
+  z-index: 3;
+  text-align: center;
+}
