@@ -174,8 +174,22 @@ button[mat-raised-button] {
   margin-top: 30px;
   display: flex;
   flex-flow: column nowrap;
-  width: 100%;
+  width: 65%;
   height: auto;
   overflow-y: auto;
   padding: 20px;
+}
+
+.main-container{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 100px;
+
+}
+
+.container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }

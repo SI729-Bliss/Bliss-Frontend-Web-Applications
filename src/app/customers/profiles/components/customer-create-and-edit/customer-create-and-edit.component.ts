@@ -1,5 +1,13 @@
 // src/app/customers/profiles/components/customer-create-and-edit/customer-create-and-edit.component.ts
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Customer } from '../../model/customer.entity';
 import { CustomerService } from '../../services/customer.service';
@@ -11,6 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatIcon } from '@angular/material/icon';
 import { AuthenticationService } from '../../../../iam/services/authentication.service';
+import {Company} from "../../../../enterprise/profiles/model/company.entity";
+import {CompanyService} from "../../../../enterprise/profiles/services/company.service";
 
 @Component({
   selector: 'app-customer-create-and-edit',
@@ -30,6 +40,7 @@ import { AuthenticationService } from '../../../../iam/services/authentication.s
 })
 export class CustomerCreateAndEditComponent implements OnInit {
   customers: Customer[] = [];
+  companies: Company[] = [];
   services: Service[] = [];
 
   // Para guardar el cliente original antes de editar
@@ -44,28 +55,34 @@ export class CustomerCreateAndEditComponent implements OnInit {
 
   @ViewChild('customerForm', { static: false }) customerForm!: NgForm;
 
-  constructor(private customerService: CustomerService, private authenticationService: AuthenticationService) {
+  constructor(private customerService: CustomerService, private authenticationService: AuthenticationService, private companyService: CompanyService) {
     this.customer = {} as Customer;
   }
 
   ngOnInit(): void {
     const currentCustomerId = this.authenticationService.getCurrentUserId;
+    console.log('currentCustomerId:', currentCustomerId);
     this.loadCustomerById(currentCustomerId);
     this.loadServicesByCustomerId(currentCustomerId);
   }
 
+
   loadCustomerById(id: number): void {
     this.customerService.getCustomerById(id).subscribe((data: Customer) => {
-      this.customer = data;
+        this.customer = data;
     });
   }
+
+
 
   loadServicesByCustomerId(customerId: number): void {
     this.customerService.getServicesByCustomerId(customerId).subscribe((data: Service[]) => {
       this.services = data;
     });
   }
-
+  getRandomRating(): number {
+    return Math.floor(Math.random() * 5) + 1; // Genera un número aleatorio entre 1 y 5
+  }
   onSubmit(): void {
     if (this.customerForm && this.customerForm.form.valid) {
       this.customer.id = this.authenticationService.getCurrentUserId;

@@ -33,7 +33,7 @@ export class CitaService {
   }
 
   private saveCitaToServer(cita: Cita): Observable<Cita> {
-    return this.http.post<Cita>(`${this.apiUrl}/booking_service`, cita).pipe(
+    return this.http.post<Cita>(`${this.apiUrl}/bookings`, cita).pipe(
       tap(data => console.log('Cita saved:', data))
     );
   }
