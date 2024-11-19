@@ -8,7 +8,8 @@ import { catchError, Observable, retry, throwError } from "rxjs";
 })
 export class BaseService<T> {
 
-  basePath: string = `${environment.serverBasePath}`;
+  basePathOne: string = `${environment.serverBasePath}`;
+  basePath:string = 'https://exquisite-possibility-production.up.railway.app/api/v1'
   resourceEndpoint: string = '/resources';
 
   httpOptions = {
