@@ -51,6 +51,7 @@ export class PaymentCardComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.predefinedTotalAmount = +params['totalAmount'] || this.predefinedTotalAmount;
+      this.payment.reservationId = +params['reservationId'] || 0; // Obtener reservationId
     });
   }
 

@@ -74,9 +74,9 @@ export class ReservationFormComponent implements OnInit {
       reservation.totalAmount = this.basePrice; // Use basePrice for totalAmount
 
       this.reservationService.create(reservation).subscribe(response => {
-        console.log('Reservation created:', response);
-        this.router.navigate(['/payment'], { queryParams: { totalAmount: reservation.totalAmount } });
-      });
+            console.log('Reservation created:', response);
+            this.router.navigate(['/payment'], { queryParams: { totalAmount: reservation.totalAmount, reservationId: response.id } });
+          });
     }
   }
 }
