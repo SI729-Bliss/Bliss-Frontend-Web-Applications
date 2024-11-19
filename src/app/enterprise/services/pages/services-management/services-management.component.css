@@ -17,6 +17,23 @@
   margin: 3px;
 }
 
+.details-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.details-list mat-card {
+  width: 150px;
+  height: 100px;
+  margin: 10px;
+}
+
+.details-list mat-card mat-card-content {
+  font-size: 16px;
+}
+
 .custom-title{
   text-align: center;
   font-size: 16px;

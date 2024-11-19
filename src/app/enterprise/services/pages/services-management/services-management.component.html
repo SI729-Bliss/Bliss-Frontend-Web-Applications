@@ -34,7 +34,7 @@
 
       <ng-container matColumnDef="category">
         <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'bc-4.categoryId' | translate }} </th>
-        <td *matCellDef="let element" mat-cell>{{ element.categoryId }}</td>
+        <td *matCellDef="let element" mat-cell>{{ element.category }}</td>
       </ng-container>
 
       <ng-container matColumnDef="imageUrl">
@@ -106,6 +106,15 @@
         </mat-form-field>
         <button mat-raised-button color="primary">{{ 'bc-4.addButton' | translate }}</button>
       </form>
+    </div>
+  </div>
+
+  <div class="details-list">
+    <div *ngFor="let detail of detailsList">
+      <mat-card appearance="outlined">
+        <mat-card-content> {{ 'bc-4.addDetail' | translate }}: {{ detail.detail }} </mat-card-content>
+        <mat-card-content> {{ 'bc-4.basePrice' | translate }}: {{ detail.price }} </mat-card-content>
+      </mat-card>
     </div>
   </div>
 
