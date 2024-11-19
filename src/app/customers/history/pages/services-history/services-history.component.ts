@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ReviewService } from '../../../review/services/review.services';
 import { Review } from '../../../review/model/review.entity';
 import { MatTableModule } from '@angular/material/table';
@@ -6,7 +6,7 @@ import { DatePipe, NgForOf } from '@angular/common';
 import { ServicesGridComponent } from '../../components/services-grid/services-grid.component';
 import { TranslateModule } from "@ngx-translate/core";
 import { AuthenticationService } from '../../../../iam/services/authentication.service';
-import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
+import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle } from "@angular/material/card";
 
 @Component({
   selector: 'app-services-history',
@@ -28,23 +28,33 @@ import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle} fr
 })
 export class ServicesHistoryComponent implements OnInit {
   reviews: Review[] = [];
-  displayedColumns: string[] = ['bookingId', 'punctuation', 'comment'];
 
   constructor(
     private reviewService: ReviewService,
-    private authService: AuthenticationService
-  ) {}
+    private authService: AuthenticationService,
+    private cdr: ChangeDetectorRef
+  ) {
+    console.log('ServicesHistoryComponent instantiated');
+  }
 
   ngOnInit(): void {
-    this.authService.currentUserId.subscribe(userId => {
-      if (userId) {
-        this.reviewService.getReviewsByCustomerId(userId).subscribe(reviews => {
-          this.reviews = reviews.map(review => {
-            review.userId = userId;
-            return review;
-          });
-        });
-      }
-    });
+    const getCurrentUserId = this.authService.getCurrentUserId;
+    this.loadReviewsByCustomerId(getCurrentUserId);
+
   }
-}
+
+  private loadReviewsByCustomerId(userId: number): void {
+    console.log('loadReviewsByCustomerId called with userId:', userId);
+    this.reviewService.getReviewsByCustomerId(userId).subscribe(reviews => {
+      console.log('Reviews fetched:', reviews);
+      this.reviews = reviews.map(review => {
+          return review;
+      })
+      this.refreshReviews()
+  })
+  }
+  refreshReviews(): void {
+    const getCurrentUserId = this.authService.getCurrentUserId;
+    this.loadReviewsByCustomerId(getCurrentUserId);
+  }
+  }
