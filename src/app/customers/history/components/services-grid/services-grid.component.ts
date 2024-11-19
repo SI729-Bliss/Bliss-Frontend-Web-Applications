@@ -1,25 +1,24 @@
-// services-grid.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ReservationService } from '../../services/reservation.service';
+import { BookingService } from '../../services/booking.service';
 import { ReviewService } from '../../../review/services/review.services';
-import { Reservation } from '../../model/reservation.entity';
-import { Service } from '../../model/service.entity';
-import { BeautySalon } from '../../model/beautySalon.entity';
-import { Review } from '../../../review/model/review.entity';
+import { AuthenticationService } from '../../../../iam/services/authentication.service';
+import { Booking } from '../../model/booking.entity';
+import { Company } from '../../model/company.entity';
 import { forkJoin } from 'rxjs';
 import { MatGridList, MatGridTile } from "@angular/material/grid-list";
 import { MatIcon } from "@angular/material/icon";
 import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardModule } from "@angular/material/card";
 import { CurrencyPipe, DatePipe, NgForOf, NgIf } from "@angular/common";
 import { MatButton } from "@angular/material/button";
-import {TranslateModule} from "@ngx-translate/core";
-import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
+import { TranslateModule } from "@ngx-translate/core";
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import {Review} from "../../../review/model/review.entity";
+import {Service} from "../../model/service.entity";
 
-
-interface ReservationWithDetails extends Reservation {
+interface BookingWithDetails extends Booking {
+  company: Company;
   service: Service;
-  beautySalon: BeautySalon;
   review?: Review;
 }
 
@@ -48,17 +47,16 @@ interface ReservationWithDetails extends Reservation {
   styleUrls: ['./services-grid.component.css']
 })
 export class ServicesGridComponent implements OnInit {
-  reservations: ReservationWithDetails[] = [];
-  services: Service[] = [];
-  beautySalons: BeautySalon[] = [];
+  bookings: BookingWithDetails[] = [];
+  reviews: Review[] = []; // Add this line to define the reviews property
   cols: number = 1;
 
   constructor(
-    private reservationService: ReservationService,
+    private bookingService: BookingService,
     private reviewService: ReviewService,
+    private authService: AuthenticationService,
     private router: Router,
     private breakpointObserver: BreakpointObserver
-
   ) {}
 
   ngOnInit(): void {
@@ -75,49 +73,62 @@ export class ServicesGridComponent implements OnInit {
         this.cols = 3;
       }
     });
-    forkJoin({
-      reservations: this.reservationService.getAll(),
-      services: this.reservationService.getServices(),
-      beautySalons: this.reservationService.getBeautySalons(),
-      reviews: this.reviewService.getAll()
-    }).subscribe(({ reservations, services, beautySalons, reviews }) => {
-      this.services = services;
-      this.beautySalons = beautySalons;
-      this.reservations = reservations
-        .filter(reservation => reservation.status === 'completed')
-        .map((reservation: Reservation) => {
-          const review = reviews.find(r => r.reservationId === reservation.id);
-          return{
-          ...reservation,
-          service: this.getServiceById(reservation.serviceId),
-          beautySalon: this.getBeautySalonById(reservation.beautySalonId),
-          review
-        } as ReservationWithDetails;
+
+    this.authService.currentUserId.subscribe(userId => {
+      if (userId) {
+        this.getBookingsWithDetailsByCustomerId(userId);
+      }
+    });
+  }
+
+  private getBookingsWithDetailsByCustomerId(customerId: number): void {
+    this.bookingService.getBookingsByCustomerId(customerId).subscribe(bookings => {
+      const filteredBookings = bookings.filter(booking => booking.bookingStatus);
+      const companyRequests = filteredBookings.map(booking => this.bookingService.getCompanyById(booking.companyId));
+      const reviewRequests = filteredBookings.map(booking => this.reviewService.getReviewsByReservationId(booking.id));
+      const serviceRequests = filteredBookings.map(booking => this.bookingService.getServiceById(booking.serviceId));
+      forkJoin([forkJoin(companyRequests),forkJoin(serviceRequests), forkJoin(reviewRequests)]).subscribe(([companies, services, reviews]) => {
+        this.bookings = filteredBookings.map((booking, index) => ({
+          ...booking,
+          company: companies[index],
+          service:services[index],
+          review: reviews[index][0] // Assuming each booking has one review
+        }));
       });
     });
   }
 
-  getServiceById(serviceId: number): Service {
-    return this.services.find(service => service.id === serviceId) || new Service();
+  goToReviewPage(bookingId: number): void {
+    this.router.navigate(['/review-page', bookingId]);
   }
 
-  getBeautySalonById(beautySalonId: number): BeautySalon {
-    return this.beautySalons.find(salon => salon.id === beautySalonId) || new BeautySalon();
+  updateReview(bookingId: number): void {
+    this.router.navigate(['/review-page', bookingId]);
   }
 
-  goToReviewPage(reservationId: number): void {
-    this.router.navigate(['/review-page', reservationId]);
-  }
-
-  deleteReview(reviewId: number): void {
-    this.reviewService.delete(reviewId).subscribe(() => {
-      this.reservations = this.reservations.map(reservation => {
-        if (reservation.review?.id === reviewId) {
-          return { ...reservation, review: undefined };
-        }
-        return reservation;
+  deleteReview(reviewId?: number): void {
+    if (reviewId) {
+      this.reviewService.deleteReview(reviewId).subscribe(() => {
+        this.bookings = this.bookings.map(booking => {
+          if (booking.review?.id === reviewId) {
+            booking.review = undefined;
+          }
+          return booking;
+        });
+        this.refreshReviews(); // Call refreshBookings to update the table
       });
+    } else {
+      console.error('Review ID is undefined');
+    }
+  }
+
+  private refreshReviews(): void {
+    this.authService.currentUserId.subscribe(userId => {
+      if (userId) {
+        this.reviewService.getReviewsByCustomerId(userId).subscribe(reviews => {
+          this.reviews = reviews;
+        });
+      }
     });
   }
-
 }
