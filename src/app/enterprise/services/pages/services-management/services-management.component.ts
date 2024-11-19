@@ -8,7 +8,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { EntsevicesService } from "../../services/entsevices.service";
 import { Entservice } from "../../model/entservice.entity";
 import { ServicesCreateAndEditComponent } from "../../components/services-create-and-edit/services-create-and-edit.component";
-import { NgClass } from "@angular/common";
+import {NgClass, NgForOf} from "@angular/common";
 import {TranslateModule, TranslateService} from "@ngx-translate/core";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
@@ -19,12 +19,13 @@ import {Detail} from "../../model/detail.entity";
 import {DetailsService} from "../../services/details.service";
 import {formToJSON} from "axios";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {MatCardModule} from "@angular/material/card";
 
 @Component({
   selector: 'app-services-management',
   standalone: true,
   imports: [MatPaginator, MatSort, MatIconModule, ServicesCreateAndEditComponent, MatTableModule,
-    NgClass, TranslateModule, MatMenuModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule],
+    NgClass, TranslateModule, MatMenuModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule, MatCardModule, NgForOf],
   templateUrl: './services-management.component.html',
   styleUrl: './services-management.component.css'
 })
@@ -39,6 +40,7 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
 
   serviceForDetail: Entservice;
   detail: Detail;
+  detailsList: any[];
 
   @ViewChild(MatPaginator, { static: false}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false}) sort!: MatSort;
@@ -56,6 +58,7 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
 
     this.serviceForDetail = {} as Entservice;
     this.detail = {} as Detail;
+    this.detailsList = [];
   }
 
   // Private Methods
@@ -155,8 +158,16 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
     this.getTotalServices();
   }
 
+  getDetailsByService(){
+    this.detailService.getAllDetailsByService(this.serviceForDetail.id).subscribe((response: any) => {
+      this.detailsList = response;
+    })
+  }
+
   onAddDetail(element: Entservice){
     this.serviceForDetail = element;
+
+    this.getDetailsByService();
 
     this.translate.get('bc-4.selected').subscribe((translatedMessage: string) =>
     { window.alert(this.serviceForDetail.name + translatedMessage); })
@@ -177,6 +188,8 @@ export class ServicesManagementComponent implements OnInit, AfterViewInit{
         { window.alert(translatedMessage); })
       }
     })
+
+    this.getDetailsByService();
 
   }
 
