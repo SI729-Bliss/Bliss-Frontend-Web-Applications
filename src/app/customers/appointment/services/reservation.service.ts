@@ -13,7 +13,7 @@ export class ReservationService extends BaseService<Reservation>{
 
   constructor(http: HttpClient) {
            super(http);
-           this.resourceEndpoint = '/reservations';
+           this.resourceEndpoint = '/bookings';
     }
 
 

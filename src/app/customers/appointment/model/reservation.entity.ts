@@ -7,7 +7,6 @@ export class Reservation {
   bookingTime: string;
   bookingStatus: string;
   requirements?: string;
-  message: string;
   totalAmount: number;
 
   constructor(){
@@ -19,6 +18,5 @@ export class Reservation {
     this.bookingTime = '';
     this.bookingStatus = '';
     this.requirements = '';
-    this.message = '';
     this.totalAmount = 0;}
 }
