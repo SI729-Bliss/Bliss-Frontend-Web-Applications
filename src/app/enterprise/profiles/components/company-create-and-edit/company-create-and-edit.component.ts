@@ -50,12 +50,12 @@ export class CompanyCreateAndEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.companyService.getServices().subscribe((data: Stylist[]) => {
+    this.companyService.getSpecialists().subscribe((data: Stylist[]) => {
       this.stylists = data;
     });
     const currentCompanyId = this.authenticationService.getCurrentUserId;
     this.loadCompanyById(currentCompanyId);
-    this.loadServices();
+    this.loadSpecialists();
   }
 
   loadCustomers(): void {
@@ -70,8 +70,8 @@ export class CompanyCreateAndEditComponent implements OnInit {
     });
   }
 
-  loadServices(): void {
-    this.companyService.getServices().subscribe((data: Stylist[]) => {
+  loadSpecialists(): void {
+    this.companyService.getSpecialists().subscribe((data: Stylist[]) => {
       this.stylists = data;
     });
   }

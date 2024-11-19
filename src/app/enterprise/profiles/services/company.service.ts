@@ -21,8 +21,8 @@ export class CompanyService extends BaseService<Company> {
   }
 
   // Obtener lista de servicios
-  getServices(): Observable<Stylist[]> {
-    return this.http.get<Stylist[]>(`${this.basePath}${this.resourceEndpoint}`);
+  getSpecialists(): Observable<Stylist[]> {
+    return this.http.get<Stylist[]>(`${this.basePath}/specialists`);
   }
 
   // Agregar un nuevo cliente
