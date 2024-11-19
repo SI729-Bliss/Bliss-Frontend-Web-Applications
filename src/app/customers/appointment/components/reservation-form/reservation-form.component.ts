@@ -6,6 +6,8 @@ import { ReservationService } from '../../services/reservation.service';
 import { CompanyService } from '../../services/company.service';
 import { Service } from '../../model/service.entity';
 import { Reservation } from '../../model/reservation.entity';
+import {AuthenticationService} from "../../../../iam/services/authentication.service";
+
 @Component({
   selector: 'app-reservation-form',
   standalone: true,
@@ -26,13 +28,14 @@ export class ReservationFormComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private reservationService: ReservationService,
-    private companyService: CompanyService
+    private companyService: CompanyService,
+    private authenticationService: AuthenticationService
   ) {
     this.bookingForm = this.fb.group({
-      message: [''],
       bookingDate: ['', Validators.required],
       bookingTime: ['', Validators.required],
-      totalAmount: [0, Validators.required]
+      requirements: [''], // Add requirements field
+      totalAmount: [0]
     });
   }
 
@@ -57,16 +60,17 @@ export class ReservationFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    const usuarioActual = this.authenticationService.getCurrentUserId;
     if (this.bookingForm.valid) {
       const reservation: Reservation = new Reservation();
-      reservation.customerId = 2; // Replace with actual customer ID
+      reservation.customerId = usuarioActual; // Replace with actual customer ID
       reservation.serviceId = this.serviceId;
       reservation.companyId = this.companyId;
       reservation.bookingDate = this.bookingForm.value.bookingDate;
       reservation.bookingTime = this.bookingForm.value.bookingTime;
-      reservation.bookingStatus = 'false';
-      reservation.requirements = '';
-      reservation.totalAmount = this.bookingForm.value.totalAmount;
+      reservation.bookingStatus = false;
+      reservation.requirements = this.bookingForm.value.requirements.split(',').map((req: string) => req.trim());
+      reservation.totalAmount = this.predefinedTotalAmount;
 
       this.reservationService.create(reservation).subscribe(response => {
         console.log('Reservation created:', response);

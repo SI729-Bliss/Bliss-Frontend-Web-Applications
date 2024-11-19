@@ -5,8 +5,8 @@ export class Reservation {
   companyId: number;
   bookingDate: string;
   bookingTime: string;
-  bookingStatus: string;
-  requirements?: string;
+  bookingStatus: boolean;
+  requirements?: string[];
   totalAmount: number;
 
   constructor(){
@@ -16,7 +16,7 @@ export class Reservation {
     this.companyId = 0;
     this.bookingDate = '';
     this.bookingTime = '';
-    this.bookingStatus = '';
-    this.requirements = '';
+    this.bookingStatus = false;
+    this.requirements = [];
     this.totalAmount = 0;}
 }
