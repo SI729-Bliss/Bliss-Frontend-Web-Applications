@@ -5,24 +5,23 @@
     <p class="price">Starting at: <strong>{{ basePrice }}$</strong></p>
   </div>
   <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
-    <!-- Campo de fecha -->
     <div class="input-group">
       <label for="bookingDate">Date * </label>
       <input id="bookingDate" formControlName="bookingDate" type="date" required class="form-control">
     </div>
-
-    <!-- Campo de hora -->
     <div class="input-group">
       <label for="bookingTime">Enter time * </label>
       <input id="bookingTime" placeholder="Select a date" formControlName="bookingTime" type="time" required class="form-control">
     </div>
-
-    <!-- Campo de mensaje -->
-    <div class="input-group">
-      <label for="message">Message </label>
-      <textarea id="message" formControlName="message" rows="4" class="form-control"></textarea>
+    <div formArrayName="requirements">
+      <div class="input-group" *ngFor="let detail of serviceDetails; let i = index">
+        <label>
+          <input type="checkbox" [formControlName]="i" (change)="updateTotalAmount()">
+          {{ detail.detail }} - {{ detail.price }}$
+        </label>
+      </div>
     </div>
-    <!-- Botón de enviar -->
+    <p>Total Amount: {{ bookingForm.value.totalAmount }}$</p>
     <button [disabled]="!bookingForm.valid" type="submit" class="btn btn-primary">Proceed to Payment <mat-icon>payment</mat-icon> </button>
   </form>
 </div>

@@ -25,7 +25,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Payment } from '../../model/payment.entity';
 import { PaymentsService } from '../../services/payments.service';
 import {AuthenticationService} from "../../../../iam/services/authentication.service";
-
+import { ReservationService } from '../../../appointment/services/reservation.service';
 @Component({
   selector: 'app-payment-card',
   standalone: true,
@@ -38,21 +38,29 @@ export class PaymentCardComponent implements OnInit {
   readonly dialog = inject(MatDialog);
   payment: Payment = new Payment();
   predefinedTotalAmount = 60;
-  services = [
-    { detail: 'Detalle servicio 1', price: 50 },
-    { detail: 'Detalle servicio 2', price: 5 },
-    { detail: 'Detalle servicio 3', price: 5 }
-  ];
+  services: { detail: string, price: number }[] = [];
+  reservationId: number = 0;
 
-  constructor(private paymentService: PaymentsService,
+  constructor(
+    private paymentService: PaymentsService,
     private route: ActivatedRoute,
-     private authenticationService: AuthenticationService) {}
+    private authenticationService: AuthenticationService,
+    private reservationService: ReservationService
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.predefinedTotalAmount = +params['totalAmount'] || this.predefinedTotalAmount;
-      this.payment.reservationId = +params['reservationId'] || 0; // Obtener reservationId
+      this.reservationId = +params['reservationId'] || 0;
     });
+  }
+
+
+  getServicePrice(detail: string): number {
+    // Implement logic to get the price of the service based on the detail
+    // This is a placeholder implementation
+    const service = this.services.find(service => service.detail === detail);
+    return service ? service.price : 0;
   }
 
   openDialog() {
