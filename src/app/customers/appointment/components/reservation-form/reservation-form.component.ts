@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormArray } from '@angular/forms';
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { ReservationService } from '../../services/reservation.service';
 import { CompanyService } from '../../services/company.service';
@@ -22,6 +22,7 @@ export class ReservationFormComponent implements OnInit {
   serviceId: number = 0;
   companyId: number = 0;
   basePrice: number = 0;
+  serviceDetails: any[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -34,7 +35,7 @@ export class ReservationFormComponent implements OnInit {
     this.bookingForm = this.fb.group({
       bookingDate: ['', Validators.required],
       bookingTime: ['', Validators.required],
-      requirements: [''], // Add requirements field
+      requirements: this.fb.array([]),
       totalAmount: [0]
     });
   }
@@ -46,7 +47,7 @@ export class ReservationFormComponent implements OnInit {
       this.serviceId = +serviceId;
       this.reservationService.getServiceById(this.serviceId).subscribe(service => {
         this.serviceName = service.name;
-        this.basePrice = service.basePrice; // Assign basePrice
+        this.basePrice = service.basePrice;
 
         const salonId = service.salonId;
 
@@ -56,27 +57,51 @@ export class ReservationFormComponent implements OnInit {
             this.companyName = company.name;
           });
         }
+
+        this.reservationService.getServicesDetailById(this.serviceId).subscribe(details => {
+          this.serviceDetails = details;
+          this.addServiceDetailsToForm();
+        });
       });
     }
   }
 
-  onSubmit(): void {
-    const usuarioActual = this.authenticationService.getCurrentUserId;
-    if (this.bookingForm.valid) {
-      const reservation: Reservation = new Reservation();
-      reservation.customerId = usuarioActual; // Replace with actual customer ID
-      reservation.serviceId = this.serviceId;
-      reservation.companyId = this.companyId;
-      reservation.bookingDate = this.bookingForm.value.bookingDate;
-      reservation.bookingTime = this.bookingForm.value.bookingTime;
-      reservation.bookingStatus = false;
-      reservation.requirements = this.bookingForm.value.requirements.split(',').map((req: string) => req.trim());
-      reservation.totalAmount = this.basePrice; // Use basePrice for totalAmount
-
-      this.reservationService.create(reservation).subscribe(response => {
-            console.log('Reservation created:', response);
-            this.router.navigate(['/payment'], { queryParams: { totalAmount: reservation.totalAmount, reservationId: response.id } });
-          });
+  addServiceDetailsToForm(): void {
+      const requirements = this.bookingForm.get('requirements') as FormArray;
+      this.serviceDetails.forEach(detail => {
+        requirements.push(this.fb.control(false));
+      });
     }
-  }
+
+  updateTotalAmount(): void {
+      const requirements = this.bookingForm.get('requirements')?.value || [];
+      this.bookingForm.patchValue({
+        totalAmount: requirements
+          .map((checked: boolean, i: number) => checked ? this.serviceDetails[i].price : 0)
+          .reduce((acc: number, price: number) => acc + price, this.basePrice)
+      });
+    }
+  onSubmit(): void {
+      const usuarioActual = this.authenticationService.getCurrentUserId;
+      if (this.bookingForm.valid) {
+        const reservation: Reservation = new Reservation();
+        reservation.customerId = usuarioActual;
+        reservation.serviceId = this.serviceId;
+        reservation.companyId = this.companyId;
+        reservation.bookingDate = this.bookingForm.value.bookingDate;
+        reservation.bookingTime = this.bookingForm.value.bookingTime;
+        reservation.bookingStatus = false;
+        reservation.requirements = this.bookingForm.value.requirements
+          .map((checked: boolean, i: number) => checked ? this.serviceDetails[i].detail : null)
+          .filter((v: string | null) => v !== null) as string[];
+        reservation.totalAmount = this.bookingForm.value.requirements
+          .map((checked: boolean, i: number) => checked ? this.serviceDetails[i].price : 0)
+          .reduce((acc: number, price: number) => acc + price, this.basePrice);
+
+        this.reservationService.create(reservation).subscribe(response => {
+          console.log('Reservation created:', response);
+          this.router.navigate(['/payment'], { queryParams: { totalAmount: reservation.totalAmount, reservationId: response.id } });
+        });
+      }
+    }
 }

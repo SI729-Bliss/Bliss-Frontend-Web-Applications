@@ -35,5 +35,13 @@ export class ReservationService extends BaseService<Reservation>{
         })
       );
     }
-
+  getReservationById(reservationId: number): Observable<Reservation> {
+      return this.http.get<Reservation>(`${this.basePath}/${reservationId}`).pipe(
+        tap((data: Reservation) => console.log('Reservation:', data)),
+        catchError(error => {
+          console.error('Error fetching reservation details:', error);
+          return of(new Reservation());
+        })
+      );
+    }
 }
