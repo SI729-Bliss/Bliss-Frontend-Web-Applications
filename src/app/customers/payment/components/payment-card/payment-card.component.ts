@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, model,inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, model,inject,OnInit } from '@angular/core';
 
 import {CommonModule} from '@angular/common';
 /*Select component*/
@@ -20,9 +20,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatDialog,MatDialogActions,MatDialogClose,MatDialogContent,MatDialogTitle} from '@angular/material/dialog';
 
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { ActivatedRoute } from '@angular/router';
 
 import { Payment } from '../../model/payment.entity';
 import { PaymentsService } from '../../services/payments.service';
+import {AuthenticationService} from "../../../../iam/services/authentication.service";
 
 @Component({
   selector: 'app-payment-card',
@@ -32,7 +34,7 @@ import { PaymentsService } from '../../services/payments.service';
   styleUrl: './payment-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PaymentCardComponent {
+export class PaymentCardComponent implements OnInit {
   readonly dialog = inject(MatDialog);
   payment: Payment = new Payment();
   predefinedTotalAmount = 60;
@@ -42,15 +44,25 @@ export class PaymentCardComponent {
     { detail: 'Detalle servicio 3', price: 5 }
   ];
 
-  constructor(private paymentService: PaymentsService) {}
+  constructor(private paymentService: PaymentsService,
+    private route: ActivatedRoute,
+     private authenticationService: AuthenticationService) {}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.predefinedTotalAmount = +params['totalAmount'] || this.predefinedTotalAmount;
+      this.payment.reservationId = +params['reservationId'] || 0; // Obtener reservationId
+    });
+  }
 
   openDialog() {
     this.dialog.open(ConfirmationDialogComponent);
   }
 
   submitPayment() {
+    const activeUser = this.authenticationService.getCurrentUserId;
     this.openDialog();
-    // Assuming you have a predefined total amount
+    this.payment.customerId = activeUser;
     this.payment.amount = this.predefinedTotalAmount;
     this.payment.status = 'PENDING';
     this.paymentService.create(this.payment).subscribe(response => {

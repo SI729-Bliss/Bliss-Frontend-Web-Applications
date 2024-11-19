@@ -1,13 +1,5 @@
 // src/app/customers/profiles/components/customer-create-and-edit/customer-create-and-edit.component.ts
-import {
-  Component,
-  OnInit,
-  Input,
-  Output,
-  EventEmitter,
-  ViewChild,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ViewEncapsulation } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Customer } from '../../model/customer.entity';
 import { CustomerService } from '../../services/customer.service';
@@ -22,6 +14,10 @@ import { AuthenticationService } from '../../../../iam/services/authentication.s
 import {Company} from "../../../../enterprise/profiles/model/company.entity";
 import {CompanyService} from "../../../../enterprise/profiles/services/company.service";
 
+import { DialogPaymentReservationComponent } from '../../../../customers/payment/components/dialog-payment-reservation/dialog-payment-reservation.component';
+import {MatDialog} from '@angular/material/dialog';
+
+
 @Component({
   selector: 'app-customer-create-and-edit',
   standalone: true,
@@ -32,13 +28,14 @@ import {CompanyService} from "../../../../enterprise/profiles/services/company.s
     MatButtonModule,
     TranslateModule,
     FormsModule,
-    MatIcon,
+    MatIcon
   ],
   templateUrl: './customer-create-and-edit.component.html',
   styleUrls: ['./customer-create-and-edit.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class CustomerCreateAndEditComponent implements OnInit {
+
   customers: Customer[] = [];
   companies: Company[] = [];
   services: Service[] = [];
@@ -55,10 +52,17 @@ export class CustomerCreateAndEditComponent implements OnInit {
 
   @ViewChild('customerForm', { static: false }) customerForm!: NgForm;
 
-  constructor(private customerService: CustomerService, private authenticationService: AuthenticationService, private companyService: CompanyService) {
+  constructor(private customerService: CustomerService,
+    private authenticationService: AuthenticationService,
+    private companyService: CompanyService,
+    private dialog: MatDialog) {
     this.customer = {} as Customer;
   }
-
+  openPaymentDialog(reservationId: number): void {
+      this.dialog.open(DialogPaymentReservationComponent, {
+        data: { reservationId }
+      });
+    }
   ngOnInit(): void {
     const currentCustomerId = this.authenticationService.getCurrentUserId;
     console.log('currentCustomerId:', currentCustomerId);

@@ -84,25 +84,19 @@
           <div class="content-container">
             <div class="card-container">
               <div class="row">
-
-
                 <div class="stars">
                   <mat-icon matPrefix>star</mat-icon>
                   Reserva Pendiente
                   <mat-icon matPrefix>star</mat-icon>
-
                 </div>
               </div>
               <div class="sales">
                 <mat-icon matPrefix>today</mat-icon>
-
                 {{ service.bookingDate }}
-
               </div>
               <div class="sales">
                 <mat-icon matPrefix>watch_later</mat-icon>
                 {{ service.bookingTime }}
-
               </div>
               <div class="sales">
                 <mat-icon matPrefix>card_giftcard</mat-icon>
@@ -112,11 +106,12 @@
                 <mat-icon matPrefix>monetization_on</mat-icon>
                 {{service.totalAmount}}
               </div>
-            </div>
+              <button mat-raised-button color="primary" (click)="openPaymentDialog(service.id)">Mi Boleta/Factura</button>            </div>
           </div>
         </div>
         }}
 
     </div>
+
   </div>
 </div>

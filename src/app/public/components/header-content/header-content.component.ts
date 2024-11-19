@@ -49,7 +49,6 @@ export class HeaderContentComponent implements OnInit{
   loadTranslations(): void {
     this.translate.get([
       'BLISS',
-      'My Reservations',
       'Catalog',
       'Services History',
       'CustomerPr',
@@ -60,7 +59,6 @@ export class HeaderContentComponent implements OnInit{
     ]).subscribe(translations => {
       this.options = [
         { icon: 'info', path: '/catalog', title: translations['Catalog'] },
-        { icon: 'info', path: '/my-reservations', title: translations['My Reservations'] },
         { icon: 'info', path: '/services-history', title: translations['Services History'] },
         { icon: 'person', path: '/customerProfile', title: translations['CustomerPr'] },
 
