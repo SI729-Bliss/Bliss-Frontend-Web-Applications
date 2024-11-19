@@ -15,7 +15,7 @@ export class PaymentsService extends BaseService<Payment>{
   }
 
   getPaymentByReservationId(reservationId: number): Observable<Payment> {
-    return this.http.get<Payment>(`${this.basePath}${this.resourceEndpoint}?reservationId=${reservationId}`);
+    return this.http.get<Payment>(`${this.basePath}${this.resourceEndpoint}/findByReservationId?reservationId=${reservationId}`);
   }
 
 }
