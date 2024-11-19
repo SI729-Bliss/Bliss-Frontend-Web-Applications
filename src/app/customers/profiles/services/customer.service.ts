@@ -20,8 +20,8 @@ export class CustomerService extends BaseService<Customer> {
     return this.http.get<Customer[]>(`${this.basePath}${this.resourceEndpoint}`);
   }
   // Obtener lista de servicios
-  getServicesByCustomerId(id:number): Observable<Service[]> {
-    return this.http.get<Service[]>(`${this.basePath}/bookings/customer/${id}`);
+  getServicesByCustomerId(customerId:number): Observable<Service[]> {
+    return this.http.get<Service[]>(`${this.basePath}/bookings/customer/${customerId}`);
   }
 
   // Agregar un nuevo cliente
