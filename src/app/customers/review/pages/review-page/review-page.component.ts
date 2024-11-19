@@ -2,9 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReviewService } from '../../services/review.services';
-import { ReservationService } from '../../../history/services/reservation.service';
+import { BookingService } from '../../../history/services/booking.service';
 import { Review } from '../../model/review.entity';
-import { Reservation } from '../../../history/model/reservation.entity';
+import { Booking } from '../../../history/model/booking.entity';
 import { Service } from '../../../history/model/service.entity';
 import { ReviewCardComponent } from '../../components/review-card/review-card.component';
 
@@ -17,32 +17,30 @@ import { ReviewCardComponent } from '../../components/review-card/review-card.co
 })
 export class ReviewPageComponent implements OnInit {
   review: Review = new Review();
-  reservation: Reservation = new Reservation();
+  booking: Booking = new Booking();
   service: Service = new Service();
+  reservation: Booking = new Booking();
   userName: string = 'Juan Pérez';
 
   constructor(
     private reviewService: ReviewService,
-    private reservationService: ReservationService,
+    private bookingService: BookingService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    const reservationId = +this.route.snapshot.paramMap.get('id')!;
-    this.reviewService.getReviewByReservationId(reservationId).subscribe(reviews => {
+    const bookingId = +this.route.snapshot.paramMap.get('id')!;
+    this.reviewService.getReviewsByReservationId(bookingId).subscribe(reviews => {
       if (reviews.length > 0) {
         this.review = reviews[0];
       } else {
-        this.review.reservationId = reservationId;
-        this.review.customerId = 1; // Assuming user ID is 1
+        this.review.reservationId = bookingId;
       }
     });
 
-    this.reservationService.getReservationById(reservationId).subscribe(reservation => {
-      this.reservation = reservation;
-      this.reservationService.getServiceById(reservation.serviceId).subscribe(service => {
-        this.service = service;
-      });
+    this.bookingService.getBookingById(bookingId).subscribe(booking => {
+      this.booking = booking;
+      this.reservation = booking;
     });
   }
 }
