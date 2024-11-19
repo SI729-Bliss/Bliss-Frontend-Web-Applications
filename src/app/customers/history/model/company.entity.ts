@@ -1,18 +1,17 @@
-// src/app/history/model/beauty_salon.entity.ts
-export class BeautySalon {
+export class Company {
   id: number;
   name: string;
   email: string;
-  phone: string;
+  phoneNumber: string;
   address: string;
-  password: string;
+  rating: number;
 
   constructor() {
     this.id = 0;
     this.name = '';
     this.email = '';
-    this.phone = '';
+    this.phoneNumber = '';
     this.address = '';
-    this.password = '';
+    this.rating = 0;
   }
 }

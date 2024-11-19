@@ -15,7 +15,6 @@ import { TranslateLoader, TranslateModule, TranslateService } from "@ngx-transla
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient } from "@angular/common/http";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
-import { BookingComponent } from "./enterprise/services/pages/booking/booking.component";
 import { RouterLink } from "@angular/router";
 import { NgClass, NgForOf } from "@angular/common";
 import {ScrollControlService} from "./shared/services/style.service";
@@ -29,7 +28,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   standalone: true,
   imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatCardModule, MatIconModule, MatGridListModule,
     MatBadgeModule, MatMenuModule, MatSidenavModule, MatDividerModule, MatListModule, TranslateModule,
-    HeaderContentComponent, LanguageSwitcherComponent, BookingComponent, NgForOf, NgClass, RouterLink, AuthenticationSectionComponent],
+    HeaderContentComponent, LanguageSwitcherComponent, NgForOf, NgClass, RouterLink, AuthenticationSectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [

@@ -1,370 +1,60 @@
 {
-  "service_details": [
+  "users": [
     {
       "id": 1,
-      "price": 30,
-      "duration": 45,
-      "description": "Corte de cabello corto",
-      "customization_options": "Lavado, secado, peinado"
-    },
-    {
-      "id": 2,
-      "price": 50,
-      "duration": 60,
-      "description": "Coloración de cabello",
-      "customization_options": "Tinte, mechas, balayage"
-    },
-    {
-      "id": 3,
-      "price": 20,
-      "duration": 30,
-      "description": "Manicuría básica",
-      "customization_options": "Esmalte, cutícula"
+      "username": "glitter",
+      "password": "123"
     }
   ],
-  "beauty_salons": [
+  "bookings": [
     {
       "id": 1,
-      "name": "Belleza Express",
-      "email": "bellezaexpress@example.com",
-      "phone": "+541144433322",
-      "address": "Av. Corrientes 1234, Buenos Aires",
-      "password": "mystrongpassword"
-    },
-    {
-      "id": 2,
-      "name": "Estética Total",
-      "email": "esteticatotal@example.com",
-      "phone": "+541144433311",
-      "address": "Calle Florida 567, Buenos Aires",
-      "password": "anotherstrongpassword"
-    },
-    {
-      "id": 3,
-      "name": "Estilo Único",
-      "email": "estilo-unico@example.com",
-      "phone": "+541166655544",
-      "address": "Av. Santa Fe 123, Buenos Aires",
-      "password": "superstrongpassword"
-    }
-  ],
-  "categories": [
-    {
-      "id": 1,
-      "name": "Cabello",
-      "description": "Todos los servicios relacionados al cuidado del cabello.",
-      "type": "servicio"
-    },
-    {
-      "id": 2,
-      "name": "Uñas",
-      "description": "Servicios de manicura y pedicura.",
-      "type": "estetica"
-    },
-    {
-      "id": 3,
-      "name": "Maquillaje",
-      "description": "Servicios de maquillaje profesional.",
-      "type": "estetica"
+      "customerId": 1,
+      "serviceId": 1,
+      "companyId": 1,
+      "totalAmount": 100,
+      "bookingDate": "2024-11-18",
+      "bookingTime": "00:26:07.896Z",
+      "bookingStatus": true,
+      "requirements": ["string"]
     }
   ],
   "services": [
     {
       "id": 1,
-      "name": "Corte de cabello",
-      "language": "English",
+      "name": "Haircut",
       "categoryId": 1,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
-      "description": "Corte de cabello clásico.",
-      "basePrice": 30,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Coloración",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
-      "description": "Expert hair styling services to give you a fresh, modern look.",
-      "basePrice": 50,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 3,
-      "name": "Manicure & Pedicure",
-      "language": "English",
-      "description": "Complete manicure and pedicure services for flawless hands and feet.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 4,
-      "name": "Coloración",
-      "language": "English",
-      "description": "Aplicación de color en el cabello.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 2
-    },
-    {
-      "id": 5,
-      "name": "Corte de cabello",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4AnPmaudDLnAZE_QDVp2zmeLpGGzE750duw&s",
-      "description": "Corte de cabello clásico.",
-      "basePrice": 30,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 6,
-      "name": "Coloración",
-      "language": "English",
-      "categoryId": 1,
-      "imageUrl": "https://phantom-expansion.unidadeditorial.es/53eb2367c52a8d0ea7f61372f6d5b2c0/crop/26x0/960x1136/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/15/16947630246686.png",
-      "description": "Expert hair styling services to give you a fresh, modern look.",
-      "basePrice": 50,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 7,
-      "name": "Manicure & Pedicure",
-      "language": "English",
-      "description": "Complete manicure and pedicure services for flawless hands and feet.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 1
-    },
-    {
-      "id": 8,
-      "name": "Coloración",
-      "language": "English",
-      "description": "Aplicación de color en el cabello.",
-      "basePrice": 50,
-      "categoryId": 1,
-      "beautySalon": "SOHO",
-      "sales": 15,
-      "rating": 4.5,
-      "image": "https://xn--z-uas-qta.com/wp-content/uploads/2023/06/unas-corazones.webp",
-      "beauty_salon_id": 2
-    }
-  ],
-   "service_customization": [
-    {
-      "serviceId": 1,
-      "customizations": [
-        "Peinado con rizos",
-        "Secado con volumen",
-        "Lavado con shampoo especial"
-      ]
-    },
-    {
-      "serviceId": 2,
-      "customizations": [
-        "Tinte vegano",
-        "Mechas"
-      ]
-    },
-    {
-      "serviceId": 3,
-      "customizations": [
-        "Cuidado de uñas",
-        "Exfoliación de manos",
-        "Masaje de cierre y esmaltado"
-      ]
-    }
-  ],
-  "booking_service": [],
-  "specialists": [
-    {
-      "name": "John Dae",
-      "email": "john.doe@example.com",
-      "address": "123 Main St",
-      "phoneNumber": "+1234567890",
-      "profession": "Estilist",
-      "rating": 4.5,
-      "certificationNumber": "CERT-987654321",
-      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
-    },
-    {
-      "name": "John Dae",
-      "email": "jane.smith@example.com",
-      "address": "123 Main St",
-      "phoneNumber": "+0987654321",
-      "profession": "Estilist",
-      "rating": 4.5,
-      "certificationNumber": "CERT-123456789",
-      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
-    },
-    {
-      "name": "John Dae",
-      "email": "carlos.gonzalez@example.com",
-      "address": "123 Main St",
-      "phoneNumber": "+1122334455",
-      "profession": "Estilist",
-      "rating": 4.5,
-      "certificationNumber": "CERT-112233445",
-      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
-    },
-    {
-      "name": "John Dae",
-      "email": "john.doe@example.com",
-      "address": "123 Main St",
-      "phoneNumber": "+1234567890",
-      "profession": "Estilist",
-      "rating": 4.5,
-      "certificationNumber": "CERT-987654321",
-      "img": "https://cdn-3.expansion.mx/dims4/default/7a7a6a3/2147483647/strip/true/crop/1080x1349+0+0/resize/1200x1499!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F7a%2F05%2F5349177a46e6974889fbd074b4da%2F51567926-2221602051440039-5571373392387679404-n.jpg"
-    }
-  ],
-  "service-details": [
-    {
-      "id": 1,
-      "serviceId": 1,
-      "price": 30,
-      "duration": 45,
-      "customization_options": "Lavado, secado, peinado"
-    },
-    {
-      "id": 2,
-      "serviceId": 2,
-      "price": 50,
-      "duration": 60,
-      "customization_options": "Tinte, mechas, balayage"
-    },
-    {
-      "id": 4,
-      "serviceId": 4,
-      "price": 20,
-      "duration": 30,
-      "customization_options": "Esmalte, cutícula"
-    }
-  ],
-  "reservations": [
-    {
-      "id": 1,
-      "customerId": 1,
-      "serviceId": 1,
-      "beautySalonId": 1,
-      "reservationDate": "2023-11-20",
-      "status": "completed"
-    },
-    {
-      "id": 2,
-      "customerId": 1,
-      "serviceId": 2,
-      "beautySalonId": 1,
-      "reservationDate": "2023-11-22",
-      "status": "completed"
-    }
-  ],
-  "reservations_details": [
-    {
-      "id": 1,
-      "status": "confirmed",
-      "description": "Corte de cabello con color",
-      "duration": 120,
-      "totalPrice": 70,
-      "reservation_id": 123
-    }
-  ],
-  "feedback": [
-    {
-      "id": 1,
-      "punctuation": 3,
-      "comment": "1212e12e",
-      "createdDate": "2024-10-20T06:12:10.716Z",
-      "reservationId": 1,
-      "customerId": 1,
-      "images": [
-        "",
-        "",
-        ""
-      ]
-    }
-  ],
-  "customers": [
-    {
-      "id": "1",
-      "name": "Juan Flores",
-      "email": "john.do@gmai.",
-      "address": "123 santa rosa",
-      "phoneNumber": "123-456-789"
-    },
-    {
-      "id": "2",
-      "name": "Jane Smith",
-      "email": "jane.smith@example.com",
-      "address": "456 Elm St",
-      "phoneNumber": "555-5678"
+      "imageUrl": "http://example.com/image.jpg",
+      "description": "A basic haircut",
+      "basePrice": 20,
+      "salonId": 1
     }
   ],
   "companies": [
     {
-      "id": "1",
-      "name": "Beauty Salqwe",
-      "email": "john.doe@example.com",
+      "id": 1,
+      "name": "Beauty Salon",
+      "email": "contact@beautysalon.com",
+      "phoneNumber": "123-456-7890",
       "address": "123 Main St",
-      "phoneNumber": "555-1234"
-    },
-    {
-      "id": "2",
-      "name": "John's Salon",
-      "email": "john.doe@example.com",
-      "address": "123 Main Std qqe2",
-      "phoneNumber": "555-3214"
+      "rating": 4.5
     }
   ],
-  "stylists": [
+
+  "reviews": [
     {
-      "id": "1",
-      "name": "Alice",
-      "image": "https://micarrerauniversitaria.com/wp-content/uploads/2018/04/ESTILISTA.jpg",
-      "specialism": "Hair Styling",
-      "rating": 4.9
-    },
-    {
-      "id": "2",
-      "name": "Maria",
-      "image": "https://i.pinimg.com/enabled_lo/564x/68/70/a4/6870a466e0b53c77eded825fcfbfe9ea.jpg",
-      "specialism": "Manicure & Pedicure",
-      "rating": 4.7
-    },
-    {
-      "id": "3",
-      "name": "Charlie",
-      "image": "https://i.pinimg.com/736x/1f/ec/57/1fec577ace50c4938ff1f62235dc4309.jpg",
-      "specialism": "Facial Treatments",
-      "rating": 4.8
+      "id": 1,
+      "createdAt": "2024-11-18T00:26:07.896Z",
+      "updatedAt": "2024-11-18T00:26:07.896Z",
+      "reservationId": 1,
+      "punctuation": 5,
+      "comment": "Great service!",
+      "reservationInfo": {
+        "serviceId": 1,
+        "companyId": 1
+      },
+      "imageUrls": ["http://example.com/image1.jpg", "http://example.com/image2.jpg"],
+      "customerId": 1
     }
   ]
 }
